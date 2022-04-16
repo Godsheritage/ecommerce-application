@@ -1,6 +1,8 @@
 import React from "react";
 import bg2 from "../assets/img/bg-2.jpg";
 import bg from "../assets/img/bg.jpg";
+import "./hero.scss";
+
 // import webpack from 'webpack'
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel';
@@ -10,22 +12,51 @@ const Hero: React.FC = () => {
     <div className="hero">
       <div
         id="carouselExampleFade"
-        className="carousel slide carousel-fade"
+        className="carousel slide carousel-fade hero"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
+        <div className="carousel-inner hero">
           <div className="carousel-item active">
-            <img src={bg} className="d-block w-100" alt="..." />
+            <img src={bg} className="d-block w-100 img" alt="..." />
+            <span className="txt">
+              <h3>NEW ARRIVALS</h3>
+              <h1>DENIM JACKETS</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium maiores ullam a assumenda commodi iusto non omnis
+                adipisci quasi magnam, nisi, eveniet impedit reprehenderit totam
+                laborum minus pariatur voluptas qui. Fuga quidem suscipit odio
+                saepe laboriosam porro, hic, quo nostrum ullam voluptatibus
+                incidunt numquam esse totam recusandae deserunt sit sunt rerum!
+                Doloremque ab sapiente repellendus suscipit corporis neque in
+                eos.
+              </p>
+              <button className="btn btn-primary">Discover</button>
+              <button className="btn btn-primary">Add to cart</button>
+            </span>
           </div>
           <div className="carousel-item">
-            <img src={bg} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={bg2} className="d-block w-100" alt="..." />
+            <img src={bg2} className="d-block w-100 img" alt="..." />
+            <span className="txt">
+              <h3>NEW ARRIVALS</h3>
+              <h1>DENIM JACKETS</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium maiores ullam a assumenda commodi iusto non omnis
+                adipisci quasi magnam, nisi, eveniet impedit reprehenderit totam
+                laborum minus pariatur voluptas qui. Fuga quidem suscipit odio
+                saepe laboriosam porro, hic, quo nostrum ullam voluptatibus
+                incidunt numquam esse totam recusandae deserunt sit sunt rerum!
+                Doloremque ab sapiente repellendus suscipit corporis neque in
+                eos.
+              </p>
+              <button className="btn btn-primary">Discover</button>
+              <button className="btn btn-primary">Add to cart</button>
+            </span>
           </div>
         </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev "
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="prev"
