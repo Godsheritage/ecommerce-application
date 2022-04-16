@@ -1,11 +1,8 @@
-import React from "react";
-import bg2 from "../assets/img/bg-2.jpg";
-import bg from "../assets/img/bg.jpg";
 import "./hero.scss";
+import bg from "../assets/img/bg.jpg";
+import bg2 from "../assets/img/bg-2.jpg";
 
-// import webpack from 'webpack'
-// import 'owl.carousel/dist/assets/owl.carousel.css';
-// import 'owl.carousel';
+
 
 const Hero: React.FC = () => {
   return (

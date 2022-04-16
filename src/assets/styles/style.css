@@ -777,6 +777,10 @@ ol {
 	display: inline-block;
 }
 
+.features-section {
+	margin-top: -18px;
+}
+
 /* ----------------------
   Latest product section
 ------------------------*/
