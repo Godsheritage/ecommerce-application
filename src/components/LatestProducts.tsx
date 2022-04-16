@@ -1,4 +1,9 @@
 import React from "react";
+import product1 from '../assets/img/product/1.jpg'
+import product2 from '../assets/img/product/2.jpg'
+import product3 from '../assets/img/product/3.jpg'
+import product4 from '../assets/img/product/4.jpg'
+import product6 from '../assets/img/product/6.jpg'
 
 const LatestProducts: React.FC = () => {
   return (
@@ -11,7 +16,7 @@ const LatestProducts: React.FC = () => {
           <div className="product-slider owl-carousel">
             <div className="product-item">
               <div className="pi-pic">
-                <img src="./img/product/1.jpg" alt="" />
+                <img src={product1} alt="product 1" />
                 <div className="pi-links">
                   <a href="#" className="add-card">
                     <i className="flaticon-bag"></i>
@@ -30,7 +35,7 @@ const LatestProducts: React.FC = () => {
             <div className="product-item">
               <div className="pi-pic">
                 <div className="tag-new">New</div>
-                <img src="./img/product/2.jpg" alt="" />
+                <img src={product2} alt="" />
                 <div className="pi-links">
                   <a href="#" className="add-card">
                     <i className="flaticon-bag"></i>
@@ -48,7 +53,7 @@ const LatestProducts: React.FC = () => {
             </div>
             <div className="product-item">
               <div className="pi-pic">
-                <img src="./img/product/3.jpg" alt="" />
+                <img src={product3} alt="" />
                 <div className="pi-links">
                   <a href="#" className="add-card">
                     <i className="flaticon-bag"></i>
@@ -66,7 +71,7 @@ const LatestProducts: React.FC = () => {
             </div>
             <div className="product-item">
               <div className="pi-pic">
-                <img src="./img/product/4.jpg" alt="" />
+                <img src={product4} alt="" />
                 <div className="pi-links">
                   <a href="#" className="add-card">
                     <i className="flaticon-bag"></i>
@@ -84,7 +89,7 @@ const LatestProducts: React.FC = () => {
             </div>
             <div className="product-item">
               <div className="pi-pic">
-                <img src="./img/product/6.jpg" alt="" />
+                <img src={product6} alt="" />
                 <div className="pi-links">
                   <a href="#" className="add-card">
                     <i className="flaticon-bag"></i>
