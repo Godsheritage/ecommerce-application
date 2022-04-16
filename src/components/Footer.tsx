@@ -1,7 +1,7 @@
 import React from "react";
 import lightLogo from "../assets/img/logo-light.png";
 import cards from "../assets/img/cards.png";
-import { FaGooglePlus, FaInstagram, FaFacebook, FaPinterest, FaTwitter, FaYoutube, FaTumblr, FaTumblrSquare } from "react-icons/fa";
+import { FaGooglePlus, FaInstagram, FaFacebook, FaPinterest, FaTwitter, FaYoutube, FaTumblrSquare } from "react-icons/fa";
 
 const Footer:React.FC = () => {
   return (
