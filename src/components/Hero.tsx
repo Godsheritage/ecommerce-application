@@ -1,11 +1,55 @@
 import React from "react";
 import bg2 from "../assets/img/bg-2.jpg";
 import bg from "../assets/img/bg.jpg";
+// import webpack from 'webpack'
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel';
 
 const Hero: React.FC = () => {
   return (
-    <div>
-      <section className="hero-section">
+    <div className="hero">
+      <div
+        id="carouselExampleFade"
+        className="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={bg} className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src={bg} className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src={bg2} className="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+      {/* <section className="hero-section">
         <div className="hero-slider owl-carousel">
           <div className="hs-item set-bg" data-setbg={bg}>
             <div className="container">
@@ -57,7 +101,7 @@ const Hero: React.FC = () => {
         <div className="container">
           <div className="slide-num-holder" id="snh-1"></div>
         </div>
-      </section>
+  </section>*/}
     </div>
   );
 };
