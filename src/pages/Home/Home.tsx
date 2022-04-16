@@ -4,6 +4,7 @@ import Hero from "../../components/hero/Hero";
 import Footer from "../../components/footer/Footer";
 import Features from "../../components/Features";
 import LatestProducts from "../../components/LatestProducts";
+import ProductsFilterSection from "../../components/ProductsFilterSection";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <Features/>
       <LatestProducts/>
+      <ProductsFilterSection/>
       <Footer />
     </>
   );
