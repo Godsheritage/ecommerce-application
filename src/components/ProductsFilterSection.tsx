@@ -1,16 +1,21 @@
-import product5 from "../assets/img/product/5.jpg";
-import product6 from "../assets/img/product/6.jpg";
-import product7 from "../assets/img/product/7.jpg";
-import product8 from "../assets/img/product/8.jpg";
-import product9 from "../assets/img/product/9.jpg";
-import product10 from "../assets/img/product/10.jpg";
-import product11 from "../assets/img/product/11.jpg";
-import product12 from "../assets/img/product/12.jpg";
+// import product5 from "../assets/img/product/5.jpg";
+// import product6 from "../assets/img/product/6.jpg";
+// import product7 from "../assets/img/product/7.jpg";
+// import product8 from "../assets/img/product/8.jpg";
+// import product9 from "../assets/img/product/9.jpg";
+// import product10 from "../assets/img/product/10.jpg";
+// import product11 from "../assets/img/product/11.jpg";
+// import product12 from "../assets/img/product/12.jpg";
 
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
+import ProductContext from "../context/ProductContext";
+import { contextTypes } from "../types";
+import { useContext } from "react";
 
 const ProductsFilterSection = () => {
+  const { topSellingProducts } = useContext(ProductContext) as contextTypes;
+
   return (
     <div>
       <section className="product-filter-section">
@@ -45,19 +50,40 @@ const ProductsFilterSection = () => {
             </li>
           </ul>
           <div className="row">
-            <div className="col-lg-3 col-sm-6">
+            {topSellingProducts.map((product) => (
+              <div className="col-lg-3 col-sm-6" key={product.id}>
+                <div className="product-item">
+                  <div className="pi-pic">
+                    <img src={product.image} alt={product.name} />
+                    <div className="pi-links">
+                      <a href="#" className="add-card">
+                        <FaShoppingCart />
+                        <span>ADD TO CART</span>
+                      </a>
+                      <a href="#" className="wishlist-btn">
+                        <FaHeart />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="pi-text">
+                    <h6>${product.price}</h6>
+                    <p>{product.name}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
                   <img src={product5} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -74,13 +100,11 @@ const ProductsFilterSection = () => {
                   <img src={product6} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -96,13 +120,11 @@ const ProductsFilterSection = () => {
                   <img src={product7} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -118,13 +140,11 @@ const ProductsFilterSection = () => {
                   <img src={product8} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -140,20 +160,18 @@ const ProductsFilterSection = () => {
                   <img src={product9} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
                       <i className="flaticon-heart"></i>
-                      {/* <FaHeart/> */}
-                      <FaShoppingCart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
                 <div className="pi-text">
-                  
-                  <FaHeart/>{/* <h6>$35,00</h6> */}
+                  <FaHeart />
+                  <h6>$35,00</h6>
                   <p>Flamboyant Pink Top </p>
                 </div>
               </div>
@@ -164,13 +182,11 @@ const ProductsFilterSection = () => {
                   <img src={product10} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -186,13 +202,11 @@ const ProductsFilterSection = () => {
                   <img src={product11} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -208,13 +222,11 @@ const ProductsFilterSection = () => {
                   <img src={product12} alt="" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      {/* <i className="flaticon-bag"></i> */}
-                      <FaShoppingCart/>
+                      <FaShoppingCart />
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      {/* <i className="flaticon-heart"></i> */}
-                      <FaHeart/>
+                      <FaHeart />
                     </a>
                   </div>
                 </div>
@@ -223,7 +235,7 @@ const ProductsFilterSection = () => {
                   <p>Flamboyant Pink Top </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="text-center pt-5">
             <button className="site-btn sb-line sb-dark">LOAD MORE</button>
