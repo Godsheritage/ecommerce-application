@@ -1,5 +1,5 @@
 import Logo from "../assets/img/logo.png";
-import { FaUser, FaCartPlus, FaSearch } from "react-icons/fa";
+import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Header: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                   <div className="up-item">
                     <div className="shopping-card">
                       <i className="flaticon-bag"></i>
-                      <FaCartPlus size="22px" />
+                      <FaShoppingCart size="22px" />
                       <span>0</span>
                     </div>
                     <a href="#">Shopping Cart</a>
