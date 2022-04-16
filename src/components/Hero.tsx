@@ -1,6 +1,6 @@
 import React from "react";
-import bg2 from "../../assets/img/bg-2.jpg";
-import bg from "../../assets/img/bg.jpg";
+import bg2 from "../assets/img/bg-2.jpg";
+import bg from "../assets/img/bg.jpg";
 
 const Hero: React.FC = () => {
   return (
