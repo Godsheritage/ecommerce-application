@@ -1,8 +1,7 @@
-import React from "react";
-import Logo from "../../assets/img/logo.png"
-import {FaUser, FaCartPlus, FaSearch} from 'react-icons/fa';
+import Logo from "../../assets/img/logo.png";
+import { FaUser, FaCartPlus, FaSearch } from "react-icons/fa";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div>
       <header className="header-section">
@@ -12,7 +11,7 @@ const Header = () => {
               <div className="col-lg-2 text-center text-lg-left">
                 {/* <!-- logo --> */}
                 <a href="./index.html" className="site-logo">
-                   <img src = {Logo} alt="logo" />
+                  <img src={Logo} alt="logo" />
                 </a>
               </div>
               <div className="col-xl-6 col-lg-5">
@@ -20,7 +19,7 @@ const Header = () => {
                   <input type="text" placeholder="Search on divisima ...." />
                   <button>
                     {/* <i className="flaticon-search"></i> */}
-                    <FaSearch size='18px'/>
+                    <FaSearch size="18px" />
                   </button>
                 </form>
               </div>
@@ -28,14 +27,14 @@ const Header = () => {
                 <div className="user-panel">
                   <div className="up-item">
                     {/* <i className="flaticon-profile"></i> */}
-                    <FaUser size='22px'/>
+                    <FaUser size="22px" />
                     {/* <FontAwesomeIcon icon="fa-light fa-user" /> */}
                     <a href="#">Sign</a> In or <a href="#">Create Account</a>
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">
                       <i className="flaticon-bag"></i>
-                      <FaCartPlus size= '22px'/>
+                      <FaCartPlus size="22px" />
                       <span>0</span>
                     </div>
                     <a href="#">Shopping Cart</a>
