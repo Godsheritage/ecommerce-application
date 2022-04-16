@@ -1,6 +1,6 @@
 import React from "react";
+import Logo from "../../assets/img/logo.png"
 import {FaUser, FaCartPlus, FaSearch} from 'react-icons/fa';
-import * as Logo from "../../assets/img/logo.png"
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
               <div className="col-lg-2 text-center text-lg-left">
                 {/* <!-- logo --> */}
                 <a href="./index.html" className="site-logo">
-                  {/* // <img src = {../../assets/img/logo.png} alt="logo" /> */}
+                   <img src = {Logo} alt="logo" />
                 </a>
               </div>
               <div className="col-xl-6 col-lg-5">
