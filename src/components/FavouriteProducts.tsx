@@ -2,6 +2,7 @@ import product1 from "../assets/img/product/1.jpg";
 import product2 from "../assets/img/product/2.jpg";
 import product5 from "../assets/img/product/5.jpg";
 import product9 from "../assets/img/product/9.jpg";
+import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 
 const FavouriteProducts = () => {
   return (
@@ -19,11 +20,11 @@ const FavouriteProducts = () => {
                   <img src={product2} alt="product 2" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      <i className="flaticon-bag"></i>
+                      <FaShoppingCart/>
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      <i className="flaticon-heart"></i>
+                      <FaHeart/>
                     </a>
                   </div>
                 </div>
@@ -39,11 +40,11 @@ const FavouriteProducts = () => {
                   <img src={product5} alt="product 5" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      <i className="flaticon-bag"></i>
+                      <FaShoppingCart/>
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      <i className="flaticon-heart"></i>
+                      <FaHeart/>
                     </a>
                   </div>
                 </div>
@@ -59,11 +60,11 @@ const FavouriteProducts = () => {
                   <img src={product9} alt="product 9" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      <i className="flaticon-bag"></i>
+                      <FaShoppingCart/>
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      <i className="flaticon-heart"></i>
+                      <FaHeart/>
                     </a>
                   </div>
                 </div>
@@ -79,11 +80,11 @@ const FavouriteProducts = () => {
                   <img src={product1} alt="product 1" />
                   <div className="pi-links">
                     <a href="#" className="add-card">
-                      <i className="flaticon-bag"></i>
+                      <FaShoppingCart/>
                       <span>ADD TO CART</span>
                     </a>
                     <a href="#" className="wishlist-btn">
-                      <i className="flaticon-heart"></i>
+                      <FaHeart/>
                     </a>
                   </div>
                 </div>

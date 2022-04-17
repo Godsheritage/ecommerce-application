@@ -1,28 +1,19 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FavouriteProducts from "../components/FavouriteProducts";
+import PageTopInfo from "../components/PageTopInfo";
 
 import cartImg1 from "../assets/img/cart/1.jpg";
 import cartImg2 from "../assets/img/cart/2.jpg";
 import cartImg3 from "../assets/img/cart/3.jpg";
 
 
-
 const Cart = () => {
   return (
     <div>
       <Header />
-
-      <div className="page-top-info">
-        <div className="container">
-          <h4>Your cart</h4>
-          <div className="site-pagination">
-            <a href="">Home</a> /<a href="">Your cart</a>
-          </div>
-        </div>
-      </div>
-      {/* <!-- Page info end --> */}
-
+      <PageTopInfo page = 'Cart' link = '/cart'/>
+   
       {/* <!-- cart section end --> */}
       <section className="cart-section spad">
         <div className="container">

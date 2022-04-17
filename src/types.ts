@@ -9,3 +9,8 @@ export interface contextTypes {
   latestProduct: productTypes[];
   topSellingProducts : productTypes[];
 }
+
+export interface pageTopInfo {
+  page : string;
+  link : string;
+}

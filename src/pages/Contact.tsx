@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FavouriteProducts from "../components/FavouriteProducts";
+import PageTopInfo from "../components/PageTopInfo";
+import { FaBehance, FaFacebook, FaPinterest, FaTwitter,  FaDribbble,  } from "react-icons/fa";
 
 
 const Contact: React.FC = () => {
@@ -8,14 +10,7 @@ const Contact: React.FC = () => {
     <div>
       <Header />
 
-      <div className="page-top-info">
-        <div className="container">
-          <h4>Contact</h4>
-          <div className="site-pagination">
-            <a href="">Home</a> /<a href="">Contact</a>
-          </div>
-        </div>
-      </div>
+     <PageTopInfo page = 'Contact' link = '/contact' />
 
       <section className="contact-section">
         <div className="container">
@@ -27,19 +22,24 @@ const Contact: React.FC = () => {
               <p>hosting@contact.com</p>
               <div className="contact-social">
                 <a href="#">
-                  <i className="fa fa-pinterest"></i>
+                  {/* <i className="fa fa-pinterest"></i> */}
+                  <FaPinterest/>
                 </a>
                 <a href="#">
-                  <i className="fa fa-facebook"></i>
+                  {/* <i className="fa fa-facebook"></i> */}
+                  <FaFacebook/>
                 </a>
                 <a href="#">
-                  <i className="fa fa-twitter"></i>
+                  {/* <i className="fa fa-twitter"></i> */}
+                  <FaTwitter/>
                 </a>
                 <a href="#">
-                  <i className="fa fa-dribbble"></i>
+                  {/* <i className="fa fa-dribbble"></i> */}
+                  <FaDribbble/>
                 </a>
                 <a href="#">
-                  <i className="fa fa-behance"></i>
+                  {/* <i className="fa fa-behance"></i> */}
+                  <FaBehance/>
                 </a>
               </div>
               <form className="contact-form">
