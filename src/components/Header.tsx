@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Logo from "../assets/img/logo.png";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
+
 
 const Header: React.FC = () => {
   return (
@@ -50,7 +52,7 @@ const Header: React.FC = () => {
             {/* <!-- menu --> */}
             <ul className="main-menu">
               <li>
-                <a href="#">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <a href="#">Women</a>
@@ -94,7 +96,7 @@ const Header: React.FC = () => {
                     <a href="./category.html">Category Page</a>
                   </li>
                   <li>
-                    <a href="./cart.html">Cart Page</a>
+                    <Link to="/cart">Cart Page</Link>
                   </li>
                   <li>
                     <a href="./checkout.html">Checkout Page</a>
