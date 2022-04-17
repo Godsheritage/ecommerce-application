@@ -8,6 +8,8 @@ export interface productTypes {
 export interface contextTypes {
   latestProduct: productTypes[];
   topSellingProducts : productTypes[];
+  favouriteProducts : productTypes[];
+
 }
 
 export interface pageTopInfo {

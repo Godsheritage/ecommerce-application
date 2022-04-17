@@ -107,9 +107,37 @@ const topSellingProducts: productTypes[] = [
   },
 ];
 
+
+const favouriteProducts:productTypes[] = [
+  {
+    id: 0,
+    name: "Flamboyant Pink Top",
+    image: "https://img.ltwebstatic.com/images3_pi/2020/11/02/160428419151111c0092668dc7c683f7a47448f1b8_thumbnail_900x.webp",
+    price: 35.0,
+  },
+  {
+    id: 1 ,
+    name: "Black and White Stripes Dress",
+    image: "https://img.ltwebstatic.com/images3_pi/2020/11/02/160428418721d1a32468afeb38b1a3937669ea666a_thumbnail_900x.webp",
+    price: 45.0,
+  },
+  {
+    id: 2,
+    name: "Flamboyant Pink Top",
+    image: "https://img.ltwebstatic.com/images3_pi/2021/01/05/1609840017cd8cfcbc304b22a0336f6ce4ba1daf85_thumbnail_900x.webp",
+    price: 35.0,
+  },
+  {
+    id: 3,
+    name: "Black and White Stripes Dress",
+    image: "https://img.ltwebstatic.com/images3_pi/2021/01/05/160984002842a0a35c831a9d39450173240ffe1e79_thumbnail_900x.webp",
+    price: 45.0,
+  },
+]
+
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
   return (
-    <ProductContext.Provider value={{ latestProduct, topSellingProducts }}>
+    <ProductContext.Provider value={{ latestProduct, topSellingProducts, favouriteProducts }}>
       {children}
     </ProductContext.Provider>
   );
