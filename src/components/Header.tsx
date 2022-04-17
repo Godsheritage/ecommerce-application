@@ -1,5 +1,6 @@
 import Logo from "../assets/img/logo.png";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const Header: React.FC = () => {
                       <FaShoppingCart size="22px" />
                       <span>0</span>
                     </div>
-                    <a href="#">Shopping Cart</a>
+                    <Link to='/cart'>Shopping Cart</Link>
                   </div>
                 </div>
               </div>
@@ -104,7 +105,7 @@ const Header: React.FC = () => {
                 </ul>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>

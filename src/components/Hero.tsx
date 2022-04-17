@@ -2,10 +2,6 @@ import "./hero.scss";
 import bg from "../assets/img/bg.jpg";
 import bg2 from "../assets/img/bg-2.jpg";
 
-
-
-
-
 const Hero: React.FC = () => {
   return (
     <div className="hero">
@@ -82,12 +78,12 @@ const Hero: React.FC = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-  </div>
-  )
-}
+    </div>
+  );
+};
 
-
-{/* 
+{
+  /* 
 <div className="carousel-inner hero">
           <div className="carousel-item active">
             <img src={bg} className="d-block w-100 img" alt="..." />
@@ -107,7 +103,7 @@ const Hero: React.FC = () => {
               </span>
             ))}
           </div>
-    </div> */}
-  
+    </div> */
+}
 
 export default Hero;
