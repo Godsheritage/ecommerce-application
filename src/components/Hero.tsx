@@ -4,6 +4,8 @@ import bg2 from "../assets/img/bg-2.jpg";
 
 
 
+
+
 const Hero: React.FC = () => {
   return (
     <div className="hero">
@@ -16,20 +18,23 @@ const Hero: React.FC = () => {
           <div className="carousel-item active">
             <img src={bg} className="d-block w-100 img" alt="..." />
             <span className="txt">
-              <h3>NEW ARRIVALS</h3>
-              <h1>DENIM JACKETS</h1>
-              <p>
+              <p className="h5">NEW ARRIVALS</p>
+              <p className="display-4 text-white">DENIM JACKETS</p>
+              <p className="text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium maiores ullam a assumenda commodi iusto non omnis
-                adipisci quasi magnam, nisi, eveniet impedit reprehenderit totam
-                laborum minus pariatur voluptas qui. Fuga quidem suscipit odio
-                saepe laboriosam porro, hic, quo nostrum ullam voluptatibus
-                incidunt numquam esse totam recusandae deserunt sit sunt rerum!
-                Doloremque ab sapiente repellendus suscipit corporis neque in
-                eos.
+                <br /> Laudantium maiores ullam a assumenda commodi iusto non
+                <br />
+                omnis adipisci quasi magnam, nisi, eveniet impedit reprehenderit
+                <br />
+                totam incidunt numquam esse totam recusandae deserunt sit sunt
+                <br />
+                rerum! Doloremque ab sapiente repellendus suscipit corporis
+                <br /> neque in eos.
               </p>
-              <button className="btn btn-primary">Discover</button>
-              <button className="btn btn-primary">Add to cart</button>
+              <div className="d-flex flex-row justify-content-between w-100 ">
+                <button className="btn btn-primary">Discover</button>
+                <button className="btn btn-primary">Add to cart</button>
+              </div>
             </span>
           </div>
           <div className="carousel-item">
@@ -77,61 +82,32 @@ const Hero: React.FC = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      {/* <section className="hero-section">
-        <div className="hero-slider owl-carousel">
-          <div className="hs-item set-bg" data-setbg={bg}>
-            <div className="container">
-              <div className="row">
-                <div className="col-xl-6 col-lg-7 text-white">
-                  <span>New Arrivals</span>
-                  <h2>denim jackets</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus
-                    commodo viverra maecenas accumsan lacus vel facilisis.{" "}
-                  </p>
-                  <button className="site-btn sb-line">DISCOVER</button>
-                  <button className="site-btn sb-white">ADD TO CART</button>
+  </div>
+  )
+}
+
+
+{/* 
+<div className="carousel-inner hero">
+          <div className="carousel-item active">
+            <img src={bg} className="d-block w-100 img" alt="..." />
+            {heroText.map((heroItem) => (
+              <span className="txt">
+                <p className="h5">{heroItem.subHeading}</p>
+                <p className="display-4 text-white">{heroItem.heading}</p>
+                <p className="text-white">{heroItem.text}</p>
+                <div className="d-flex flex-row justify-content-between w-100 ">
+                  <button className="btn btn-primary">
+                    {heroItem.btn1Text}
+                  </button>
+                  <button className="btn btn-primary">
+                    {heroItem.btn2Text}
+                  </button>
                 </div>
-              </div>
-              <div className="offer-card text-white">
-                <span>from</span>
-                <h2>$29</h2>
-                <p>SHOP NOW</p>
-              </div>
-            </div>
+              </span>
+            ))}
           </div>
-          <div className="hs-item set-bg" data-setbg={bg2}>
-            <div className="container">
-              <div className="row">
-                <div className="col-xl-6 col-lg-7 text-white">
-                  <span>New Arrivals</span>
-                  <h2>denim jackets</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus
-                    commodo viverra maecenas accumsan lacus vel facilisis.{" "}
-                  </p>
-                  <button className="site-btn sb-line">DISCOVER</button>
-                  <button className="site-btn sb-white">ADD TO CART</button>
-                </div>
-              </div>
-              <div className="offer-card text-white">
-                <span>from</span>
-                <h2>$29</h2>
-                <p>SHOP NOW</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="slide-num-holder" id="snh-1"></div>
-        </div>
-  </section>*/}
-    </div>
-  );
-};
+    </div> */}
+  
 
 export default Hero;
