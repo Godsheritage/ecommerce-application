@@ -4,7 +4,9 @@ import ProductContext from "../context/ProductContext";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 const ProductsFilterSection = () => {
-  const { topSellingProducts } = useContext(ProductContext) as contextTypes;
+  const { topSellingProducts, addToCart } = useContext(
+    ProductContext
+  ) as contextTypes;
 
   return (
     <div>
@@ -46,13 +48,16 @@ const ProductsFilterSection = () => {
                   <div className="pi-pic">
                     <img src={product.image} alt={product.name} />
                     <div className="pi-links">
-                      <a href="#" className="add-card">
-                        <FaShoppingCart />
+                      <button
+                        className="add-card"
+                        onClick={() => addToCart(product)}
+                      >
+                        <FaShoppingCart className="i" />
                         <span>ADD TO CART</span>
-                      </a>
-                      <a href="#" className="wishlist-btn">
-                        <FaHeart />
-                      </a>
+                      </button>
+                      <button className="wishlist-btn">
+                        <FaHeart className="i" />
+                      </button>
                     </div>
                   </div>
                   <div className="pi-text">

@@ -1,14 +1,17 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import FavouriteProducts from "../components/FavouriteProducts";
+import { Link } from "react-router-dom";
 import PageTopInfo from "../components/PageTopInfo";
+import FavouriteProducts from "../components/FavouriteProducts";
 
 import cartImg1 from "../assets/img/cart/1.jpg";
 import cartImg2 from "../assets/img/cart/2.jpg";
 import cartImg3 from "../assets/img/cart/3.jpg";
 
 
-const Cart = () => {
+
+
+const Cart:React.FC = () => {
   return (
     <div>
       <Header />
@@ -113,12 +116,12 @@ const Cart = () => {
                 <input type="text" placeholder="Enter promo code" />
                 <button>Submit</button>
               </form>
-              <a href="" className="site-btn">
+              <Link to="/checkout" className="site-btn">
                 Proceed to checkout
-              </a>
-              <a href="" className="site-btn sb-dark">
+              </Link>
+              <Link to="/" className="site-btn sb-dark">
                 Continue shopping
-              </a>
+              </Link>
             </div>
           </div>
         </div>

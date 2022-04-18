@@ -1,10 +1,12 @@
+import { useContext } from "react";
+import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
 import Logo from "../assets/img/logo.png";
+import ProductContext from "../context/ProductContext";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 
-
-
 const Header: React.FC = () => {
+  const { cart } = useContext(ProductContext) as contextTypes;
   return (
     <div>
       <header className="header-section">
@@ -12,16 +14,14 @@ const Header: React.FC = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-2 text-center text-lg-left">
-                {/* <!-- logo --> */}
-                <a href="./index.html" className="site-logo">
+                <Link to="/" className="site-logo">
                   <img src={Logo} alt="logo" />
-                </a>
+                </Link>
               </div>
               <div className="col-xl-6 col-lg-5">
                 <form className="header-search-form">
                   <input type="text" placeholder="Search on divisima ...." />
                   <button>
-                    {/* <i className="flaticon-search"></i> */}
                     <FaSearch size="18px" />
                   </button>
                 </form>
@@ -29,18 +29,16 @@ const Header: React.FC = () => {
               <div className="col-xl-4 col-lg-5">
                 <div className="user-panel">
                   <div className="up-item">
-                    {/* <i className="flaticon-profile"></i> */}
                     <FaUser size="22px" />
-                    {/* <FontAwesomeIcon icon="fa-light fa-user" /> */}
                     <a href="#">Sign</a> In or <a href="#">Create Account</a>
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">
                       <i className="flaticon-bag"></i>
                       <FaShoppingCart size="22px" />
-                      <span>0</span>
+                      <span>{cart.length}</span>
                     </div>
-                    <Link to='/cart'>Shopping Cart</Link>
+                    <Link to="/cart">Shopping Cart</Link>
                   </div>
                 </div>
               </div>
@@ -49,7 +47,6 @@ const Header: React.FC = () => {
         </div>
         <nav className="main-navbar">
           <div className="container">
-            {/* <!-- menu --> */}
             <ul className="main-menu">
               <li>
                 <Link to="/">Home</Link>
