@@ -856,7 +856,7 @@ ol {
 	text-align: right;
 }
 
-.product-item .pi-links a {
+.product-item .pi-links button {
 	display: inline-table;
 	width: 36px;
 	height: 36px;
@@ -868,24 +868,29 @@ ol {
 	overflow: hidden;
 	color: #000;
 	position: relative;
-	-webkit-box-shadow: 1px 0 32px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 0 32px rgba(0, 0, 0, 1);
 	box-shadow: 1px 0 32px rgba(0, 0, 0, 0.2);
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 	text-align: center;
+	border-color : #fff;
+	/* box-shadow: none; */
 }
 
-.product-item .pi-links a i {
+.product-item .pi-links button .i{
+	position: absolute;
+	top:7.5px;
+	left:7px;
 	display: inline-block;
 	color: #000;
 }
 
-.product-item .pi-links a.add-card {
+.product-item .pi-links button.add-card {
 	padding-top: 8px;
 }
 
-.product-item .pi-links a.add-card span {
+.product-item .pi-links button.add-card span {
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -895,13 +900,13 @@ ol {
 	opacity: 0;
 }
 
-.product-item .pi-links a.add-card:hover {
+.product-item .pi-links button.add-card:hover {
 	width: 148px;
 	padding: 8px 18px 0;
 	text-align: left;
 }
 
-.product-item .pi-links a.add-card:hover span {
+.product-item .pi-links button.add-card:hover span {
 	opacity: 1;
 	top: 10px;
 	-webkit-transition: all 0.4s ease 0.3s;

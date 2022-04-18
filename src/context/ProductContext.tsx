@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { productTypes, contextTypes } from "../types";
 
 const ProductContext = createContext<contextTypes | null>(null);
@@ -152,16 +152,22 @@ const favouriteProducts: productTypes[] = [
   },
 ];
 
-const cart:productTypes[] = [];
-
-const addToCart = (product: productTypes) => {
-  cart.push(product);
-};
-
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
+  const [cart, setCart] = useState<productTypes[]>([]);
+
+  const addToCart = (product: productTypes) => {
+    setCart([...cart, product]);
+  };
+
   return (
     <ProductContext.Provider
-      value={{cart, latestProduct, topSellingProducts, favouriteProducts, addToCart }}
+      value={{
+        cart,
+        latestProduct,
+        topSellingProducts,
+        favouriteProducts,
+        addToCart,
+      }}
     >
       {children}
     </ProductContext.Provider>

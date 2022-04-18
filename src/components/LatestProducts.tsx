@@ -11,8 +11,9 @@ import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 
 const LatestProducts: React.FC = () => {
-  const { latestProduct, addToCart } = useContext(ProductContext) as contextTypes;
-
+  const { latestProduct, addToCart } = useContext(
+    ProductContext
+  ) as contextTypes;
 
   return (
     <div>
@@ -28,13 +29,16 @@ const LatestProducts: React.FC = () => {
                   <div className="pi-pic">
                     <img src={product.image} alt={product.name} />
                     <div className="pi-links">
-                      <a  onClick={() => addToCart(product)} className="add-card">
-                        <FaShoppingCart />
+                      <button
+                        className="add-card"
+                        onClick={() => addToCart(product)}
+                      >
+                        <FaShoppingCart className="i" />
                         <span>ADD TO CART</span>
-                      </a>
-                      <a href="#" className="wishlist-btn">
-                        <FaHeart />
-                      </a>
+                      </button>
+                      <button className="wishlist-btn">
+                        <FaHeart className="i" />
+                      </button>
                     </div>
                   </div>
                   <div className="pi-text">
@@ -44,8 +48,6 @@ const LatestProducts: React.FC = () => {
                 </div>
               </div>
             ))}
-
-        
           </div>
         </div>
       </section>
