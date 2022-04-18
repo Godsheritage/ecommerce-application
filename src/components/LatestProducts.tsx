@@ -11,7 +11,7 @@ import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 
 const LatestProducts: React.FC = () => {
-  const { latestProduct } = useContext(ProductContext) as contextTypes;
+  const { latestProduct, addToCart } = useContext(ProductContext) as contextTypes;
 
 
   return (
@@ -28,7 +28,7 @@ const LatestProducts: React.FC = () => {
                   <div className="pi-pic">
                     <img src={product.image} alt={product.name} />
                     <div className="pi-links">
-                      <a href="#" className="add-card">
+                      <a  onClick={() => addToCart(product)} className="add-card">
                         <FaShoppingCart />
                         <span>ADD TO CART</span>
                       </a>
@@ -45,169 +45,7 @@ const LatestProducts: React.FC = () => {
               </div>
             ))}
 
-            {/* <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product6} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <div className="tag-sale">ON SALE</div>
-                  <img src={product6} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Black and White Stripes Dress</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product1} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product2} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product3} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <i className="flaticon-heart"></i>
-                      <FaHeart/>
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <FaHeart />
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product4} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Black and White Stripes Dress</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product2} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="product-item">
-                <div className="pi-pic">
-                  <img src={product6} alt="" />
-                  <div className="pi-links">
-                    <a href="#" className="add-card">
-                      <FaShoppingCart />
-                      <span>ADD TO CART</span>
-                    </a>
-                    <a href="#" className="wishlist-btn">
-                      <FaHeart />
-                    </a>
-                  </div>
-                </div>
-                <div className="pi-text">
-                  <h6>$35,00</h6>
-                  <p>Flamboyant Pink Top </p>
-                </div>
-              </div>
-            </div> */}
+        
           </div>
         </div>
       </section>

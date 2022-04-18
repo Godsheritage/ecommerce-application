@@ -6,13 +6,14 @@ export interface productTypes {
 }
 
 export interface contextTypes {
+  cart:productTypes[]
   latestProduct: productTypes[];
-  topSellingProducts : productTypes[];
-  favouriteProducts : productTypes[];
-
+  favouriteProducts: productTypes[];
+  topSellingProducts: productTypes[];
+  addToCart : (product : productTypes) => void
 }
 
 export interface pageTopInfo {
-  page : string;
-  link : string;
+  page: string;
+  link: string;
 }
