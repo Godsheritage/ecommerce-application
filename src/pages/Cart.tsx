@@ -13,6 +13,7 @@ import { contextTypes } from "../types";
 const Cart: React.FC = () => {
   const { cart } = useContext(ProductContext) as contextTypes;
 
+  //sum all the cart items
   const sum = cart.reduce((total: any, curVal: any) => {
     return total + curVal.price;
   }, 0);
@@ -69,7 +70,7 @@ const Cart: React.FC = () => {
                 </div>
                 <div className="total-cost">
                   <h6>
-                    Total <span>$99.90</span>
+                    Total <span>${sum}</span>
                   </h6>
                 </div>
               </div>
