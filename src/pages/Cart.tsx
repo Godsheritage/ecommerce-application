@@ -8,19 +8,21 @@ import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 
-import cartImg1 from "../assets/img/cart/1.jpg";
-import cartImg2 from "../assets/img/cart/2.jpg";
-import cartImg3 from "../assets/img/cart/3.jpg";
+
 
 const Cart: React.FC = () => {
   const { cart } = useContext(ProductContext) as contextTypes;
+
+  const sum = cart.reduce((total: any, curVal: any) => {
+    return total + curVal.price;
+  }, 0);
+  console.log(sum)
 
   return (
     <div>
       <Header />
       <PageTopInfo page="Cart" link="/cart" />
 
-      {/* <!-- cart section end --> */}
       <section className="cart-section spad">
         <div className="container">
           <div className="row">
@@ -39,7 +41,7 @@ const Cart: React.FC = () => {
                     </thead>
                     <tbody>
                       {cart.map((cartItem) => (
-                        <tr>
+                        <tr key={cartItem.id} >
                           <td className="product-col">
                             <img src={cartItem.image} alt="cartImage1" />
                             <div className="pc-title">
@@ -50,7 +52,7 @@ const Cart: React.FC = () => {
                           <td className="quy-col">
                             <div className="quantity">
                               <div className="pro-qty">
-                                <input type="text" value="1" />
+                                <input type="text" defaultValue="1" />
                               </div>
                             </div>
                           </td>
@@ -62,51 +64,6 @@ const Cart: React.FC = () => {
                           </td>
                         </tr>
                       ))}
-
-                      {/* <tr>
-                        <td className="product-col">
-                          <img src={cartImg2} alt="cartImage2" />
-                          <div className="pc-title">
-                            <h4>Ruffle Pink Top</h4>
-                            <p>$45.90</p>
-                          </div>
-                        </td>
-                        <td className="quy-col">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" value="1" />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="size-col">
-                          <h4>Size M</h4>
-                        </td>
-                        <td className="total-col">
-                          <h4>$45.90</h4>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="product-col">
-                          <img src={cartImg3} alt="cartImage3" />
-                          <div className="pc-title">
-                            <h4>Skinny Jeans</h4>
-                            <p>$45.90</p>
-                          </div>
-                        </td>
-                        <td className="quy-col">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" value="1" />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="size-col">
-                          <h4>Size M</h4>
-                        </td>
-                        <td className="total-col">
-                          <h4>$45.90</h4>
-                        </td>
-                      </tr> */}
                     </tbody>
                   </table>
                 </div>

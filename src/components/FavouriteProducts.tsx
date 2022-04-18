@@ -15,7 +15,7 @@ const FavouriteProducts = () => {
           </div>
           <div className="row">
             {favouriteProducts.map((product) => (
-              <div className="col-lg-3 col-sm-6">
+              <div className="col-lg-3 col-sm-6" key = {product.id}>
                 <div className="product-item">
                   <div className="pi-pic">
                     <div className="tag-new">New</div>
