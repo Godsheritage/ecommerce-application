@@ -1,16 +1,18 @@
+
 export interface productTypes {
   id: number;
   name: string;
   image: string;
+  size: string;
   price: number;
 }
 
 export interface contextTypes {
-  cart:productTypes[]
+  cart: productTypes[];
   latestProduct: productTypes[];
   favouriteProducts: productTypes[];
   topSellingProducts: productTypes[];
-  addToCart : (product : productTypes) => void
+  addToCart: (product: productTypes) => void;
 }
 
 export interface pageTopInfo {

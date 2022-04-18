@@ -4,7 +4,7 @@ import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 
 const FavouriteProducts = () => {
-  const { favouriteProducts } = useContext(ProductContext) as contextTypes;
+  const { favouriteProducts, addToCart } = useContext(ProductContext) as contextTypes;
 
   return (
     <div>
@@ -21,13 +21,16 @@ const FavouriteProducts = () => {
                     <div className="tag-new">New</div>
                     <img src={product.image} alt={product.name} />
                     <div className="pi-links">
-                      <a href="#" className="add-card">
-                        <FaShoppingCart />
+                    <button
+                        className="add-card"
+                        onClick={() => addToCart(product)}
+                      >
+                        <FaShoppingCart className="i" />
                         <span>ADD TO CART</span>
-                      </a>
-                      <a href="#" className="wishlist-btn">
-                        <FaHeart />
-                      </a>
+                      </button>
+                      <button className="wishlist-btn">
+                        <FaHeart className="i" />
+                      </button>
                     </div>
                   </div>
                   <div className="pi-text">

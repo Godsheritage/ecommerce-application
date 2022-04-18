@@ -4,19 +4,22 @@ import { Link } from "react-router-dom";
 import PageTopInfo from "../components/PageTopInfo";
 import FavouriteProducts from "../components/FavouriteProducts";
 
+import { useContext } from "react";
+import ProductContext from "../context/ProductContext";
+import { contextTypes } from "../types";
+
 import cartImg1 from "../assets/img/cart/1.jpg";
 import cartImg2 from "../assets/img/cart/2.jpg";
 import cartImg3 from "../assets/img/cart/3.jpg";
 
+const Cart: React.FC = () => {
+  const { cart } = useContext(ProductContext) as contextTypes;
 
-
-
-const Cart:React.FC = () => {
   return (
     <div>
       <Header />
-      <PageTopInfo page = 'Cart' link = '/cart'/>
-   
+      <PageTopInfo page="Cart" link="/cart" />
+
       {/* <!-- cart section end --> */}
       <section className="cart-section spad">
         <div className="container">
@@ -35,29 +38,32 @@ const Cart:React.FC = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td className="product-col">
-                          <img src={cartImg1} alt="cartImage1" />
-                          <div className="pc-title">
-                            <h4>Animal Print Dress</h4>
-                            <p>$45.90</p>
-                          </div>
-                        </td>
-                        <td className="quy-col">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" value="1" />
+                      {cart.map((cartItem) => (
+                        <tr>
+                          <td className="product-col">
+                            <img src={cartItem.image} alt="cartImage1" />
+                            <div className="pc-title">
+                              <h4>{cartItem.name}</h4>
+                              <p>${cartItem.price}</p>
                             </div>
-                          </div>
-                        </td>
-                        <td className="size-col">
-                          <h4>Size M</h4>
-                        </td>
-                        <td className="total-col">
-                          <h4>$45.90</h4>
-                        </td>
-                      </tr>
-                      <tr>
+                          </td>
+                          <td className="quy-col">
+                            <div className="quantity">
+                              <div className="pro-qty">
+                                <input type="text" value="1" />
+                              </div>
+                            </div>
+                          </td>
+                          <td className="size-col">
+                            <h4>Size {cartItem.size}</h4>
+                          </td>
+                          <td className="total-col">
+                            <h4>${cartItem.price}</h4>
+                          </td>
+                        </tr>
+                      ))}
+
+                      {/* <tr>
                         <td className="product-col">
                           <img src={cartImg2} alt="cartImage2" />
                           <div className="pc-title">
@@ -100,7 +106,7 @@ const Cart:React.FC = () => {
                         <td className="total-col">
                           <h4>$45.90</h4>
                         </td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                   </table>
                 </div>
