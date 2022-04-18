@@ -1,14 +1,7 @@
-import React, { useContext } from "react";
-
-import product1 from "../assets/img/product/1.jpg";
-import product2 from "../assets/img/product/2.jpg";
-import product3 from "../assets/img/product/3.jpg";
-import product4 from "../assets/img/product/4.jpg";
-import product6 from "../assets/img/product/6.jpg";
-
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
-import ProductContext from "../context/ProductContext";
+import { useContext } from "react";
 import { contextTypes } from "../types";
+import ProductContext from "../context/ProductContext";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 const LatestProducts: React.FC = () => {
   const { latestProduct, addToCart } = useContext(
