@@ -1,9 +1,17 @@
 import React from "react";
 import lightLogo from "../../assets/img/logo-light.png";
 import cards from "../../assets/img/cards.png";
-import { FaGooglePlus, FaInstagram, FaFacebook, FaPinterest, FaTwitter, FaYoutube, FaTumblrSquare } from "react-icons/fa";
+import {
+  FaGooglePlus,
+  FaInstagram,
+  FaFacebook,
+  FaPinterest,
+  FaTwitter,
+  FaYoutube,
+  FaTumblrSquare,
+} from "react-icons/fa";
 
-const Footer:React.FC = () => {
+const Footer: React.FC = () => {
   return (
     <section className="footer-section">
       <div className="container">
@@ -125,48 +133,37 @@ const Footer:React.FC = () => {
       <div className="social-links-warp">
         <div className="container">
           <div className="social-links">
-            <a href="" className="instagram">
-              {/* <i className="fa fa-instagram"></i> */}
-              <FaInstagram/>
+            <a href="https://instagram.com" className="instagram">
+              <FaInstagram className=" i instagram" />
               <span>instagram</span>
             </a>
-            <a href="" className="google-plus">
-              {/* <i className="fa fa-google-plus"></i> */}
-              <FaGooglePlus/>
+            <a href="https://google-plus.com" className="google-plus">
+              <FaGooglePlus className=" i google-plus" />
               <span>g+plus</span>
             </a>
-            <a href="" className="pinterest">
-              {/* <i className="fa fa-pinterest"></i> */}
-              <FaPinterest/>
+            <a href="https://pinterest.com" className="pinterest">
+              <FaPinterest className=" i pinterest" />
               <span>pinterest</span>
             </a>
-            <a href="" className="facebook">
-              {/* <i className="fa fa-facebook"></i> */}
-              <FaFacebook/>
+            <a href="https://facebook.com" className="facebook">
+              <FaFacebook className=" i facebook" />
               <span>facebook</span>
             </a>
-            <a href="" className="twitter">
-              {/* <i className="fa fa-twitter"></i> */}
-              <FaTwitter/>
+            <a href="https://twitter.com" className="twitter">
+              <FaTwitter className=" i twitter" />
               <span>twitter</span>
             </a>
-            <a href="" className="youtube">
-              {/* <i className="fa fa-youtube"></i> */}
-              <FaYoutube/>
+            <a href="https://youtube.com" className="youtube">
+              <FaYoutube className=" i youtube" />
               <span>youtube</span>
             </a>
-            <a href="" className="tumblr">
-              {/* <i className="fa fa-tumblr-square"></i> */}
-              <FaTumblrSquare/>
+            <a href="https://tumblr.com" className="tumblr">
+              <FaTumblrSquare className=" i tumblr" />
               <span>tumblr</span>
             </a>
           </div>
-
           <p className="text-white text-center mt-5">
-            Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> All
-            rights reserved | This template is made with{" "}
-            <i className="fa fa-heart-o" aria-hidden="true"></i> by Godsheritage
+            Copyright &copy; All rights reserved
           </p>
         </div>
       </div>
