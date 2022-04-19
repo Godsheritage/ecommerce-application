@@ -3,6 +3,7 @@ import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const CartTable = () => {
   const { cart } = useContext(ProductContext) as contextTypes;
@@ -42,7 +43,9 @@ const CartTable = () => {
                         <td className="quy-col">
                           <div className="quantity">
                             <div className="pro-qty">
-                              <input type="text" defaultValue="1" />
+                            <FaMinus className="qtybtn" onClick={ () => (cartItem.quantity + 1)}/>
+                              <input type="text" defaultValue={cartItem.quantity} />
+                            <FaPlus className="qtybtn"/>
                             </div>
                           </div>
                         </td>
@@ -78,6 +81,20 @@ const CartTable = () => {
           </div>
         </div>
       </div>
+
+      {/* <div className="input-group plus-minus-input">
+  <div className="input-group-button">
+    <button type="button" className="button hollow circle" data-quantity="minus" data-field="quantity">
+      <i className="fa fa-minus" aria-hidden="true"></i>
+    </button>
+  </div>
+  <input className="input-group-field" type="number" name="quantity" value="0"/>
+  <div className="input-group-button">
+    <button type="button" className="button hollow circle" data-quantity="plus" data-field="quantity">
+      <i className="fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
+</div> */}
     </section>
   );
 };

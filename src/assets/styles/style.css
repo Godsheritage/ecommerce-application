@@ -10,6 +10,39 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+
+/* demo to be deleted*/
+.plus-minus-input {
+	-webkit-align-items: center;
+		-ms-flex-align: center;
+			align-items: center;
+  }
+  
+  .plus-minus-input .input-group-field {
+	text-align: center;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	padding: 1rem;
+  }
+  
+  .plus-minus-input .input-group-field::-webkit-inner-spin-button,
+  .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+			appearance: none;
+  }
+  
+  .plus-minus-input .input-group-button .circle {
+	border-radius: 50%;
+	padding: 0.25em 0.8em;
+  }
+  
+  
+
+
+
+
+
+
 html,
 body {
 	height: 100%;
@@ -1690,6 +1723,7 @@ ol {
 	padding: 0 15px;
 	border-radius: 40px;
 	float: left;
+	position: relative;
 }
 
 .quantity .pro-qty .qtybtn {
@@ -1701,6 +1735,7 @@ ol {
 	text-align: center;
 	font-size: 18px;
 	color: #404040;
+	margin-top: 9px;
 }
 
 .quantity .pro-qty input {
