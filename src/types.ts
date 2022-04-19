@@ -14,6 +14,7 @@ export interface contextTypes {
   favouriteProducts: productTypes[];
   topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
+  sum :  any
 }
 
 export interface pageTopInfo {

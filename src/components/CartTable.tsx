@@ -6,13 +6,10 @@ import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const CartTable = () => {
-  const { cart } = useContext(ProductContext) as contextTypes;
+  const { cart, sum } = useContext(ProductContext) as contextTypes;
 
   //sum all the products
-  const sum = cart.reduce((total: any, curVal: any) => {
-    return total + curVal.price;
-  }, 0);
-
+ 
   return (
     <section className="cart-section spad">
       <div className="container">
@@ -72,29 +69,15 @@ const CartTable = () => {
               <input type="text" placeholder="Enter promo code" />
               <button>Submit</button>
             </form>
-            <Link to="/checkout" className="site-btn">
+            <Link to="/checkout" className="site-btn card-link">
               Proceed to checkout
             </Link>
-            <Link to="/" className="site-btn sb-dark">
+            <Link to="/" className="site-btn sb-dark card-link">
               Continue shopping
             </Link>
           </div>
         </div>
       </div>
-
-      {/* <div className="input-group plus-minus-input">
-  <div className="input-group-button">
-    <button type="button" className="button hollow circle" data-quantity="minus" data-field="quantity">
-      <i className="fa fa-minus" aria-hidden="true"></i>
-    </button>
-  </div>
-  <input className="input-group-field" type="number" name="quantity" value="0"/>
-  <div className="input-group-button">
-    <button type="button" className="button hollow circle" data-quantity="plus" data-field="quantity">
-      <i className="fa fa-plus" aria-hidden="true"></i>
-    </button>
-  </div>
-</div> */}
     </section>
   );
 };
