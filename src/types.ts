@@ -5,6 +5,7 @@ export interface productTypes {
   image: string;
   size: string;
   price: number;
+  quantity : number;
 }
 
 export interface contextTypes {

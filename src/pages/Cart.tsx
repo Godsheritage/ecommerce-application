@@ -1,18 +1,18 @@
+import { useContext } from "react";
+import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
+import CartTable from "../components/CartTable";
+import ProductContext from "../context/ProductContext";
 import PageTopInfo from "../components/Shared/PageTopInfo";
 import FavouriteProducts from "../components/Home/FavouriteProducts";
 
-import CartTable from "../components/CartTable";
 
-import { useContext } from "react";
-import ProductContext from "../context/ProductContext";
-import { contextTypes } from "../types";
 
 const Cart: React.FC = () => {
+
   const { cart } = useContext(ProductContext) as contextTypes;
-  //sum all the cart items
 
   return (
     <>

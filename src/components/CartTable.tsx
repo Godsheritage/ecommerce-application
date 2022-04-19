@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const CartTable = () => {
   const { cart } = useContext(ProductContext) as contextTypes;
 
+  //sum all the products
   const sum = cart.reduce((total: any, curVal: any) => {
     return total + curVal.price;
   }, 0);
