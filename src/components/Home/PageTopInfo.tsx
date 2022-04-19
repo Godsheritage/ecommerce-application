@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { pageTopInfo } from "../types";
+import { pageTopInfo } from "../../types";
 
 const PageTopInfo:React.FC<pageTopInfo> = ({link, page}) => {
   return (

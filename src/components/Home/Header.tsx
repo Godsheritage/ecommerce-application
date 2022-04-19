@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
-import Logo from "../assets/img/logo.png";
-import ProductContext from "../context/ProductContext";
+import { contextTypes } from "../../types";
+import Logo from "../../assets/img/logo.png";
+import ProductContext from "../../context/ProductContext";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Header: React.FC = () => {
@@ -49,62 +49,94 @@ const Header: React.FC = () => {
           <div className="container">
             <ul className="main-menu">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className="card-link">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#">Women</a>
+                <a href="#" className="card-link">
+                  Women
+                </a>
               </li>
               <li>
-                <a href="#">Men</a>
+                <a href="#" className="card-link">
+                  Men
+                </a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" className="card-link">
                   Jewelry
                   <span className="new">New</span>
                 </a>
               </li>
               <li>
-                <a href="#">Shoes</a>
+                <a href="#" className="card-link">
+                  Shoes{" "}
+                </a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="#">Sneakers</a>
+                    <a href="#" className="card-link">
+                      Sneakers
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Sandals</a>
+                    <a href="#" className="card-link">
+                      Sandals
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Formal Shoes</a>
+                    <a href="#" className="card-link">
+                      Formal Shoes
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Boots</a>
+                    <a href="#" className="card-link">
+                      Boots
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Flip Flops</a>
+                    <a href="#" className="card-link">
+                      Flip Flops
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">Pages</a>
+                <a href="#" className="card-link">
+                  Pages
+                </a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="./product.html">Product Page</a>
+                    <a href="./product.html" className="card-link">
+                      Product Page
+                    </a>
                   </li>
                   <li>
-                    <a href="./category.html">Category Page</a>
+                    <a href="./category.html" className="card-link">
+                      Category Page
+                    </a>
                   </li>
                   <li>
-                    <Link to="/cart">Cart Page</Link>
+                    <Link to="/cart" className="card-link">
+                      Cart Page
+                    </Link>
                   </li>
                   <li>
-                    <a href="./checkout.html">Checkout Page</a>
+                    <a href="./checkout.html" className="card-link">
+                      Checkout Page
+                    </a>
                   </li>
                   <li>
-                    <a href="./contact.html">Contact Page</a>
+                    <a href="./contact.html" className="card-link">
+                      Contact Page
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className="card-link">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
