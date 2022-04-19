@@ -1,7 +1,7 @@
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
 import FavouriteProducts from "../components/Home/FavouriteProducts";
-import PageTopInfo from "../components/Home/PageTopInfo";
+import PageTopInfo from "../components/Shared/PageTopInfo";
 import { FaBehance, FaFacebook, FaPinterest, FaTwitter,  FaDribbble,  } from "react-icons/fa";
 
 
