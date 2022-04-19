@@ -122,14 +122,14 @@ const Header: React.FC = () => {
                     </Link>
                   </li>
                   <li>
-                    <a href="./checkout.html" className="card-link">
+                    <Link to="/" className="card-link">
                       Checkout Page
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="./contact.html" className="card-link">
+                    <Link to="/" className="card-link">
                       Contact Page
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>

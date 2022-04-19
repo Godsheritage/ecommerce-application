@@ -30,7 +30,7 @@ const Checkout: React.FC = () => {
                   <div className="col-md-5">
                     <div className="cf-radio-btns address-rb">
                       <div className="cfr-item">
-                        <input type="radio" name="pm" id="one" />
+                        <input type="radio" name="pm" id="one" checked/>
                         <label htmlFor="one">Use my regular address</label>
                       </div>
                       <div className="cfr-item">
@@ -120,19 +120,20 @@ const Checkout: React.FC = () => {
                         <img src={cartItem.image} alt={cartItem.name} />
                       </div>
                       <h6>{cartItem.name}</h6>
-                      <p>$ {cartItem.price}</p>
+                      <p>${cartItem.price}</p>
                     </li>
                   ))}
                 </ul>
                 <ul className="price-list">
                   <li>
-                    Total<span>{sum}</span>
+                    Total<span>${sum}</span>
                   </li>
                   <li>
-                    Shipping<span>free</span>
+                    Shipping
+                    <span>{checked === true ? <>Standard</> : <>free</>} </span>
                   </li>
                   <li className="total">
-                    Total<span>{checked === true ? sum + 3.45 : sum}</span>
+                    Total<span>${checked === true ? sum + 3.45 : sum}</span>
                   </li>
                 </ul>
               </div>
