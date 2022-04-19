@@ -1,15 +1,12 @@
-import React from "react";
 import { useContext } from "react";
-import ProductContext from "../context/ProductContext";
 import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import ProductContext from "../context/ProductContext";
 
 const CartTable = () => {
   const { cart, sum } = useContext(ProductContext) as contextTypes;
 
-  //sum all the products
- 
   return (
     <section className="cart-section spad">
       <div className="container">
@@ -40,9 +37,15 @@ const CartTable = () => {
                         <td className="quy-col">
                           <div className="quantity">
                             <div className="pro-qty">
-                            <FaMinus className="qtybtn" onClick={ () => (cartItem.quantity + 1)}/>
-                              <input type="text" defaultValue={cartItem.quantity} />
-                            <FaPlus className="qtybtn"/>
+                              <FaMinus
+                                className="qtybtn"
+                                onClick={() => cartItem.quantity + 1}
+                              />
+                              <input
+                                type="text"
+                                defaultValue={cartItem.quantity}
+                              />
+                              <FaPlus className="qtybtn" />
                             </div>
                           </div>
                         </td>

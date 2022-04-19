@@ -1,14 +1,16 @@
+import { useContext, useState } from "react";
+import { contextTypes } from "../types";
+import paypal from "../assets/img/paypal.png";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
-import PageTopInfo from "../components/Shared/PageTopInfo";
-import paypal from "../assets/img/paypal.png";
 import mastercard from "../assets/img/mastercart.png";
-import { useContext } from "react";
-import { contextTypes } from "../types";
 import ProductContext from "../context/ProductContext";
+import PageTopInfo from "../components/Shared/PageTopInfo";
 
 const Checkout: React.FC = () => {
   const { cart, sum } = useContext(ProductContext) as contextTypes;
+
+  const [checked, setChecked] = useState<boolean>(false);
 
   return (
     <div>
@@ -59,7 +61,13 @@ const Checkout: React.FC = () => {
                   <div className="col-6">
                     <div className="cf-radio-btns">
                       <div className="cfr-item">
-                        <input type="radio" name="shipping" id="ship-1" />
+                        <input
+                          type="radio"
+                          name="shipping"
+                          id="ship-1"
+                          checked
+                          onClick={() => setChecked(false)}
+                        />
                         <label htmlFor="ship-1">Free</label>
                       </div>
                     </div>
@@ -70,7 +78,12 @@ const Checkout: React.FC = () => {
                   <div className="col-6">
                     <div className="cf-radio-btns">
                       <div className="cfr-item">
-                        <input type="radio" name="shipping" id="ship-2" />
+                        <input
+                          type="radio"
+                          name="shipping"
+                          id="ship-2"
+                          onClick={() => setChecked(true)}
+                        />
                         <label htmlFor="ship-2">$3.45</label>
                       </div>
                     </div>
@@ -80,13 +93,13 @@ const Checkout: React.FC = () => {
                 <ul className="payment-list">
                   <li>
                     Paypal
-                    <a href="#">
+                    <a href="https://paypal.com">
                       <img src={paypal} alt="" />
                     </a>
                   </li>
                   <li>
                     Credit / Debit card
-                    <a href="#">
+                    <a href="https://mastercard.com">
                       <img src={mastercard} alt="" />
                     </a>
                   </li>
@@ -113,13 +126,13 @@ const Checkout: React.FC = () => {
                 </ul>
                 <ul className="price-list">
                   <li>
-                    Total<span>${sum}</span>
+                    Total<span>{sum}</span>
                   </li>
                   <li>
                     Shipping<span>free</span>
                   </li>
                   <li className="total">
-                    Total<span>${sum}</span>
+                    Total<span>{checked === true ? sum + 3.45 : sum}</span>
                   </li>
                 </ul>
               </div>
