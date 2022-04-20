@@ -14,9 +14,9 @@ const Hero: React.FC = () => {
           <div className="carousel-item active">
             <img src={bg} className="d-block w-100 img" alt="..." />
             <span className="txt">
-              <p className="h5">NEW ARRIVALS</p>
-              <p className="display-4 text-white">DENIM JACKETS</p>
-              <p className="text-white">
+              <p className=" hs-item-p text-white ">NEW ARRIVALS</p>
+              <p className="display-4 text-white hs-item">DENIM JACKETS</p>
+              <p className="text-white offer-card">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 <br /> Laudantium maiores ullam a assumenda commodi iusto non
                 <br />
@@ -27,52 +27,55 @@ const Hero: React.FC = () => {
                 rerum! Doloremque ab sapiente repellendus suscipit corporis
                 <br /> neque in eos.
               </p>
-              <div className="d-flex flex-row justify-content-between w-100 ">
-                <button className="btn btn-primary">Discover</button>
-                <button className="btn btn-primary">Add to cart</button>
+              <div className="d-flex flex-row justify-content-start pt-5">
+                <button className="site-btn ">Discover</button>
+                <button className="site-btn sb-white ml-3">Add to cart</button>
               </div>
             </span>
           </div>
           <div className="carousel-item">
             <img src={bg2} className="d-block w-100 img" alt="..." />
             <span className="txt">
-              <h3>NEW ARRIVALS</h3>
-              <h1>DENIM JACKETS</h1>
-              <p>
+              <p className=" hs-item-p text-white ">NEW ARRIVALS</p>
+              <p className="display-4 text-white hs-item">DENIM JACKETS</p>
+              <p className="text-white offer-card">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium maiores ullam a assumenda commodi iusto non omnis
-                adipisci quasi magnam, nisi, eveniet impedit reprehenderit totam
-                laborum minus pariatur voluptas qui. Fuga quidem suscipit odio
-                saepe laboriosam porro, hic, quo nostrum ullam voluptatibus
-                incidunt numquam esse totam recusandae deserunt sit sunt rerum!
-                Doloremque ab sapiente repellendus suscipit corporis neque in
-                eos.
+                <br /> Laudantium maiores ullam a assumenda commodi iusto non
+                <br />
+                omnis adipisci quasi magnam, nisi, eveniet impedit reprehenderit
+                <br />
+                totam incidunt numquam esse totam recusandae deserunt sit sunt
+                <br />
+                rerum! Doloremque ab sapiente repellendus suscipit corporis
+                <br /> neque in eos.
               </p>
-              <button className="btn btn-primary">Discover</button>
-              <button className="btn btn-primary">Add to cart</button>
+              <div className="d-flex flex-row justify-content-start pt-5">
+                <button className="site-btn ">Discover</button>
+                <button className="site-btn sb-white ml-3">Add to cart</button>
+              </div>
             </span>
           </div>
         </div>
         <button
-          className="carousel-control-prev "
+          className="carousel-control-prev button-prev "
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon"
+            className="carousel-control-prev-icon button-prev"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next button-next"
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="next"
         >
           <span
-            className="carousel-control-next-icon"
+            className="carousel-control-next-icon button-next"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Next</span>

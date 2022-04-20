@@ -561,23 +561,23 @@ ol {
 	opacity: 0;
 }
 
-.hero-slider .hs-item h2 {
+.hs-item{
 	font-size: 60px;
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-bottom: 10px;
 	position: relative;
-	top: 50px;
-	opacity: 0;
+	top: 30px;
+	/* opacity: 0; */
 }
 
-.hero-slider .hs-item p {
+.hs-item-p {
 	font-size: 18px;
 	font-weight: 300;
 	margin-bottom: 35px;
 	position: relative;
-	top: 100px;
-	opacity: 0;
+	top: 80px;
+	/* opacity: 0; */
 }
 
 .hero-slider .hs-item .site-btn {
@@ -622,12 +622,12 @@ ol {
 	border-radius: 50%;
 }
 
-.hero-slider .hs-item .offer-card span {
-	font-size: 18px;
+ .offer-card{
+	font-size: 1rem;
 	text-transform: lowercase;
 	position: relative;
-	top: 50px;
-	opacity: 0;
+	top: 40px;
+	/* opacity: 0; */
 }
 
 .hero-slider .hs-item .offer-card h2 {
@@ -679,13 +679,13 @@ ol {
 	margin-right: 0;
 }
 
-.hero-slider .owl-nav button.owl-next,
-.hero-slider .owl-nav button.owl-prev {
-	font-size: 27px;
+.button-next,
+.button-prev {
+	font-size: 2rem;
 	position: absolute;
 	color: #fff;
 	opacity: 0.5;
-	bottom: -20px;
+	bottom: 100px;
 }
 
 .hero-slider .owl-nav button.owl-next {
