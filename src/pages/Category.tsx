@@ -6,7 +6,7 @@ import { contextTypes } from "../types";
 import PageTopInfo from "../components/Shared/PageTopInfo";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
-const Category = () => {
+const Category: = () => {
   const { topSellingProducts, addToCart } = useContext(ProductContext) as contextTypes;
   return (
     <>
