@@ -11,7 +11,7 @@ const Category = () => {
   return (
     <>
       <Header />
-      <PageTopInfo page="category" link="/category" />
+      <PageTopInfo page="categories" link="/category" />
 
       <section className="category-section spad">
         <div className="container">
@@ -256,6 +256,7 @@ const Category = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
