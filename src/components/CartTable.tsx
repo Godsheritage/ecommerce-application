@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -6,6 +6,8 @@ import ProductContext from "../context/ProductContext";
 
 const CartTable = () => {
   const { cart, sum } = useContext(ProductContext) as contextTypes;
+
+  const [quantity, setQuantity] = useState<number>(1)
 
   return (
     <section className="cart-section spad">
@@ -39,13 +41,16 @@ const CartTable = () => {
                             <div className="pro-qty">
                               <FaMinus
                                 className="qtybtn"
-                                onClick={() => cartItem.quantity + 1}
+                                onClick={() => cartItem.quantity - 1}
                               />
                               <input
                                 type="text"
                                 defaultValue={cartItem.quantity}
                               />
-                              <FaPlus className="qtybtn" />
+                              <FaPlus
+                                className="qtybtn"
+                                onClick={() => cartItem.quantity ++}
+                              />
                             </div>
                           </div>
                         </td>
