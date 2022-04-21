@@ -200,9 +200,35 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const addToCart = (product: productTypes) => {
     if (cart.some((cartItems) => cartItems.id === product.id)) {
       product.quantity++;
+      let price = product.price;
+      product.price = product.price + price;
     } else {
       setCart([...cart, product]);
     }
+
+    // setCart([...cart, product]);
+
+    // cart.forEach((cartItems) => {
+    //   if (cartItems.id === product.id) {
+    //     cartItems.quantity++;
+    //   } else {
+    //     setCart([...cart, product]);
+    //   }
+    // });
+
+    // const item = cart.find((cartItems) => cartItems.id === product.id);
+    // if (item) {
+    //   item.quantity++;
+    //   const price = item.price;
+    //   item.price = item.price + price;
+    // } else {
+    //   setCart([...cart, product]);
+    // setCart([...cart, product]);
+    // }
+
+    // product.quantity++;
+    // let price = product.price;
+    // product.price = product.price + price;
   };
 
   const sum: any = cart.reduce((total: any, curVal: any) => {

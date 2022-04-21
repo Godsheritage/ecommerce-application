@@ -21,6 +21,9 @@ const CartTable = () => {
 
   // const defaultn = 1
 
+
+//TODO make a way for the value of the quantity to change on click of the + or - btn
+
   return (
     <section className="cart-section spad">
       <div className="container">

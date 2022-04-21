@@ -30,15 +30,14 @@ const Header: React.FC = () => {
                 <div className="user-panel">
                   <div className="up-item">
                     <FaUser size="22px" />
-                    <a href="#">Sign</a> In or <a href="#">Create Account</a>
+                    <Link to="/" className="card-link">Sign</Link> In or <Link to="/" className="card-link">Create Account</Link>
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">
-                      <i className="flaticon-bag"></i>
                       <FaShoppingCart size="22px" />
                       <span>{cart.length}</span>
                     </div>
-                    <Link to="/cart">Shopping Cart</Link>
+                    <Link to="/cart" className="card-link pl-2">Shopping Cart</Link>
                   </div>
                 </div>
               </div>
@@ -70,36 +69,36 @@ const Header: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="card-link">
-                  Shoes{" "}
-                </a>
-                <ul className="sub-menu">
+                <Link to="/category" className="card-link">
+                  Categories{" "}
+                </Link>
+                {/* <ul className="sub-menu">
                   <li>
-                    <a href="#" className="card-link">
+                    <Link to="/" className="card-link">
                       Sneakers
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="card-link">
+                    <Link to="/" className="card-link">
                       Sandals
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="card-link">
+                    <Link to="/" className="card-link">
                       Formal Shoes
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="card-link">
+                    <Link to="/" className="card-link">
                       Boots
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="card-link">
+                    <Link to="/" className="card-link">
                       Flip Flops
-                    </a>
+                    </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li>
                 <a href="#" className="card-link">

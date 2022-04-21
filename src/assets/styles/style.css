@@ -431,7 +431,7 @@ ol {
 
 .shopping-card span {
 	position: absolute;
-	top: 1px;
+	top: -6px;
 	left: 100%;
 	line-height: 1rem;
 	height: 16px;
