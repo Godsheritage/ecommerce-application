@@ -19,6 +19,8 @@ const CartTable = () => {
   //   setQuantity(quantity + 1);
   // };
 
+  // const defaultn = 1
+
   return (
     <section className="cart-section spad">
       <div className="container">
@@ -55,7 +57,7 @@ const CartTable = () => {
                               />
                               <input
                                 type="text"
-                                value={quantity}
+                                value={cartItem.quantity}
                               />
                               <FaPlus
                                 className="qtybtn"

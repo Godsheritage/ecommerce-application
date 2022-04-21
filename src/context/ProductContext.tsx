@@ -198,10 +198,14 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const [cart, setCart] = useState<productTypes[]>([]);
 
   const addToCart = (product: productTypes) => {
-    setCart([...cart, product]);
+    if (cart.some((cartItems) => cartItems.id === product.id)) {
+      product.quantity++;
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
-  const sum:any = cart.reduce((total: any, curVal: any) => {
+  const sum: any = cart.reduce((total: any, curVal: any) => {
     return total + curVal.price;
   }, 0);
 
