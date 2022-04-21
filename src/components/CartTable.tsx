@@ -7,7 +7,17 @@ import ProductContext from "../context/ProductContext";
 const CartTable = () => {
   const { cart, sum } = useContext(ProductContext) as contextTypes;
 
-  const [quantity, setQuantity] = useState<number>(1)
+  const [quantity, setQuantity] = useState<number>(1);
+
+  // const plusOne = () => {
+  //   cartItem.quantity++
+  //   setQuantity(quantity + 1);
+  // };
+
+  // const minusOne = () => {
+  //   cartItem.quantity --
+  //   setQuantity(quantity + 1);
+  // };
 
   return (
     <section className="cart-section spad">
@@ -41,15 +51,15 @@ const CartTable = () => {
                             <div className="pro-qty">
                               <FaMinus
                                 className="qtybtn"
-                                onClick={() => cartItem.quantity - 1}
+                                onClick={() => cartItem.quantity-- && setQuantity(quantity - 1) }
                               />
                               <input
                                 type="text"
-                                defaultValue={cartItem.quantity}
+                                value={quantity}
                               />
                               <FaPlus
                                 className="qtybtn"
-                                onClick={() => cartItem.quantity ++}
+                                onClick={() => cartItem.quantity ++ && setQuantity(quantity + 1) }
                               />
                             </div>
                           </div>
