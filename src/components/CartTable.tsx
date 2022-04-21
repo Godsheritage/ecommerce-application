@@ -53,7 +53,7 @@ const CartTable = () => {
                             <div className="pro-qty">
                               <FaMinus
                                 className="qtybtn"
-                                onClick={() => cartItem.quantity-- && setQuantity(quantity - 1) }
+                                onClick={() => cartItem.quantity--  }
                               />
                               <input
                                 type="text"
@@ -61,7 +61,7 @@ const CartTable = () => {
                               />
                               <FaPlus
                                 className="qtybtn"
-                                onClick={() => cartItem.quantity ++ && setQuantity(quantity + 1) }
+                                onClick={() => cartItem.quantity ++ }
                               />
                             </div>
                           </div>
