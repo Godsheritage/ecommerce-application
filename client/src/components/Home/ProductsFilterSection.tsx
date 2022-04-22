@@ -4,7 +4,7 @@ import ProductContext from "../../context/ProductContext";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 const ProductsFilterSection = () => {
-  const { products, addToCart } = useContext(
+  const { latestProducts, addToCart } = useContext(
     ProductContext
   ) as contextTypes;
 
@@ -13,7 +13,7 @@ const ProductsFilterSection = () => {
       <section className="product-filter-section">
         <div className="container">
           <div className="section-title">
-            <h2>BROWSE TOP SELLING PRODUCTS</h2>
+            <h2>BROWSE TOP SELLING latestPRODUCTS</h2>
           </div>
           <ul className="product-filter-menu">
             <li>
@@ -42,7 +42,7 @@ const ProductsFilterSection = () => {
             </li>
           </ul>
           <div className="row">
-            {products.map((product) => (
+            {latestProducts.map((product) => (
               <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
