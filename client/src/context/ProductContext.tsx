@@ -14,6 +14,8 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
+    
   },
   {
     id: uuidv4(),
@@ -23,6 +25,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -32,6 +35,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -41,6 +45,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -50,6 +55,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -59,6 +65,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -68,6 +75,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -77,6 +85,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
 ];
 
@@ -89,6 +98,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -98,6 +108,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -107,6 +118,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -116,6 +128,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -125,6 +138,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -134,6 +148,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -143,6 +158,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -152,6 +168,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
 ];
 
@@ -164,6 +181,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -173,6 +191,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -182,6 +201,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
+    category : 'tops, jumpsuits'
   },
   {
     id: uuidv4(),
@@ -191,6 +211,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
+    category : 'tops, jumpsuits'
   },
 ];
 

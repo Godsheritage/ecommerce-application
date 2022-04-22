@@ -6,6 +6,7 @@ export interface productTypes {
   size: string;
   price: number;
   quantity : number;
+  category : string;
 }
 
 export interface contextTypes {
