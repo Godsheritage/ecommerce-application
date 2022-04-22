@@ -1,8 +1,14 @@
 import { RequestHandler } from "express";
-import { fetchProducts } from "../model/product.model";
+import { fetchLatestProducts, fetchAllProducts, fetchFavouriteProducts} from "../model/product.model";
 
-export const httpFetchProducts: RequestHandler = async (req, res) => {
-  res.json(
-    await fetchProducts()
-  );
+export const httpFetchAllProducts: RequestHandler = async (req, res) => {
+  return res.json(await fetchAllProducts());
+};
+
+export const httpFetchLatestProducts: RequestHandler = async (req, res) => {
+  return res.json(await fetchLatestProducts());
+};
+
+export const httpFetchFavouriteProducts: RequestHandler = async (req, res) => {
+  return res.json(await fetchFavouriteProducts());
 };

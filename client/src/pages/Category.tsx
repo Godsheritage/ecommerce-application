@@ -1,13 +1,13 @@
+import { useContext } from "react";
+import { contextTypes } from "../types";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
 import ProductContext from "../context/ProductContext";
-import { useContext } from "react";
-import { contextTypes } from "../types";
-import PageTopInfo from "../components/Shared/PageTopInfo";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import PageTopInfo from "../components/Shared/PageTopInfo";
 
 const Category:React.FC = () => {
-  const { products, addToCart } = useContext(ProductContext) as contextTypes;
+  const { allProducts, addToCart } = useContext(ProductContext) as contextTypes;
   return (
     <>
       <Header />
@@ -220,7 +220,7 @@ const Category:React.FC = () => {
 
             <div className="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
               <div className="row">
-                {products.map((product) => (
+                {allProducts.map((product) => (
                   <div className="col-lg-4 col-sm-6" key={product._id}>
                     <div className="product-item">
                       <div className="pi-pic">
