@@ -4,7 +4,7 @@ import ProductContext from "../../context/ProductContext";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 const LatestProducts: React.FC = () => {
-  const { latestProduct, addToCart } = useContext(
+  const { products, addToCart } = useContext(
     ProductContext
   ) as contextTypes;
 
@@ -16,8 +16,8 @@ const LatestProducts: React.FC = () => {
             <h2>LATEST PRODUCTS</h2>
           </div>
           <div className="row">
-            {latestProduct.map((product) => (
-              <div className="col-lg-3 col-sm-6" key={product.id}>
+            {products.map((product) => (
+              <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
                     <img src={product.image} alt={product.name} />

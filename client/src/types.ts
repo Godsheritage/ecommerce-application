@@ -1,6 +1,6 @@
 
 export interface productTypes {
-  id: string;
+  _id: string;
   name: string;
   image: string;
   size: string;
@@ -11,9 +11,9 @@ export interface productTypes {
 
 export interface contextTypes {
   cart: productTypes[];
-  latestProduct: productTypes[];
-  favouriteProducts: productTypes[];
-  topSellingProducts: productTypes[];
+  // latestProduct: productTypes[];
+  // favouriteProducts: productTypes[];
+  // topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
   sum :  any
   products : productTypes[]
