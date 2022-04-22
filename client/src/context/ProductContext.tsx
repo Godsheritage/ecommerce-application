@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-
 import { productTypes, contextTypes } from "../types";
 import axios from "axios";
 
@@ -12,15 +11,17 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     []
   );
   const [cart, setCart] = useState<productTypes[]>([]);
+  const API_URL = 'https://localhost:5000'
 
-  const addToCart = (product: productTypes) => {
-    if (cart.some((cartItems) => cartItems._id === product._id)) {
-      product.quantity++;
-      let price = product.price;
-      product.price = product.price + price;
-    } else {
-      setCart([...cart, product]);
-    }
+  const addToCart = async (product: productTypes) => {
+    // if (cart.some((cartItems) => cartItems._id === product._id)) {
+    //   product.quantity++;
+    //   let price = product.price;
+    //   product.price = product.price + price;
+    // } else {
+    //   setCart([...cart, product]);
+    // }
+    await axios.post(`${API_URL}/cart`, product)
   };
 
   // const fetchAllProducts = async () => {
@@ -33,12 +34,16 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     );
     setAllProducts(response.data);
   };
+
+
   const fetchLatestProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/latestproducts"
     );
     setLatestProducts(response.data);
   };
+
+
   const fetchFavouriteProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/favouriteproducts"
