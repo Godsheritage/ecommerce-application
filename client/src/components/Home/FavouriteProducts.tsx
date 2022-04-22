@@ -4,7 +4,9 @@ import ProductContext from "../../context/ProductContext";
 import { contextTypes } from "../../types";
 
 const FavouriteProducts = () => {
-  const { products, addToCart } = useContext(ProductContext) as contextTypes;
+  const { favouriteProducts, addToCart } = useContext(
+    ProductContext
+  ) as contextTypes;
 
   return (
     <div>
@@ -14,14 +16,14 @@ const FavouriteProducts = () => {
             <h2>Your Favorites</h2>
           </div>
           <div className="row">
-            {products.map((product) => (
-              <div className="col-lg-3 col-sm-6" key = {product._id}>
+            {favouriteProducts.map((product) => (
+              <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
                     <div className="tag-new">New</div>
                     <img src={product.image} alt={product.name} />
                     <div className="pi-links">
-                    <button
+                      <button
                         className="add-card"
                         onClick={() => addToCart(product)}
                       >

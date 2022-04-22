@@ -12,6 +12,7 @@ export interface productTypes {
 export interface contextTypes {
   cart: productTypes[];
   latestProducts: productTypes[];
+  favouriteProducts: productTypes[];
   allProducts: productTypes[];
   // topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
