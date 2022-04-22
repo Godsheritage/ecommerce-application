@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { productTypes, contextTypes } from "../types";
+import axios from "axios";
 
 const ProductContext = createContext<contextTypes | null>(null);
 
@@ -14,8 +15,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
-    
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -25,7 +25,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -35,7 +35,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -45,7 +45,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -55,7 +55,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -65,7 +65,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -75,7 +75,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -85,7 +85,7 @@ const latestProduct: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
 ];
 
@@ -98,7 +98,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -108,7 +108,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -118,7 +118,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -128,7 +128,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -138,7 +138,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -148,7 +148,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -158,7 +158,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -168,7 +168,7 @@ const topSellingProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
 ];
 
@@ -181,7 +181,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -191,7 +191,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -201,7 +201,7 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 35.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
   {
     id: uuidv4(),
@@ -211,12 +211,22 @@ const favouriteProducts: productTypes[] = [
     size: "M",
     quantity: 1,
     price: 45.0,
-    category : 'tops, jumpsuits'
+    category: "tops, jumpsuits",
   },
 ];
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
+  const [products, setProducts] = useState<productTypes[]>([]);
   const [cart, setCart] = useState<productTypes[]>([]);
+
+  const fetchProducts = async () => {
+    const response = await axios.get("https://localhost:5000/products");
+    setProducts(response.data);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const addToCart = (product: productTypes) => {
     if (cart.some((cartItems) => cartItems.id === product.id)) {
@@ -264,6 +274,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
         topSellingProducts,
         favouriteProducts,
         sum,
+        products,
         addToCart,
       }}
     >

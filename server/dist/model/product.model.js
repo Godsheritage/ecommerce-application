@@ -79,8 +79,8 @@ const sendProductToMongo = async () => {
     await product_mongo_1.default.create(latestProduct);
 };
 exports.sendProductToMongo = sendProductToMongo;
-(0, exports.sendProductToMongo)();
+// sendProductToMongo()
 const fetchProducts = async () => {
-    return await product_mongo_1.default.find({});
+    return await product_mongo_1.default.find({}, { __v: 0 });
 };
 exports.fetchProducts = fetchProducts;

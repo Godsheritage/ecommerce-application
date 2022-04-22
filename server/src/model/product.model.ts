@@ -83,9 +83,9 @@ export const sendProductToMongo = async () => {
   await productDataDatabse.create(latestProduct);
 };
 
-sendProductToMongo();
+// sendProductToMongo()
 
 export const fetchProducts = async () => {
-  return await productDataDatabse.find({});
+  return await productDataDatabse.find({}, {__v : 0});
 };
 
