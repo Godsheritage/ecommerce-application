@@ -115,7 +115,7 @@ const Checkout: React.FC = () => {
                 <h3>Your Cart</h3>
                 <ul className="product-list">
                   {cart.map((cartItem) => (
-                    <li key={cartItem.id}>
+                    <li key={cartItem._id}>
                       <div className="pl-thumb">
                         <img src={cartItem.image} alt={cartItem.name} />
                       </div>

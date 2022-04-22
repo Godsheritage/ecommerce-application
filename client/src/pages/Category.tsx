@@ -7,7 +7,7 @@ import PageTopInfo from "../components/Shared/PageTopInfo";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 const Category:React.FC = () => {
-  const { topSellingProducts, addToCart } = useContext(ProductContext) as contextTypes;
+  const { products, addToCart } = useContext(ProductContext) as contextTypes;
   return (
     <>
       <Header />
@@ -220,8 +220,8 @@ const Category:React.FC = () => {
 
             <div className="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
               <div className="row">
-                {topSellingProducts.map((product) => (
-                  <div className="col-lg-4 col-sm-6" key={product.id}>
+                {products.map((product) => (
+                  <div className="col-lg-4 col-sm-6" key={product._id}>
                     <div className="product-item">
                       <div className="pi-pic">
                         <div className="tag-sale">ON SALE</div>

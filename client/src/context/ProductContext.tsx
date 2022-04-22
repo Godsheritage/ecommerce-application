@@ -229,13 +229,13 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   }, []);
 
   const addToCart = (product: productTypes) => {
-    // if (cart.some((cartItems) => cartItems.id === product.id)) {
-    //   product.quantity++;
-    //   let price = product.price;
-    //   product.price = product.price + price;
-    // } else {
-    //   setCart([...cart, product]);
-    // }
+    if (cart.some((cartItems) => cartItems._id === product._id)) {
+      product.quantity++;
+      let price = product.price;
+      product.price = product.price + price;
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
   const sum: any = cart.reduce((total: any, curVal: any) => {

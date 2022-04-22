@@ -43,7 +43,7 @@ const CartTable = () => {
                   </thead>
                   <tbody>
                     {cart.map((cartItem) => (
-                      <tr key={cartItem.id}>
+                      <tr key={cartItem._id}>
                         <td className="product-col">
                           <img src={cartItem.image} alt="cartImage1" />
                           <div className="pc-title">

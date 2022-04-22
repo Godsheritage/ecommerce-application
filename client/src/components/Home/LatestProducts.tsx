@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { contextTypes } from "../../types";
-import ProductContext from "../../context/ProductContext";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import ProductContext from "../../context/ProductContext";
 
 const LatestProducts: React.FC = () => {
   const { products, addToCart } = useContext(
