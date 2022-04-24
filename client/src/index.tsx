@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './assets/styles/style.css'
 import './assets/styles/animate.css'
+//TODO delete these imports
 // import './assets/styles/flaticon.css'
 // import './assets/styles/font-awesome.min.css'
 // import './assets/styles/jquery-ui.min.css'
