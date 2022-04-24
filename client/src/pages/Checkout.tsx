@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
 import { contextTypes } from "../types";
+import { useContext, useState } from "react";
 import paypal from "../assets/img/paypal.png";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
