@@ -6,8 +6,65 @@ import ProductContext from "../context/ProductContext";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import PageTopInfo from "../components/Shared/PageTopInfo";
 
-const Category:React.FC = () => {
+const Category: React.FC = () => {
   const { allProducts, addToCart } = useContext(ProductContext) as contextTypes;
+
+  const categories = [
+    "womenWear",
+    "menWear",
+    "children",
+    "Bags and purses ",
+    "purses",
+    "eyewear",
+    "footwear",
+  ];
+  //   womenWear: [
+  //     "Mini Dresses",
+  //     "Little Black Dresses",
+  //     "Prom Dresses",
+  //     "Maxi Dresses",
+  //     "Midi Dresses",
+  //   ],
+  //   menWear: ["Mini Dresses", "Little Black Dresses", "Prom Dresses"],
+  // ;
+  // const categories = {
+  //   womenWear: [
+  //     "Mini Dresses",
+  //     "Little Black Dresses",
+  //     "Prom Dresses",
+  //     "Maxi Dresses",
+  //     "Midi Dresses",
+  //   ],
+  //   menWear: ["Mini Dresses", "Little Black Dresses", "Prom Dresses"],
+  // };
+
+  const size = [
+    {
+      size: "M",
+      class: "m-size",
+    },
+    {
+      size: "SM",
+      class: "sm-size",
+    },
+    {
+      size: "S",
+      class: "s-size",
+    },
+    {
+      size: "L",
+      class: "l-size",
+    },
+    {
+      size: "XL",
+      class: "xl-size",
+    },
+    {
+      size: "XXL",
+      class: "xxl-size",
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -51,7 +108,7 @@ const Category:React.FC = () => {
                     </ul>
                   </li>
                   <li>
-                    <a href="#">Man Wear</a>
+                    <a href="#">Men Wear</a>
                     <ul className="sub-menu">
                       <li>
                         <a href="#">
@@ -256,7 +313,7 @@ const Category:React.FC = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 };
