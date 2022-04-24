@@ -1,7 +1,7 @@
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
-import FavouriteProducts from "../components/Home/FavouriteProducts";
 import PageTopInfo from "../components/Shared/PageTopInfo";
+import FavouriteProducts from "../components/Home/FavouriteProducts";
 import { FaBehance, FaFacebook, FaPinterest, FaTwitter,  FaDribbble,  } from "react-icons/fa";
 
 
@@ -9,9 +9,7 @@ const Contact: React.FC = () => {
   return (
     <div>
       <Header />
-
      <PageTopInfo page = 'Contact' link = '/contact' />
-
       <section className="contact-section">
         <div className="container">
           <div className="row">
