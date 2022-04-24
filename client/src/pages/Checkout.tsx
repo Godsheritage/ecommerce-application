@@ -16,7 +16,6 @@ const Checkout: React.FC = () => {
     <div>
       <Header />
       <PageTopInfo page="Checkout" link="/checkout" />
-
       <section className="checkout-section spad">
         <div className="container">
           <div className="row">
@@ -141,7 +140,6 @@ const Checkout: React.FC = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
