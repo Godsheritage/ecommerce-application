@@ -3,7 +3,7 @@ import { productTypes, contextTypes } from "../types";
 import axios from "axios";
 
 const ProductContext = createContext<contextTypes | null>(null);
-const API_URL = 'https://localhost:5000'
+const API_URL = "https://localhost:5000";
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const [allProducts, setAllProducts] = useState<productTypes[]>([]);
@@ -13,8 +13,14 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   );
   const [cart, setCart] = useState<productTypes[]>([]);
 
-  const [] = useState(false)
-  
+  // const [isAddedToCart, setIsAddedToCart] = useState(false);
+
+  //fetch cart items
+  const fetchCartItems = async () => {
+    const response = await axios.get(`${API_URL}/cart`);
+    setCart(response.data);
+  };
+
 
   const addToCart = async (product: productTypes) => {
     // if (cart.some((cartItems) => cartItems._id === product._id)) {
@@ -24,15 +30,11 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     // } else {
     //   setCart([...cart, product]);
     // }
-    await axios.post(`${API_URL}/cart`, product)
+    await axios.post(`${API_URL}/cart`, product);
+    fetchCartItems()
   };
 
-  //fetch cart items
-  const fetchCartItems = async() => {
-    const response = await axios.get(`${API_URL}/cart`)
-    setCart(response.data)
-  }
-
+ 
   //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
@@ -41,7 +43,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setAllProducts(response.data);
   };
 
-//fetch the latest products 
+  //fetch the latest products
   const fetchLatestProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/latestproducts"
@@ -49,7 +51,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setLatestProducts(response.data);
   };
 
-//fetch the favourite products
+  //fetch the favourite products
   const fetchFavouriteProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/favouriteproducts"

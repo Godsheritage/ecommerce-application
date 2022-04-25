@@ -1,12 +1,11 @@
-
 export interface productTypes {
   _id: string;
   name: string;
   image: string;
   size: string;
   price: number;
-  quantity : number;
-  category : string;
+  quantity: number;
+  category: string;
 }
 
 export interface contextTypes {
@@ -16,9 +15,9 @@ export interface contextTypes {
   allProducts: productTypes[];
   // topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
-  sum :  any
-  // products : productTypes[]
+  sum: any;
 
+  // products : productTypes[]
 }
 
 export interface pageTopInfo {
