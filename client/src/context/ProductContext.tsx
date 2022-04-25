@@ -3,6 +3,7 @@ import { productTypes, contextTypes } from "../types";
 import axios from "axios";
 
 const ProductContext = createContext<contextTypes | null>(null);
+const API_URL = 'https://localhost:5000'
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const [allProducts, setAllProducts] = useState<productTypes[]>([]);
@@ -11,7 +12,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     []
   );
   const [cart, setCart] = useState<productTypes[]>([]);
-  const API_URL = 'https://localhost:5000'
+  
 
   const addToCart = async (product: productTypes) => {
     // if (cart.some((cartItems) => cartItems._id === product._id)) {
@@ -24,10 +25,8 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await axios.post(`${API_URL}/cart`, product)
   };
 
-  // const fetchAllProducts = async () => {
-  //   const response = await axios.get("https://localhost:5000/products/allproducts");
-  // };
-  //Todo create fetch alll products aput it in state and pass it ti=o the category page
+
+  //to fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/allproducts"
@@ -35,7 +34,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setAllProducts(response.data);
   };
 
-
+//to fetch the latest products 
   const fetchLatestProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/latestproducts"
@@ -43,7 +42,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setLatestProducts(response.data);
   };
 
-
+//to fetch the favourite products
   const fetchFavouriteProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/favouriteproducts"
