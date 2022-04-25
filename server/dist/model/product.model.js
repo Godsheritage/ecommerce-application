@@ -168,23 +168,22 @@ const latestProduct = [
     },
 ];
 const sendProductToMongo = async () => {
-    // await productDataDatabse.updateMany(latestProduct, {
-    //   upsert: true,
-    // });
-    //   console.log("hey");
     await product_mongo_1.default.create(latestProduct);
 };
 exports.sendProductToMongo = sendProductToMongo;
 //send products to mongodb
 // sendProductToMongo()
+//fetch latest products from mongo
 const fetchLatestProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 }).limit(8);
 };
 exports.fetchLatestProducts = fetchLatestProducts;
+//fetch favourite products from mongo
 const fetchFavouriteProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 }).limit(4);
 };
 exports.fetchFavouriteProducts = fetchFavouriteProducts;
+//fetch All products from mongo
 const fetchAllProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 });
 };

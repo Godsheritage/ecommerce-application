@@ -186,27 +186,23 @@ const latestProduct = [
 ];
 
 export const sendProductToMongo = async () => {
-  // await productDataDatabse.updateMany(latestProduct, {
-  //   upsert: true,
-  // });
-  //   console.log("hey");
   await productDataDatabse.create(latestProduct);
 };
 //send products to mongodb
 // sendProductToMongo()
 
 
-
+//fetch latest products from mongo
 export const fetchLatestProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 }).limit(8) ;
 };
 
-
+//fetch favourite products from mongo
 export const fetchFavouriteProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 }).limit(4) ;
 };
 
-
+//fetch All products from mongo
 export const fetchAllProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 });
 };

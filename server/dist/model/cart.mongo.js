@@ -8,8 +8,8 @@ const productSchema = new mongoose_1.default.Schema({
     name: { type: String, required: true },
     image: { type: String, required: true },
     size: { type: String, required: true },
-    price: { type: String, required: true },
-    quantity: { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, required: true },
     category: { type: String, required: true },
 });
 const cartItemDatabse = mongoose_1.default.model("cartItem", productSchema);

@@ -31,7 +31,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     //   setCart([...cart, product]);
     // }
     await axios.post(`${API_URL}/cart`, product);
-    fetchCartItems()
+    await fetchCartItems()
   };
 
  
