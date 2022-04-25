@@ -2,13 +2,13 @@ import { RequestHandler } from "express";
 import { addToCart, fetchCartItems } from "../../model/cart.model";
 
 //post cart items controller
-export const httpPostCartItems: RequestHandler = (req, res) => {
+export const httpPostCartItems: RequestHandler = async (req, res) => {
   const cartItem = req.body;
-  addToCart(cartItem);
+  await addToCart(cartItem);
   return res.status(201).json(cartItem);
 };
 
-//geet cart items controller
+//fetch cart items controller
 export const httpGetCartItems: RequestHandler = async (req, res) => {
-  res.status(200).json( await fetchCartItems());
+  res.status(200).json(await fetchCartItems());
 };
