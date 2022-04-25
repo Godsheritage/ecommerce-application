@@ -12,6 +12,8 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     []
   );
   const [cart, setCart] = useState<productTypes[]>([]);
+
+  const [] = useState(false)
   
 
   const addToCart = async (product: productTypes) => {
@@ -25,6 +27,11 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await axios.post(`${API_URL}/cart`, product)
   };
 
+  //fetch cart items
+  const fetchCartItems = async() => {
+    const response = await axios.get(`${API_URL}/cart`)
+    setCart(response.data)
+  }
 
   //fetch all products
   const fetchAllProducts = async () => {
