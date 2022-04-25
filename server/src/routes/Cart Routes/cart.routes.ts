@@ -1,8 +1,9 @@
-import express from 'express'
+import express from "express";
+import { httpGetCartItems } from "./cart.controllers";
 
-const cartRoute = express.Router()
+const cartRoute = express.Router();
 
 //get all the cart items
-cartRoute.get('/', httpGetCartItems)
+cartRoute.get("/", httpGetCartItems);
 
-export default cartRoute
+export default cartRoute;
