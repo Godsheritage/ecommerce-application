@@ -195,12 +195,17 @@ export const sendProductToMongo = async () => {
 //send products to mongodb
 // sendProductToMongo()
 
+
+
 export const fetchLatestProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 }).limit(8) ;
 };
+
+
 export const fetchFavouriteProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 }).limit(4) ;
 };
+
 
 export const fetchAllProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 });

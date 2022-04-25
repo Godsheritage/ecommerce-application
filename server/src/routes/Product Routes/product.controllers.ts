@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { fetchLatestProducts, fetchAllProducts, fetchFavouriteProducts} from "../model/product.model";
+import { fetchLatestProducts, fetchAllProducts, fetchFavouriteProducts} from "../../model/product.model";
 
 export const httpFetchAllProducts: RequestHandler = async (req, res) => {
   return res.json(await fetchAllProducts());
