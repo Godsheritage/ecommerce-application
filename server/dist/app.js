@@ -9,6 +9,7 @@ const cart_routes_1 = __importDefault(require("./routes/Cart Routes/cart.routes"
 const product_routes_1 = __importDefault(require("./routes/Product Routes/product.routes"));
 const app = (0, express_1.default)();
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "public ")));
+app.use(express_1.default.json());
 app.use('/cart', cart_routes_1.default);
 app.use('/products', product_routes_1.default);
 app.get("/*", (req, res) => {
