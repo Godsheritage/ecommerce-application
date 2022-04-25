@@ -26,7 +26,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   };
 
 
-  //to fetch all products
+  //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/allproducts"
@@ -34,7 +34,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setAllProducts(response.data);
   };
 
-//to fetch the latest products 
+//fetch the latest products 
   const fetchLatestProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/latestproducts"
@@ -42,7 +42,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setLatestProducts(response.data);
   };
 
-//to fetch the favourite products
+//fetch the favourite products
   const fetchFavouriteProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/favouriteproducts"

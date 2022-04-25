@@ -3,8 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.addToCart = void 0;
 const cart_mongo_1 = __importDefault(require("./cart.mongo"));
 const cart = [];
-const addCartItem = (cartItem) => {
-    cart_mongo_1.default.updateOne(cartItem);
+const addToCart = (cartItem) => {
+    cart_mongo_1.default.create(cartItem);
 };
+exports.addToCart = addToCart;
