@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { addToCart } from "../../model/cart.model";
+import { addToCart, fetchCartItems } from "../../model/cart.model";
 
 export const httpPostCartItems: RequestHandler = (req, res) => {
   const cartItem = req.body;
@@ -7,8 +7,6 @@ export const httpPostCartItems: RequestHandler = (req, res) => {
   return res.status(201).json(cartItem);
 };
 
-export const httpGetCartItems: RequestHandler = (req, res) => {
-  res.json({
-    cart: "cartItems",
-  });
+export const httpGetCartItems: RequestHandler = async (req, res) => {
+  res.status(200).json( await fetchCartItems());
 };

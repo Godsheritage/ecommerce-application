@@ -8,9 +8,7 @@ const httpPostCartItems = (req, res) => {
     return res.status(201).json(cartItem);
 };
 exports.httpPostCartItems = httpPostCartItems;
-const httpGetCartItems = (req, res) => {
-    res.json({
-        cart: "cartItems",
-    });
+const httpGetCartItems = async (req, res) => {
+    res.status(200).json(await (0, cart_model_1.fetchCartItems)());
 };
 exports.httpGetCartItems = httpGetCartItems;
