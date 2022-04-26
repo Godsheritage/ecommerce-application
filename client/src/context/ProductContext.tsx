@@ -19,6 +19,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setCart(response.data);
   };
 
+  // add items to cart
   const addToCart = async (product: productTypes) => {
     // if (cart.some((cartItems) => cartItems._id === product._id)) {
     //   product.quantity++;
@@ -31,7 +32,6 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await fetchCartItems();
   };
 
-
   //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
@@ -40,7 +40,6 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setAllProducts(response.data);
   };
 
-
   //fetch the latest products
   const fetchLatestProducts = async () => {
     const response = await axios.get(
@@ -48,7 +47,6 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     );
     setLatestProducts(response.data);
   };
-
 
   //fetch the favourite products
   const fetchFavouriteProducts = async () => {
@@ -64,7 +62,6 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     fetchFavouriteProducts();
     fetchCartItems();
   }, []);
-
 
   // sum items in cart
   const sum: any = cart.reduce((total: any, curVal: any) => {

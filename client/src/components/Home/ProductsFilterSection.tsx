@@ -46,7 +46,7 @@ const ProductsFilterSection = () => {
               <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
-                    <img src={product.image} alt={product.name} />
+                    <img src={product.image} alt={product.name}/>
                     <div className="pi-links">
                       <button
                         className="add-card"
