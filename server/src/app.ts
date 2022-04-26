@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "..", "public ")));
 
 app.use(morgan("combined"))
 app.use(express.json())
-app.use('/cart' , cartRoute);
+app.use('/cartItems' , cartRoute);
 app.use('/products' ,productRoute);
 
 app.get("/*", (req, res) => {

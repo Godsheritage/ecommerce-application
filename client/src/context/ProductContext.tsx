@@ -13,14 +13,11 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   );
   const [cart, setCart] = useState<productTypes[]>([]);
 
-  // const [isAddedToCart, setIsAddedToCart] = useState(false);
-
   //fetch cart items
   const fetchCartItems = async () => {
-    const response = await axios.get(`${API_URL}/cart`);
+    const response = await axios.get(`${API_URL}/cartItems`);
     setCart(response.data);
   };
-
 
   const addToCart = async (product: productTypes) => {
     // if (cart.some((cartItems) => cartItems._id === product._id)) {
@@ -30,11 +27,11 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     // } else {
     //   setCart([...cart, product]);
     // }
-    await axios.post(`${API_URL}/cart`, product);
-    await fetchCartItems()
+    await axios.post(`${API_URL}/cartItems`, product);
+    await fetchCartItems();
   };
 
- 
+
   //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
@@ -43,6 +40,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setAllProducts(response.data);
   };
 
+
   //fetch the latest products
   const fetchLatestProducts = async () => {
     const response = await axios.get(
@@ -50,6 +48,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     );
     setLatestProducts(response.data);
   };
+
 
   //fetch the favourite products
   const fetchFavouriteProducts = async () => {
@@ -63,8 +62,11 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     fetchAllProducts();
     fetchLatestProducts();
     fetchFavouriteProducts();
+    fetchCartItems();
   }, []);
 
+
+  // sum items in cart
   const sum: any = cart.reduce((total: any, curVal: any) => {
     return total + curVal.price;
   }, 0);
