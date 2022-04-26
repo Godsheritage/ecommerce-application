@@ -18,9 +18,10 @@ const httpPostContact: RequestHandler = (req, res) => {
   if (
     data.name.length === 0 ||
     data.email.length === 0 ||
+    data.subject.length === 0 ||
     data.message.length === 0
   ) {
-    return res.json({ msg: "Please fill all the required fields" });
+    return res.status(400).json({ msg: "Please fill all the required fields" });
   }
   //   we create a transporter
 
@@ -47,11 +48,14 @@ const httpPostContact: RequestHandler = (req, res) => {
       <li>Email: ${data.email}</li>
      
       </ul>
-  
-      <h3>Message</h3>
-      <p>${data.message}</p>
-      
-      
+      <div>
+        <h3>Subject</h3>
+        <p>${data.subject}</p>
+      </div>
+      <div>
+        <h3>Message</h3>
+        <p>${data.message}</p>
+      </div>
       `,
   };
 
@@ -71,3 +75,5 @@ const httpPostContact: RequestHandler = (req, res) => {
     }
   });
 };
+
+export default httpPostContact;
