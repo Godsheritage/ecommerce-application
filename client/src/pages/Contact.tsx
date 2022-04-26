@@ -1,15 +1,49 @@
+import axios from "axios";
+import { useState } from "react";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
 import PageTopInfo from "../components/Shared/PageTopInfo";
 import FavouriteProducts from "../components/Home/FavouriteProducts";
-import { FaBehance, FaFacebook, FaPinterest, FaTwitter,  FaDribbble,  } from "react-icons/fa";
-
+import {
+  FaBehance,
+  FaFacebook,
+  FaPinterest,
+  FaTwitter,
+  FaDribbble,
+} from "react-icons/fa";
 
 const Contact: React.FC = () => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+
+  //submit contact form
+  const submitForm = async (e: React.SyntheticEvent) => {
+    if (
+      name.length === 0 ||
+      email.length === 0 ||
+      subject.length === 0 ||
+      message.length === 0
+    ) {
+      setError("some required fields are missing");
+    }
+    e.preventDefault();
+    const data = {
+      name,
+      email,
+      subject,
+      message,
+    };
+    await axios.post("https://localhost:5000/Contact", data);
+  };
+
   return (
     <div>
       <Header />
-     <PageTopInfo page = 'Contact' link = '/contact' />
+      <PageTopInfo page="Contact" link="/contact" />
       <section className="contact-section">
         <div className="container">
           <div className="row">
@@ -19,33 +53,62 @@ const Contact: React.FC = () => {
               <p>+546 990221 123</p>
               <p>hosting@contact.com</p>
               <div className="contact-social">
-                <a href="#">
-                  {/* <i className="fa fa-pinterest"></i> */}
-                  <FaPinterest/>
+                <a href="https://.facebook.com">
+                  <FaPinterest />
                 </a>
-                <a href="#">
-                  {/* <i className="fa fa-facebook"></i> */}
-                  <FaFacebook/>
+                <a href="https://.facebook.com">
+                  <FaFacebook />
                 </a>
-                <a href="#">
-                  {/* <i className="fa fa-twitter"></i> */}
-                  <FaTwitter/>
+                <a href="https://.facebook.com">
+                  <FaTwitter />
                 </a>
-                <a href="#">
-                  {/* <i className="fa fa-dribbble"></i> */}
-                  <FaDribbble/>
+                <a href="https://.facebook.com">
+                  <FaDribbble />
                 </a>
-                <a href="#">
-                  {/* <i className="fa fa-behance"></i> */}
-                  <FaBehance/>
+                <a href="https://.facebook.com">
+                  <FaBehance />
                 </a>
               </div>
-              <form className="contact-form">
-                <input type="text" placeholder="Your name" />
-                <input type="text" placeholder="Your e-mail" />
-                <input type="text" placeholder="Subject" />
-                <textarea placeholder="Message"></textarea>
-                <button className="site-btn">SEND NOW</button>
+              <form className="contact-form" onSubmit={submitForm}>
+                <input
+                  type="text"
+                  value={name}
+                  placeholder="Your name "
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+                <input
+                  type="text"
+                  value={email}
+                  placeholder="Your e-mail"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input
+                  type="text"
+                  value={subject}
+                  placeholder="Subject"
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
+                />
+                <textarea
+                  value={message}
+                  placeholder="Message"
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
+                ></textarea>
+                {error && <p>{error}</p>}
+                <button
+                  className={isDisabled ? "site-btn disabled" : "site-btn"}
+                  type="submit"
+                  disabled={isDisabled}
+                >
+                  SEND NOW
+                </button>
               </form>
             </div>
           </div>
@@ -58,7 +121,7 @@ const Contact: React.FC = () => {
           ></iframe> */}
         </div>
       </section>
-      <FavouriteProducts/>
+      <FavouriteProducts />
       <Footer />
     </div>
   );

@@ -197,6 +197,10 @@ ol {
 	background: #413a3a;
 }
 
+.site-btn.disabled {
+	background: #413a3a;
+}
+
 .site-btn.sb-dark.sb-line {
 	background-color: transparent;
 	color: #111111;
