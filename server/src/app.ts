@@ -12,6 +12,7 @@ app.use(morgan("combined"))
 app.use(express.json())
 app.use('/cartItems' , cartRoute);
 app.use('/products' ,productRoute);
+app.use('/products' ,productRoute);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public ", "index.html"));
