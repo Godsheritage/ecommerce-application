@@ -373,6 +373,21 @@ ol {
 /*------------------
   Header section
 ---------------------*/
+.form {
+    display: block;
+    padding:5rem;
+    background-color: #fff;
+    width:50rem;                                                 
+    box-shadow: 10px 10px 8px 10px #888888;
+    position: relative;
+    top:20vh;
+    margin:auto;
+}
+
+
+
+
+
 
 .header-top {
 	padding: 18px 0 14px;

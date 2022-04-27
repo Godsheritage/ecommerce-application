@@ -30,7 +30,7 @@ const Header: React.FC = () => {
                 <div className="user-panel">
                   <div className="up-item">
                     <FaUser size="22px" />
-                    <Link to="/" className="card-link">Sign</Link> In or <Link to="/" className="card-link">Create Account</Link>
+                    <Link to="/signin" className="card-link">Sign In</Link> or <Link to="/" className="card-link">Create Account</Link>
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">
