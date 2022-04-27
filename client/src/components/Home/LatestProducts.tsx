@@ -1,3 +1,6 @@
+//TODO  this component is unused and to be deleted
+
+
 import { useContext } from "react";
 import { contextTypes } from "../../types";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
