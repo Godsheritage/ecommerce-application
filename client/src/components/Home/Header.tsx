@@ -114,14 +114,14 @@ const Header: React.FC = () => {
                 </a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="./product.html" className="card-link">
+                    <Link to="/singleproduct" className="card-link">
                       Product Page
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="./category.html" className="card-link">
+                    <Link to="/category" className="card-link">
                       Category Page
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link to="/cart" className="card-link">
@@ -129,12 +129,12 @@ const Header: React.FC = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="card-link">
+                    <Link to="/checkout" className="card-link">
                       Checkout Page
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="card-link">
+                    <Link to="/contact" className="card-link">
                       Contact Page
                     </Link>
                   </li>
