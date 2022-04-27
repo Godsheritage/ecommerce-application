@@ -30,14 +30,22 @@ const Header: React.FC = () => {
                 <div className="user-panel">
                   <div className="up-item">
                     <FaUser size="22px" />
-                    <Link to="/signin" className="card-link">Sign In</Link> or <Link to="/" className="card-link">Create Account</Link>
+                    <Link to="/signin" className="card-link">
+                      Sign In
+                    </Link>{" "}
+                    or{" "}
+                    <Link to="/" className="card-link">
+                      Create Account
+                    </Link>
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">
                       <FaShoppingCart size="22px" />
                       <span>{cart.length}</span>
                     </div>
-                    <Link to="/cart" className="card-link pl-2">Shopping Cart</Link>
+                    <Link to="/cart" className="card-link pl-2">
+                      Shopping Cart
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -63,10 +71,10 @@ const Header: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="card-link">
+                <Link to="/jewelry" className="card-link">
                   Jewelry
                   <span className="new">New</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/category" className="card-link">
