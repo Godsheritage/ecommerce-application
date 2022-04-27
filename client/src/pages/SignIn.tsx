@@ -12,7 +12,7 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="form w-50">
         <h1 className="text-center pb-2">Login</h1>
         <form onSubmit={handleSubmit}>
