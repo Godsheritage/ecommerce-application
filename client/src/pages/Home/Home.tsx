@@ -19,7 +19,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Features/>
-      <ProductSection products = {latestProducts}/>
+      <ProductSection products = {latestProducts} header = 'LATEST PRODUCTS'/>
       <LatestProducts/> 
        <ProductsFilterSection/> 
       <Banner/>

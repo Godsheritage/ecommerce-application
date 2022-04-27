@@ -3,7 +3,7 @@ import { contextTypes, productTypes } from "../../types";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 
-const ProductSection: React.FC<any> = ( {products} ) => {
+const ProductSection: React.FC<any> = ( {products, header} ) => {
   const { addToCart, fetchSingleProduct } = useContext(
     ProductContext
   ) as contextTypes;
@@ -13,7 +13,7 @@ const ProductSection: React.FC<any> = ( {products} ) => {
       <section className="top-letest-product-section">
         <div className="container">
           <div className="section-title">
-            <h2>LATEST PRODUCTS</h2>
+            <h2>{header}</h2>
           </div>
           <div className="row">
             {products.map((product: any) => (
