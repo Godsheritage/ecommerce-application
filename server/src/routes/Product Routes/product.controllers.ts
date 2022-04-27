@@ -8,9 +8,12 @@ import {
 
 //fetch single products
 export const httpFetchSingleProduct: RequestHandler = async (req, res) => {
-  const ID = req.params.product              
-  // console.log(req.params)
-  return res.status(200).json(await fetchSingleProduct(ID));
+  const ID = req.params.product;
+  const found = await fetchSingleProduct(ID);
+  if (!found) {
+    return res.status(404).json({ error: `item with id ${ID} was not found` });
+  }
+  return res.status(200).json(found);
 };
 
 //fetch all products

@@ -5,8 +5,11 @@ const product_model_1 = require("../../model/product.model");
 //fetch single products
 const httpFetchSingleProduct = async (req, res) => {
     const ID = req.params.product;
-    // console.log(req.params)
-    return res.status(200).json(await (0, product_model_1.fetchSingleProduct)(ID));
+    const found = await (0, product_model_1.fetchSingleProduct)(ID);
+    if (!found) {
+        return res.status(404).json({ error: `item with id ${ID} was not found` });
+    }
+    return res.status(200).json(found);
 };
 exports.httpFetchSingleProduct = httpFetchSingleProduct;
 //fetch all products

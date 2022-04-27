@@ -202,11 +202,11 @@ export const fetchLatestProducts = async () => {
 };
 
 //fetch favourite products from mongo
-export const fetchFavouriteProducts = async () => {
+export const fetchFavouriteProducts = async () => {  
   return await productDataDatabse.find({}, { __v: 0 }).limit(4);
 };
 
-//fetch All products from mongo
+//fetch All products from mongo 
 export const fetchAllProducts = async () => {
   return await productDataDatabse.find({}, { __v: 0 });
 };

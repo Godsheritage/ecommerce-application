@@ -188,7 +188,7 @@ const fetchFavouriteProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 }).limit(4);
 };
 exports.fetchFavouriteProducts = fetchFavouriteProducts;
-//fetch All products from mongo
+//fetch All products from mongo 
 const fetchAllProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 });
 };
