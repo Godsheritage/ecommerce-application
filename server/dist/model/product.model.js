@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchAllProducts = exports.fetchFavouriteProducts = exports.fetchLatestProducts = exports.sendProductToMongo = void 0;
+exports.fetchAllProducts = exports.fetchFavouriteProducts = exports.fetchLatestProducts = exports.fetchSingleProduct = exports.sendProductToMongo = void 0;
 const product_mongo_1 = __importDefault(require("./product.mongo"));
 const latestProduct = [
     {
@@ -173,6 +173,11 @@ const sendProductToMongo = async () => {
 exports.sendProductToMongo = sendProductToMongo;
 //send products to mongodb
 // sendProductToMongo()
+//fetch single products from mongo
+const fetchSingleProduct = async (_id) => {
+    return await product_mongo_1.default.find({ _id }, { __v: 0 });
+};
+exports.fetchSingleProduct = fetchSingleProduct;
 //fetch latest products from mongo
 const fetchLatestProducts = async () => {
     return await product_mongo_1.default.find({}, { __v: 0 }).limit(8);

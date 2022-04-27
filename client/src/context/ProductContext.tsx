@@ -32,7 +32,17 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await fetchCartItems();
   };
 
-  //fetch all products
+
+  //fetch single product
+  // const fetchSingleProducts = async (item) => {
+  //   const response = await axios.get(
+  //     "https://localhost:5000/products/allproducts"
+  //     );
+  //     setAllProducts(response.data);
+  //   };
+    
+    
+    //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/allproducts"

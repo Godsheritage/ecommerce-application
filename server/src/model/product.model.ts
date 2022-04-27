@@ -191,15 +191,19 @@ export const sendProductToMongo = async () => {
 //send products to mongodb
 // sendProductToMongo()
 
+//fetch single products from mongo
+export const fetchSingleProduct = async (_id: string) => {
+  return await productDataDatabse.find({_id}, { __v: 0 });
+};
 
 //fetch latest products from mongo
 export const fetchLatestProducts = async () => {
-  return await productDataDatabse.find({}, { __v: 0 }).limit(8) ;
+  return await productDataDatabse.find({}, { __v: 0 }).limit(8);
 };
 
 //fetch favourite products from mongo
 export const fetchFavouriteProducts = async () => {
-  return await productDataDatabse.find({}, { __v: 0 }).limit(4) ;
+  return await productDataDatabse.find({}, { __v: 0 }).limit(4);
 };
 
 //fetch All products from mongo
