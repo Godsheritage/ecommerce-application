@@ -3,9 +3,8 @@ import { contextTypes } from "../../types";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 
-const ProductSection: React.FC = () => {
-
-  const { latestProducts, addToCart } = useContext(
+const ProductSection: React.FC<any> = ({ products }) => {
+  const { addToCart } = useContext(
     ProductContext
   ) as contextTypes;
 
@@ -17,7 +16,7 @@ const ProductSection: React.FC = () => {
             <h2>LATEST PRODUCTS</h2>
           </div>
           <div className="row">
-            {latestProducts.map((product) => (
+            {products.map((product: any) => (
               <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">

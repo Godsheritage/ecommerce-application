@@ -9,6 +9,7 @@ import Women from "./pages/categories/Women";
 import Jewelry from "./pages/categories/Jewelry";
 import { ProductContextProvider } from "./context/ProductContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductSection from "./components/Shared/ProductSection";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/men" element={<Men />} />
           <Route path="/women" element={<Women />} />
           <Route path="/jewelry" element={<Jewelry />} />
+          <Route path="/products/:product" element={<ProductSection />} />
         </Routes>
       </Router>
     </ProductContextProvider>
