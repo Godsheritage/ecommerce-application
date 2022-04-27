@@ -8,9 +8,9 @@ import productRoute from "./routes/Product Routes/product.routes";
 
 const app = express();
 
-app.use(express.json());
 app.use(cors())
 app.use(morgan("combined"));
+app.use(express.json());
 app.use("/Contact", contactRoute);
 app.use("/cartitems", cartRoute);
 app.use("/products", productRoute);

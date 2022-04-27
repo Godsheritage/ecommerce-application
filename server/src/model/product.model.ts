@@ -192,8 +192,8 @@ export const sendProductToMongo = async () => {
 // sendProductToMongo()
 
 //fetch single products from mongo
-export const fetchSingleProduct = async (_id: string) => {
-  return await productDataDatabse.find({_id}, { __v: 0 });
+export const fetchSingleProduct = async (ID: string) => {
+  return await productDataDatabse.findOne({_id : ID}, { __v: 0 });
 };
 
 //fetch latest products from mongo
