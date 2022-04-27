@@ -377,7 +377,7 @@ ol {
     display: block;
     padding:5rem;
     background-color: #fff;
-    width:50rem;                                                 
+    /* width:50rem;                                                  */
     box-shadow: 10px 10px 8px 10px #888888;
     position: relative;
     top:20vh;
