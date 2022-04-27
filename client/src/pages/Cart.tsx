@@ -6,13 +6,14 @@ import Footer from "../components/Home/Footer";
 import CartTable from "../components/CartTable";
 import ProductContext from "../context/ProductContext";
 import PageTopInfo from "../components/Shared/PageTopInfo";
+import ProductSection from "../components/Shared/ProductSection";
 import FavouriteProducts from "../components/Home/FavouriteProducts";
 
 
 
 const Cart: React.FC = () => {
 
-  const { cart } = useContext(ProductContext) as contextTypes;
+  const { cart, favouriteProducts } = useContext(ProductContext) as contextTypes;
 
   return (
     <>
@@ -26,6 +27,7 @@ const Cart: React.FC = () => {
       ) : (
         <CartTable />
       )}
+      <ProductSection products={favouriteProducts} header = 'Your Favourites' />
       <FavouriteProducts />
       <Footer />
     </>

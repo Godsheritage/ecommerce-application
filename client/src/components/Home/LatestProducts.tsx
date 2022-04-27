@@ -1,6 +1,5 @@
 //TODO  this component is unused and to be deleted
 
-
 import { useContext } from "react";
 import { contextTypes } from "../../types";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
@@ -12,12 +11,7 @@ const LatestProducts: React.FC = () => {
     ProductContext
   ) as contextTypes;
 
-const fetchSingleProd = (product : any) => {
-
-}
-  
-
-
+  const fetchSingleProd = (product: any) => {};
 
   return (
     <div>
@@ -31,7 +25,11 @@ const fetchSingleProd = (product : any) => {
               <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
-                    <img src={product.image} alt={product.name} onClick = {() => fetchSingleProd(product)}    />
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      onClick={() => fetchSingleProd(product)}
+                    />
                     <div className="pi-links">
                       <button
                         className="add-card"

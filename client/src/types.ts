@@ -31,3 +31,9 @@ export interface FILTER_MENU_TYPES {
   name: string;
   link: string;
 }
+
+export interface PRODUCT_SECTION_TYPES {
+  products: productTypes[];
+  header?: string;
+  style?: any;
+}

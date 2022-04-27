@@ -1,8 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { contextTypes } from "../types";
+import { useState, useContext } from "react";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
+import ProductContext from "../context/ProductContext";
 import PageTopInfo from "../components/Shared/PageTopInfo";
+import ProductSection from "../components/Shared/ProductSection";
 import FavouriteProducts from "../components/Home/FavouriteProducts";
 import {
   FaBehance,
@@ -13,6 +16,8 @@ import {
 } from "react-icons/fa";
 
 const Contact: React.FC = () => {
+  const { favouriteProducts } = useContext(ProductContext) as contextTypes;
+
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
@@ -121,6 +126,8 @@ const Contact: React.FC = () => {
           ></iframe> */}
         </div>
       </section>
+      <ProductSection products={favouriteProducts} header="Your Favourites" />
+
       <FavouriteProducts />
       <Footer />
     </div>

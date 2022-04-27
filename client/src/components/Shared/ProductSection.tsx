@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { contextTypes, productTypes } from "../../types";
+import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../types";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 
-const ProductSection: React.FC<any> = ( {products, header, style} ) => {
+const ProductSection: React.FC<PRODUCT_SECTION_TYPES> = ( {products, header, style} ) => {
   const { addToCart, fetchSingleProduct } = useContext(
     ProductContext
   ) as contextTypes;
