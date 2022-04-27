@@ -7,14 +7,15 @@ import Checkout from "./pages/Checkout";
 import Men from "./pages/categories/Men";
 import Women from "./pages/categories/Women";
 import Jewelry from "./pages/categories/Jewelry";
+import SingleProduct from "./components/Shared/SingleProduct";
+import ProductSection from "./components/Shared/ProductSection";
 import { ProductContextProvider } from "./context/ProductContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductSection from "./components/Shared/ProductSection";
 
 const App: React.FC = () => {
   return (
-    <ProductContextProvider>
-      <Router>
+    <Router>
+      <ProductContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
@@ -25,10 +26,11 @@ const App: React.FC = () => {
           <Route path="/men" element={<Men />} />
           <Route path="/women" element={<Women />} />
           <Route path="/jewelry" element={<Jewelry />} />
-          <Route path="/products/:product" element={<ProductSection />} />
+          {/* <Route path="/products/:product" element={<ProductSection />} /> */}
+          <Route path="/products/*" element={<SingleProduct />} />
         </Routes>
-      </Router>
-    </ProductContextProvider>
+      </ProductContextProvider>
+    </Router>
   );
 };
 

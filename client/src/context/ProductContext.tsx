@@ -1,9 +1,9 @@
-import { createContext, useEffect, useState } from "react";
-import { productTypes, contextTypes } from "../types";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { productTypes, contextTypes } from "../types";
+import { createContext, useEffect, useState } from "react";
 
 const ProductContext = createContext<contextTypes | null>(null);
-const API_URL = "https://localhost:5000";
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const [allProducts, setAllProducts] = useState<productTypes[]>([]);
@@ -13,6 +13,8 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     []
   );
   const [cart, setCart] = useState<productTypes[]>([]);
+  const navigate = useNavigate();
+  const API_URL = "https://localhost:5000";
 
   //fetch cart items
   const fetchCartItems = async () => {
@@ -33,17 +35,17 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await fetchCartItems();
   };
 
-
   //fetch single product
-  const fetchSingleProduct = async (ID:string) => {
+  const fetchSingleProduct = async (product: productTypes) => {
+    const ID = product._id;
     const response = await axios.get(
       `https://localhost:5000/products/singleproduct/${ID}`
-      );
-      setSingleProduct(response.data);
-    };
-    
-    
-    //fetch all products
+    );
+    setSingleProduct(response.data);
+    navigate(`/products/${product.name}`);
+  };
+
+  //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
       "https://localhost:5000/products/allproducts"
