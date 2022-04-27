@@ -7,6 +7,7 @@ const API_URL = "https://localhost:5000";
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const [allProducts, setAllProducts] = useState<productTypes[]>([]);
+  const [singleProduct, setSingleProduct] = useState<any>();
   const [latestProducts, setLatestProducts] = useState<productTypes[]>([]);
   const [favouriteProducts, setFavouriteProducts] = useState<productTypes[]>(
     []
@@ -34,12 +35,12 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
 
 
   //fetch single product
-  // const fetchSingleProducts = async (item) => {
-  //   const response = await axios.get(
-  //     "https://localhost:5000/products/allproducts"
-  //     );
-  //     setAllProducts(response.data);
-  //   };
+  const fetchSingleProduct = async (ID:string) => {
+    const response = await axios.get(
+      `https://localhost:5000/products/singleproduct/${ID}`
+      );
+      setSingleProduct(response.data);
+    };
     
     
     //fetch all products
@@ -86,7 +87,9 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
         latestProducts,
         favouriteProducts,
         allProducts,
+        singleProduct,
         addToCart,
+        fetchSingleProduct,
       }}
     >
       {children}

@@ -4,7 +4,7 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 
 const ProductSection: React.FC<any> = ({ products }) => {
-  const { addToCart } = useContext(
+  const { addToCart, fetchSingleProduct } = useContext(
     ProductContext
   ) as contextTypes;
 
@@ -20,7 +20,7 @@ const ProductSection: React.FC<any> = ({ products }) => {
               <div className="col-lg-3 col-sm-6" key={product._id}>
                 <div className="product-item">
                   <div className="pi-pic">
-                    <img src={product.image} alt={product.name} />
+                    <img src={product.image} alt={product.name} onClick = {() => fetchSingleProduct(product._id) } />
                     <div className="pi-links">
                       <button
                         className="add-card"

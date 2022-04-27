@@ -15,6 +15,8 @@ export interface contextTypes {
   allProducts: productTypes[];
   // topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
+  fetchSingleProduct : ( _id: any ) => Promise<void>;
+  singleProduct : productTypes;
   sum: any;
 
   // products : productTypes[]
