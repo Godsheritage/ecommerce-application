@@ -53,14 +53,14 @@ const Header: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="card-link">
+                <Link to="/women" className="card-link">
                   Women
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="card-link">
+                <Link to="/men" className="card-link">
                   Men
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="card-link">

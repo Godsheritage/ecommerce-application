@@ -8,7 +8,7 @@ const PageTopInfo:React.FC<pageTopInfo> = ({link, page}) => {
       <div className="container">
         <h4>{page}</h4>
         <div className="site-pagination">
-          <Link to="/">Home</Link> /<Link to={link} >{page}</Link>
+          <Link to="/">Home</Link> / <Link to={link} >{page}</Link>
         </div>
       </div>
     </div>
