@@ -3,12 +3,9 @@ import { contextTypes } from "../../types";
 import ProductSection from "../Shared/ProductSection";
 import { FILTER_MENU_TYPES } from "../../types";
 import ProductContext from "../../context/ProductContext";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 const ProductsFilterSection = () => {
-  const { latestProducts, addToCart } = useContext(
-    ProductContext
-  ) as contextTypes;
+  const { latestProducts } = useContext(ProductContext) as contextTypes;
 
   const FILTER_MENU: FILTER_MENU_TYPES[] = [
     {
