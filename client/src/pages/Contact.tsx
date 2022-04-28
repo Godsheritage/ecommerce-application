@@ -19,13 +19,14 @@ const Contact: React.FC = () => {
   const { favouriteProducts } = useContext(ProductContext) as contextTypes;
 
   const [name, setName] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [error, setError] = useState<string>("");
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   //submit contact form
+  //TODO work on the form validation
   const submitForm = async (e: React.SyntheticEvent) => {
     if (
       name.length === 0 ||
@@ -45,6 +46,14 @@ const Contact: React.FC = () => {
     await axios.post("https://localhost:5000/Contact", data);
   };
 
+  //Contact infos
+  const CONTACT_INFO = {
+    text: "GET IN TOUCH",
+    address: "Main Str, no 23, New York",
+    number: "+546 990221 123",
+    email: "hosting@contact.com",
+  };
+
   return (
     <div>
       <Header />
@@ -53,10 +62,10 @@ const Contact: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 contact-info">
-              <h3>Get in touch</h3>
-              <p>Main Str, no 23, New York</p>
-              <p>+546 990221 123</p>
-              <p>hosting@contact.com</p>
+              <h3>{CONTACT_INFO.text}</h3>
+              <p>{CONTACT_INFO.address}</p>
+              <p>{CONTACT_INFO.number}</p>
+              <p>{CONTACT_INFO.email}</p>
               <div className="contact-social">
                 <a href="https://.facebook.com">
                   <FaPinterest />
