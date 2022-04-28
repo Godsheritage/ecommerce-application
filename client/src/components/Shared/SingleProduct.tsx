@@ -1,4 +1,10 @@
 import { useContext, useEffect } from "react";
+import Footer from "../Home/Footer";
+import Header from "../Home/Header";
+import PageTopInfo from "./PageTopInfo";
+import { contextTypes } from "../../types";
+import ProductSection from "./ProductSection";
+import ProductContext from "../../context/ProductContext";
 import {
   FaFacebook,
   FaGooglePlus,
@@ -8,13 +14,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import Footer from "../Home/Footer";
-import Header from "../Home/Header";
-import PageTopInfo from "./PageTopInfo";
-import { contextTypes } from "../../types";
-import ProductSection from "./ProductSection";
-import ProductContext from "../../context/ProductContext";
-// import '../../assets/styles/style.css'
+
 
 const SingleProduct: React.FC = () => {
   const { singleProduct, favouriteProducts, addToCart } = useContext(
@@ -107,7 +107,6 @@ const SingleProduct: React.FC = () => {
                 <div className="pro-qty">
                   <FaMinus
                     className="qtybtn1"
-                    // size='1rem'
                     onClick={() => singleProduct.quantity--}
                   />
                   <input type="text" value={singleProduct.quantity} />
