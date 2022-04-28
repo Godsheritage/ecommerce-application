@@ -1,33 +1,36 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
   FaFacebook,
   FaGooglePlus,
+  FaMinus,
   FaPinterest,
+  FaPlus,
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { contextTypes } from "../../types";
-import ProductContext from "../../context/ProductContext";
-import ProductSection from "./ProductSection";
-import FavouriteProducts from "../Home/FavouriteProducts";
 import Footer from "../Home/Footer";
 import Header from "../Home/Header";
 import PageTopInfo from "./PageTopInfo";
+import { contextTypes } from "../../types";
+import ProductSection from "./ProductSection";
+import ProductContext from "../../context/ProductContext";
+// import '../../assets/styles/style.css'
 
-const SingleProduct = () => {
+const SingleProduct: React.FC = () => {
+  const { singleProduct, favouriteProducts, addToCart } = useContext(
+    ProductContext
+  ) as contextTypes;
 
-  const { singleProduct, favouriteProducts } = useContext(ProductContext) as contextTypes;
-
+  if (typeof singleProduct === "undefined") {
+    window.location.replace("/");
+  }
 
   return (
     <div>
-      <Header/>
-      <PageTopInfo page = 'category' link = '/'/>
+      <Header />
+      <PageTopInfo page="category" link="/" />
       <section className="product-section">
         <div className="container">
-          <div className="back-link">
-            <a href="./category.html"> &lt;&lt; Back to Category</a>
-          </div>
           <div className="row">
             <div className="col-lg-6">
               <div className="product-pic-zoom">
@@ -61,8 +64,8 @@ const SingleProduct = () => {
               </div>
             </div>
             <div className="col-lg-6 product-details">
-              <h2 className="p-title">White peplum top</h2>
-              <h3 className="p-price">$39.90</h3>
+              <h2 className="p-title">{singleProduct.name}</h2>
+              <h3 className="p-price">${singleProduct.price}</h3>
               <h4 className="p-stock">
                 Available: <span>In Stock</span>
               </h4>
@@ -72,9 +75,6 @@ const SingleProduct = () => {
                 <i className="fa fa-star-o"></i>
                 <i className="fa fa-star-o"></i>
                 <i className="fa fa-star-o fa-fade"></i>
-              </div>
-              <div className="p-review">
-                <a href="">3 reviews</a>|<a href="">Add your review</a>
               </div>
               <div className="fw-size-choose">
                 <p>Size</p>
@@ -87,7 +87,7 @@ const SingleProduct = () => {
                   <label htmlFor="s-size">34</label>
                 </div>
                 <div className="sc-item">
-                  <input type="radio" name="sc" id="m-size" checked />
+                  <input type="radio" name="sc" id="m-size" defaultChecked />
                   <label htmlFor="m-size">36</label>
                 </div>
                 <div className="sc-item">
@@ -104,14 +104,25 @@ const SingleProduct = () => {
                 </div>
               </div>
               <div className="quantity">
-                <p>Quantity</p>
                 <div className="pro-qty">
-                  <input type="text" value="1" />
+                  <FaMinus
+                    className="qtybtn1"
+                    // size='1rem'
+                    onClick={() => singleProduct.quantity--}
+                  />
+                  <input type="text" value={singleProduct.quantity} />
+                  <FaPlus
+                    className="qtybtn1"
+                    onClick={() => singleProduct.quantity++}
+                  />
                 </div>
               </div>
-              <a href="#" className="site-btn">
-                SHOP NOW
-              </a>
+              <button
+                className="site-btn"
+                onClick={() => addToCart(singleProduct)}
+              >
+                ADD TO CART
+              </button>
               <div id="accordion" className="accordion-area">
                 <div className="panel">
                   <div className="panel-header" id="headingOne">
@@ -223,19 +234,15 @@ const SingleProduct = () => {
                   </i>
                 </a>
                 <a href="https://google.com">
-                  {/* <i className="fa fa-pinterest"></i> */}
                   <FaPinterest />
                 </a>
                 <a href="https://google.com">
-                  {/* <i className="fa fa-facebook"></i> */}
                   <FaFacebook />
                 </a>
                 <a href="https://google.com">
-                  {/* <i className="fa fa-twitter"></i> */}
                   <FaTwitter />
                 </a>
                 <a href="https://google.com">
-                  {/* <i className="fa fa-youtube"></i> */}
                   <FaYoutube />
                 </a>
               </div>
@@ -243,8 +250,8 @@ const SingleProduct = () => {
           </div>
         </div>
       </section>
-      <ProductSection products = {favouriteProducts} header = 'RELATED PRODUCTS'/>
-      <Footer/>
+      <ProductSection products={favouriteProducts} header="RELATED PRODUCTS" />
+      <Footer />
     </div>
   );
 };

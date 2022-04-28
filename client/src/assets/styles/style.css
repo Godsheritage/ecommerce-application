@@ -1757,6 +1757,20 @@ ol {
 	margin-top: 9px;
 }
 
+.quantity .pro-qty .qtybtn1 {
+	width: 12px;
+	display: block;
+	float: left;
+	line-height: 36px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 18px;
+	color: #404040;
+	margin-top: 9px;
+	margin-left: 3px;
+}
+
+
 .quantity .pro-qty input {
 	width: 28px;
 	float: left;
