@@ -10,11 +10,19 @@ import { contextTypes } from "../../types";
 import ProductContext from "../../context/ProductContext";
 import ProductSection from "./ProductSection";
 import FavouriteProducts from "../Home/FavouriteProducts";
+import Footer from "../Home/Footer";
+import Header from "../Home/Header";
+import PageTopInfo from "./PageTopInfo";
 
 const SingleProduct = () => {
+
   const { singleProduct, favouriteProducts } = useContext(ProductContext) as contextTypes;
+
+
   return (
     <div>
+      <Header/>
+      <PageTopInfo page = 'category' link = '/'/>
       <section className="product-section">
         <div className="container">
           <div className="back-link">
@@ -236,6 +244,7 @@ const SingleProduct = () => {
         </div>
       </section>
       <ProductSection products = {favouriteProducts} header = 'RELATED PRODUCTS'/>
+      <Footer/>
     </div>
   );
 };

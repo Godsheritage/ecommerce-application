@@ -22,13 +22,14 @@ export interface contextTypes {
   // products : productTypes[]
 }
 
-export interface pageTopInfo {
-  page: string;
-  link: string;
-}
 
 export interface FILTER_MENU_TYPES {
   name: string;
+  link: string;
+}
+
+export interface PRODUCT_TOP_INFO_TYPES {
+  page: string;
   link: string;
 }
 
