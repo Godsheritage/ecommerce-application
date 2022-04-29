@@ -21,7 +21,7 @@ const app = express();
 app.use(cors());
 app.use(morgan("combined"));
 app.use(express.json());
-app.use(helmet());
+// app.use(helmet());
 app.use("/cartitems", cartRoute);
 app.use("/Contact", contactRoute);
 app.use("/products", productRoute);
@@ -45,6 +45,7 @@ const verifyCallback = (
 ) => {};
 
 passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
+app.use(passport.initialize());
 
 app.get(
   "/auth/google",

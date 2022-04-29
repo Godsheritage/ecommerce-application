@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const morgan_1 = __importDefault(require("morgan"));
-const helmet_1 = __importDefault(require("helmet"));
 const express_1 = __importDefault(require("express"));
 const passport_1 = __importDefault(require("passport"));
 const dotenv_1 = __importDefault(require("dotenv"));
@@ -19,7 +18,7 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, morgan_1.default)("combined"));
 app.use(express_1.default.json());
-app.use((0, helmet_1.default)());
+// app.use(helmet());
 app.use("/cartitems", cart_routes_1.default);
 app.use("/Contact", contact_routes_1.default);
 app.use("/products", product_routes_1.default);
@@ -34,6 +33,7 @@ const AUTH_OPTIONS = {
 };
 const verifyCallback = (accessToken, refreshToken, profile, done) => { };
 passport_1.default.use(new passport_google_oauth20_1.Strategy(AUTH_OPTIONS, verifyCallback));
+app.use(passport_1.default.initialize());
 app.get("/auth/google", passport_1.default.authenticate("google", { scope: ["email", "profile"] }));
 app.get("/auth/google/callback", passport_1.default.authenticate("google", {
     failureRedirect: "/failure",
