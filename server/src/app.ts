@@ -11,8 +11,8 @@ const app = express();
 app.use(cors())
 app.use(morgan("combined"));
 app.use(express.json());
-app.use("/Contact", contactRoute);
 app.use("/cartitems", cartRoute);
+app.use("/Contact", contactRoute);
 app.use("/products", productRoute);
 
 app.use(express.static(path.join(__dirname, "..", "public ")));

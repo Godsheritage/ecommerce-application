@@ -15,7 +15,6 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-
 const SingleProduct: React.FC = () => {
   const { singleProduct, favouriteProducts, addToCart } = useContext(
     ProductContext
@@ -24,6 +23,13 @@ const SingleProduct: React.FC = () => {
   if (typeof singleProduct === "undefined") {
     window.location.replace("/");
   }
+
+  const sizes = [
+    {
+      size: "",
+      htmlFor: "",
+    },
+  ];
 
   return (
     <div>

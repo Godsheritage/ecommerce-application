@@ -33,7 +33,7 @@ const SignIn: React.FC = () => {
               placeholder="Passwword"
             />
           </div>
-          <button type="submit" className="btn btn-primary mb-2">
+          <button type="submit" className="mb-2 qtybtn">
             Sign In
           </button>
           <p>or sign in with google</p>

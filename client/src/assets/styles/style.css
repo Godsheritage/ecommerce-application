@@ -1745,7 +1745,7 @@ ol {
 	position: relative;
 }
 
-.quantity .pro-qty .qtybtn {
+.quantity .pro .qtybtn {
 	width: 15px;
 	display: block;
 	float: left;

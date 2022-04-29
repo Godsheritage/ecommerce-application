@@ -12,7 +12,6 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const PORT = process.env.PORT || 5000;
 const MOGO_URL = process.env.MONGO_URL;
-// console.log(MOGO_URL)
 const server = https_1.default.createServer({
     key: fs_1.default.readFileSync(path_1.default.join(__dirname, "..", "key.pem")),
     cert: fs_1.default.readFileSync(path_1.default.join(__dirname, "..", "cert.pem")),
