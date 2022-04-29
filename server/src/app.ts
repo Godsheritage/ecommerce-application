@@ -4,7 +4,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import express from "express";
 import passport, { Profile, session } from "passport";
-import dotenv, { config } from "dotenv";
+import dotenv from "dotenv";
 import {
   Strategy,
   StrategyOptionsWithRequest,
