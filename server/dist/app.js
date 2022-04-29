@@ -19,6 +19,12 @@ app.use((0, helmet_1.default)());
 app.use("/cartitems", cart_routes_1.default);
 app.use("/Contact", contact_routes_1.default);
 app.use("/products", product_routes_1.default);
+app.get("/auth/google", (req, res) => {
+    console.log("logged");
+});
+app.get("/auth/google/callback", (req, res) => {
+    console.log("logged");
+});
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "..", "public ", "index.html"));
