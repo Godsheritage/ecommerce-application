@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GoogleLogo from "../assets/img/Google.png";
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState<String>("");
@@ -36,7 +37,11 @@ const SignIn: React.FC = () => {
           <button type="submit" className="btn btn-primary mb-2 contactbtn">
             Sign In
           </button>
-          <a href= '/auth/google' className="">or sign in with google</a>
+          <div className="my-3">
+            <a href="/auth/google">
+              <img src={GoogleLogo} className="googleLogo" />
+            </a>
+          </div>
         </form>
       </div>
     </div>

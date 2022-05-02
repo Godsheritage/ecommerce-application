@@ -2265,6 +2265,13 @@ ol {
 	height: 100%;
 }
 
+/* SignIn */
+.googleLogo {
+	height:20px;
+	width:20px;
+
+}
+
 /* ----------------
   Responsive
 ---------------------*/
