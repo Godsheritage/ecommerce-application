@@ -56,10 +56,15 @@ app.use((0, cookie_session_1.default)({
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
 app.get("/auth/google", passport_1.default.authenticate("google", { scope: ["email", "profile"] }));
+//google callback
 app.get("/auth/google/callback", passport_1.default.authenticate("google", {
     failureRedirect: "/failure",
     successRedirect: "/",
 }));
+app.get("/auth/logout", (req, res) => {
+    req.logOut();
+    return res.redirect("/");
+});
 app.get("/failure", (req, res) => {
     return res.status(400).json({
         error: "Failed to login",

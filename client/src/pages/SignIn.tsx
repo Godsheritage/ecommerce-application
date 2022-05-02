@@ -31,7 +31,7 @@ const SignIn: React.FC = () => {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
-              placeholder="Passwword"
+              placeholder="Password"
             />
           </div>
           <button type="submit" className="contact-btn align-self-center mt-3 w-50 ">

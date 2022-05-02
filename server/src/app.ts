@@ -16,7 +16,6 @@ import {
 } from "passport-google-oauth20";
 dotenv.config();
 
-
 const app = express();
 
 app.use(cors());
@@ -34,7 +33,6 @@ const CONFIG: any = {
   COOKIE_SECRET_1: process.env.COOKIE_SECRET_1,
   COOKIE_SECRET_2: process.env.COOKIE_SECRET_2,
 };
-
 
 //passport authentication options
 const AUTH_OPTIONS: any = {
@@ -72,7 +70,6 @@ app.use(
   })
 );
 
-
 app.use(passport.initialize());
 
 app.use(passport.session());
@@ -82,6 +79,7 @@ app.get(
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
+//google callback
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
@@ -89,6 +87,11 @@ app.get(
     successRedirect: "/",
   })
 );
+
+app.get("/auth/logout", (req, res) => {
+  req.logOut();
+  return res.redirect("/");
+});
 
 app.get("/failure", (req, res) => {
   return res.status(400).json({
