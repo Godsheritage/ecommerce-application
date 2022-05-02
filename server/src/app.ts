@@ -14,8 +14,8 @@ import {
   StrategyOptionsWithRequest,
   VerifyCallback,
 } from "passport-google-oauth20";
-
 dotenv.config();
+
 
 const app = express();
 
@@ -27,6 +27,7 @@ app.use("/cartitems", cartRoute);
 app.use("/Contact", contactRoute);
 app.use("/products", productRoute);
 
+//confign options
 const CONFIG: any = {
   CLIENT_ID: process.env.CLIENT_ID,
   CLIENT_SECRET: process.env.CLIENT_SECRET,
@@ -34,6 +35,8 @@ const CONFIG: any = {
   COOKIE_SECRET_2: process.env.COOKIE_SECRET_2,
 };
 
+
+//passport authentication options
 const AUTH_OPTIONS: any = {
   clientID: CONFIG.CLIENT_ID,
   clientSecret: CONFIG.CLIENT_SECRET,

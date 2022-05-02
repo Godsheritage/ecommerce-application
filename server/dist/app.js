@@ -23,12 +23,14 @@ app.use(express_1.default.json());
 app.use("/cartitems", cart_routes_1.default);
 app.use("/Contact", contact_routes_1.default);
 app.use("/products", product_routes_1.default);
+//confign options
 const CONFIG = {
     CLIENT_ID: process.env.CLIENT_ID,
     CLIENT_SECRET: process.env.CLIENT_SECRET,
     COOKIE_SECRET_1: process.env.COOKIE_SECRET_1,
     COOKIE_SECRET_2: process.env.COOKIE_SECRET_2,
 };
+//passport authentication options
 const AUTH_OPTIONS = {
     clientID: CONFIG.CLIENT_ID,
     clientSecret: CONFIG.CLIENT_SECRET,
