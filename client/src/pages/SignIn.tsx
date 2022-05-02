@@ -36,7 +36,7 @@ const SignIn: React.FC = () => {
           <button type="submit" className="btn btn-primary mb-2 contactbtn">
             Sign In
           </button>
-          <p>or sign in with google</p>
+          <a href= '/auth/google' className="">or sign in with google</a>
         </form>
       </div>
     </div>

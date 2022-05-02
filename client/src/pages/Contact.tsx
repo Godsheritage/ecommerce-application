@@ -119,7 +119,7 @@ const Contact: React.FC = () => {
                 <button
                   className={isDisabled ? "site-btn disabled" : "site-btn"}
                   type="submit"
-                  disabled={isDisabled}
+                  // disabled={isDisabled}
                 >
                   SEND NOW
                 </button>
