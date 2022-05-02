@@ -136,8 +136,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
       <ProductSection products={favouriteProducts} header="Your Favourites" />
-
-      <FavouriteProducts />
+      {/* <FavouriteProducts /> */}
       <Footer />
     </div>
   );

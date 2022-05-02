@@ -1,5 +1,5 @@
 import express from "express";
-import httpPostContact from "./cart.controller";
+import httpPostContact from "./contact.controller";
 
 const contactRoute = express.Router();
 
