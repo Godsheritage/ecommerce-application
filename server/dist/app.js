@@ -36,14 +36,11 @@ const AUTH_OPTIONS = {
     clientSecret: CONFIG.CLIENT_SECRET,
     callbackURL: "https://localhost:5000/auth/google/callback",
 };
-app.use((0, cookie_session_1.default)({
-    name: "session",
-    keys: [CONFIG.COOKIE_SECRET_1, CONFIG.COOKIE_SECRET_2],
-    maxAge: 24 * 60 * 60 * 1000,
-}));
-const verifyCallback = (accessToken, refreshToken, profile, done) => { };
+const verifyCallback = (accessToken, refreshToken, profile, done) => {
+    console.log("Google Profile", profile);
+    done(null, profile);
+};
 passport_1.default.use(new passport_google_oauth20_1.Strategy(AUTH_OPTIONS, verifyCallback));
-app.use(passport_1.default.initialize());
 passport_1.default.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -51,6 +48,11 @@ passport_1.default.serializeUser((user, done) => {
 passport_1.default.deserializeUser((id, done) => {
     done(null, id);
 });
+app.use((0, cookie_session_1.default)({
+    name: "session",
+    keys: [CONFIG.COOKIE_SECRET_1, CONFIG.COOKIE_SECRET_2],
+    maxAge: 24 * 60 * 60 * 1000,
+}));
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
 app.get("/auth/google", passport_1.default.authenticate("google", { scope: ["email", "profile"] }));

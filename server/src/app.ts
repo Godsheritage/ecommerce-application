@@ -43,23 +43,17 @@ const AUTH_OPTIONS: any = {
   callbackURL: "https://localhost:5000/auth/google/callback",
 };
 
-app.use(
-  cookieSession({
-    name: "session",
-    keys: [CONFIG.COOKIE_SECRET_1, CONFIG.COOKIE_SECRET_2],
-    maxAge: 24 * 60 * 60 * 1000,
-  })
-);
-
 const verifyCallback = (
   accessToken: string,
   refreshToken: string,
   profile: Profile,
   done: VerifyCallback
-) => {};
+) => {
+  console.log("Google Profile", profile);
+  done(null, profile);
+};
 
 passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
-app.use(passport.initialize());
 
 passport.serializeUser((user: any, done) => {
   done(null, user.id);
@@ -69,6 +63,15 @@ passport.serializeUser((user: any, done) => {
 passport.deserializeUser((id: any, done) => {
   done(null, id);
 });
+
+app.use(
+  cookieSession({
+    name: "session",
+    keys: [CONFIG.COOKIE_SECRET_1, CONFIG.COOKIE_SECRET_2],
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
+
 
 app.use(passport.initialize());
 
