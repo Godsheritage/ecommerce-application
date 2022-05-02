@@ -177,6 +177,23 @@ ol {
 	text-align: center;
 }
 
+.contact-btn {
+	display: inline-block;
+	border: none;
+	font-size: 12px;
+	font-weight: 600;
+	min-width: 167px;
+	padding: 15px 10px 14px;
+	border-radius: 50px;
+	text-transform: uppercase;
+	background: #f51167;
+	color: #fff;
+	line-height: normal;
+	cursor: pointer;
+	text-align: center;
+	justify-content:center
+}
+
 .site-btn:hover {
 	color: #fff;
 }

@@ -14,13 +14,13 @@ const SignIn: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="form w-50">
+      <div className="form w-50 d-flex flex-column">
         <h1 className="text-center pb-2">Login</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className =' d-flex flex-column '>
           <div className="my-3">
             <input
               type="email"
-              className="form-control"
+              className="form-control "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
@@ -34,11 +34,11 @@ const SignIn: React.FC = () => {
               placeholder="Passwword"
             />
           </div>
-          <button type="submit" className="btn btn-primary mb-2 contactbtn">
+          <button type="submit" className="contact-btn align-self-center mt-3 w-50 ">
             Sign In
           </button>
-          <div className="my-3">
-            <a href="/auth/google">
+          <div className="my-3" >
+            <a href="/auth/google" >
               <img src={GoogleLogo} className="googleLogo" />
             </a>
           </div>
