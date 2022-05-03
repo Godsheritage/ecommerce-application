@@ -7,10 +7,10 @@ exports.signUp = exports.findUser = void 0;
 const auth_mongo_1 = __importDefault(require("./auth.mongo"));
 //find email
 const findUser = async (email, password) => {
-    return await auth_mongo_1.default.findOne({ email, password }, { _v: 0 });
+    return await auth_mongo_1.default.findOne({ email, password }, { __v: 0 });
 };
 exports.findUser = findUser;
-//sign UP users
+//sign up users
 const signUp = async (email, password) => {
     return await auth_mongo_1.default.create({ email, password });
 };

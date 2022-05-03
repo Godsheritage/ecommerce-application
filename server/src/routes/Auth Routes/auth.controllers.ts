@@ -1,6 +1,5 @@
 import { RequestHandler } from "express";
 import { findUser, signUp } from "../../model/auth models/auth.models";
-// import cookieSession from "cookie-session";
 
 export const httpSignup: RequestHandler = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -38,15 +37,22 @@ export const httpSignup: RequestHandler = async (req, res) => {
 
 export const httpSignIn: RequestHandler = async (req, res) => {
   const { email, password } = req.body;
+  // console.log(email);
+  // console.log({
+  //   email,
+  //   password,
+  // });
 
   //find user
   const user = await findUser(email, password);
-  if (!user) {
+  if (user === null) {
     return res.status(400).json({
-      error: "incorrect username or password",
+      error: "User not found",
     });
   }
-
   req.session!.userId = user._id;
   return res.status(200).json(user);
 };
+
+//   return res.status(200).json(user);
+// };

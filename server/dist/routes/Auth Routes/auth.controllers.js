@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.httpSignIn = exports.httpSignup = void 0;
 const auth_models_1 = require("../../model/auth models/auth.models");
-// import cookieSession from "cookie-session";
 const httpSignup = async (req, res) => {
     const { email, password, confirmPassword } = req.body;
     if (!email || !password || !confirmPassword) {
@@ -33,14 +32,21 @@ const httpSignup = async (req, res) => {
 exports.httpSignup = httpSignup;
 const httpSignIn = async (req, res) => {
     const { email, password } = req.body;
+    // console.log(email);
+    // console.log({
+    //   email,
+    //   password,
+    // });
     //find user
     const user = await (0, auth_models_1.findUser)(email, password);
-    if (!user) {
+    if (user === null) {
         return res.status(400).json({
-            error: "incorrect username or password",
+            error: "User not found",
         });
     }
     req.session.userId = user._id;
     return res.status(200).json(user);
 };
 exports.httpSignIn = httpSignIn;
+//   return res.status(200).json(user);
+// };
