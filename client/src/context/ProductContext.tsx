@@ -38,40 +38,39 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   //fetch single product
   const fetchSingleProduct = async (product: productTypes) => {
     const ID = product._id;
-    const response = await axios.get(
-      `${API_URL}/products/singleproduct/${ID}`
-    );
+    const response = await axios.get(`${API_URL}/products/singleproduct/${ID}`);
     setSingleProduct(response.data);
     navigate(`/products/${product.name}`);
   };
 
   //fetch all products
   const fetchAllProducts = async () => {
-    const response = await axios.get(
-      `${API_URL}/products/allproducts`
-    );
+    const response = await axios.get(`${API_URL}/products/allproducts`);
     setAllProducts(response.data);
   };
 
   //fetch the latest products
   const fetchLatestProducts = async () => {
-    const response = await axios.get(
-      `${API_URL}/products/latestproducts`
-    );
+    const response = await axios.get(`${API_URL}/products/latestproducts`);
     setLatestProducts(response.data);
   };
 
   //fetch the favourite products
   const fetchFavouriteProducts = async () => {
-    const response = await axios.get(
-      `${API_URL}/products/favouriteproducts`
-    );
+    const response = await axios.get(`${API_URL}/products/favouriteproducts`);
     setFavouriteProducts(response.data);
   };
 
-  const submitContact = async (data:any) => {
-    await axios.post(`${API_URL}/Contact`, data)
-  }
+  //submit contact form
+  const submitContact = async (data: any) => {
+    await axios.post(`${API_URL}/Contact`, data);
+  };
+
+  //signup
+  const signUp = async (details: any) => {
+    await axios.post(`${API_URL}/auth/signup`, details);
+  };
+
   useEffect(() => {
     fetchAllProducts();
     fetchLatestProducts();

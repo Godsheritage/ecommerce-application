@@ -1,3 +1,5 @@
+//front end types
+
 export interface productTypes {
   _id: string;
   name: string;

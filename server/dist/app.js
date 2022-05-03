@@ -14,6 +14,7 @@ const cart_routes_1 = __importDefault(require("./routes/Cart Routes/cart.routes"
 const contact_routes_1 = __importDefault(require("./routes/contact routes/contact.routes"));
 const product_routes_1 = __importDefault(require("./routes/Product Routes/product.routes"));
 const passport_google_oauth20_1 = require("passport-google-oauth20");
+const auth_routes_1 = __importDefault(require("./routes/Auth Routes/auth.routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
@@ -23,6 +24,7 @@ app.use(express_1.default.json());
 app.use("/cartitems", cart_routes_1.default);
 app.use("/Contact", contact_routes_1.default);
 app.use("/products", product_routes_1.default);
+app.use('/auth', auth_routes_1.default);
 //confign options
 const CONFIG = {
     CLIENT_ID: process.env.CLIENT_ID,

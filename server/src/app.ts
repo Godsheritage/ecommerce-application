@@ -14,6 +14,7 @@ import {
   StrategyOptionsWithRequest,
   VerifyCallback,
 } from "passport-google-oauth20";
+import authRoute from "./routes/Auth Routes/auth.routes";
 dotenv.config();
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use("/cartitems", cartRoute);
 app.use("/Contact", contactRoute);
 app.use("/products", productRoute);
+app.use('/auth', authRoute)
 
 //confign options
 const CONFIG: any = {

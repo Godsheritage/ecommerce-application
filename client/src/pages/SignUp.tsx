@@ -10,7 +10,7 @@ const SignUp = () => {
     const info = {
       email,
       password,
-      confirmPassword
+      confirmPassword,
     };
   };
 
