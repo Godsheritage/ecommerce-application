@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
+import { findMail, signUp } from "../../model/auth models/auth.models";
 
-export const httpSignup: RequestHandler = (req, res) => {
+export const httpSignup: RequestHandler = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
 
   if (!email || !password || !confirmPassword) {
@@ -15,5 +16,15 @@ export const httpSignup: RequestHandler = (req, res) => {
     });
   }
 
-  const checkIfMailExists = 
+  //check if mail exists
+  const existingMail = await findMail(email);
+
+  if (existingMail) {
+    return res.status(400).json({
+      err: "mail already exists",
+    });
+  }
+  await signUp(email, password);
+
+  // const checkIfMailExists =
 };
