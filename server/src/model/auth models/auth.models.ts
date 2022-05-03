@@ -1,8 +1,8 @@
 import userDatabase from "./auth.mongo";
 
 //find email
-export const findMail = async (email: string) => {
-  return await userDatabase.findOne({ email }, { _v: 0 });
+export const findUser = async (email: string, password:string) => {
+  return await userDatabase.findOne({ email, password }, { _v: 0 });
 };
 
 //sign UP users
