@@ -1,5 +1,5 @@
 import axios from "axios";
-import { contextTypes } from "../types";
+import { contextTypes } from "../../../types";
 import { useState, useContext } from "react";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";
@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 
 const Contact: React.FC = () => {
-  const { favouriteProducts } = useContext(ProductContext) as contextTypes;
+  const { favouriteProducts, submitContact } = useContext(ProductContext) as contextTypes;
 
   const [name, setName] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -43,7 +43,8 @@ const Contact: React.FC = () => {
       subject,
       message,
     };
-    await axios.post("https://localhost:5000/Contact", data);
+    // await axios.post("https://localhost:5000/Contact", data);
+    await submitContact(data)
   };
 
   //Contact infos

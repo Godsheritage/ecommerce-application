@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { contextTypes } from "../../types";
+import { contextTypes } from "../../../../types";
 import ProductSection from "../Shared/ProductSection";
-import { FILTER_MENU_TYPES } from "../../types";
+import { FILTER_MENU_TYPES } from "../../../../types";
 import ProductContext from "../../context/ProductContext";
 
 const ProductsFilterSection = () => {

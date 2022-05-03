@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { contextTypes } from "../types";
+import { contextTypes } from "../../../types";
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import ProductContext from "../context/ProductContext";

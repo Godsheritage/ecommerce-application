@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { contextTypes } from "../../types";
+import { contextTypes } from "../../../../types";
 import Hero from "../../components/Home/Hero";
 import Banner from "../../components/Home/Banner";
 import Footer from "../../components/Home/Footer";

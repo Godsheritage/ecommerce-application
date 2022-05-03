@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { contextTypes } from "../types";
+import { contextTypes } from "../../../types";
 import { Link } from "react-router-dom";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";

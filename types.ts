@@ -18,10 +18,10 @@ export interface contextTypes {
   // topSellingProducts: productTypes[];
   addToCart: (product: productTypes) => void;
   fetchSingleProduct: (_id: any) => Promise<void>;
+  submitContact: (data: any) => Promise<void>;
 
   // products : productTypes[]
 }
-
 
 export interface FILTER_MENU_TYPES {
   name: string;
@@ -37,4 +37,13 @@ export interface PRODUCT_SECTION_TYPES {
   products: productTypes[];
   header?: string;
   style?: any;
+}
+
+// Backend types
+
+interface contactDataTypes {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }

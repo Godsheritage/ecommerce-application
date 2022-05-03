@@ -1,4 +1,4 @@
-import { contextTypes } from "../types";
+import { contextTypes } from "../../../types";
 import { useContext, useState } from "react";
 import paypal from "../assets/img/paypal.png";
 import Header from "../components/Home/Header";

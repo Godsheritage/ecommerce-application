@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { productTypes, contextTypes } from "../types";
+import { productTypes, contextTypes } from "../../../types";
 import { createContext, useEffect, useState } from "react";
 
 const ProductContext = createContext<contextTypes | null>(null);
@@ -39,7 +39,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const fetchSingleProduct = async (product: productTypes) => {
     const ID = product._id;
     const response = await axios.get(
-      `https://localhost:5000/products/singleproduct/${ID}`
+      `${API_URL}/products/singleproduct/${ID}`
     );
     setSingleProduct(response.data);
     navigate(`/products/${product.name}`);
@@ -48,7 +48,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   //fetch all products
   const fetchAllProducts = async () => {
     const response = await axios.get(
-      "https://localhost:5000/products/allproducts"
+      `${API_URL}/products/allproducts`
     );
     setAllProducts(response.data);
   };
@@ -56,7 +56,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   //fetch the latest products
   const fetchLatestProducts = async () => {
     const response = await axios.get(
-      "https://localhost:5000/products/latestproducts"
+      `${API_URL}/products/latestproducts`
     );
     setLatestProducts(response.data);
   };
@@ -64,11 +64,14 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   //fetch the favourite products
   const fetchFavouriteProducts = async () => {
     const response = await axios.get(
-      "https://localhost:5000/products/favouriteproducts"
+      `${API_URL}/products/favouriteproducts`
     );
     setFavouriteProducts(response.data);
   };
 
+  const submitContact = async (data:any) => {
+    await axios.post(`${API_URL}/Contact`, data)
+  }
   useEffect(() => {
     fetchAllProducts();
     fetchLatestProducts();
@@ -91,6 +94,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
         allProducts,
         singleProduct,
         addToCart,
+        submitContact,
         fetchSingleProduct,
       }}
     >

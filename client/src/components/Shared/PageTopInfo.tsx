@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PRODUCT_TOP_INFO_TYPES } from "../../types";
+import { PRODUCT_TOP_INFO_TYPES } from "../../../../types";
 
 const PageTopInfo:React.FC<PRODUCT_TOP_INFO_TYPES> = ({link, page}) => {
   return (

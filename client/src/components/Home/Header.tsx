@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { contextTypes } from "../../types";
+import { contextTypes } from "../../../../types";
 import Logo from "../../assets/img/logo.png";
 import ProductContext from "../../context/ProductContext";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                       Sign In
                     </Link>{" "}
                     or{" "}
-                    <Link to="/" className="card-link">
+                    <Link to="/signup" className="card-link">
                       Create Account
                     </Link>
                   </div>
