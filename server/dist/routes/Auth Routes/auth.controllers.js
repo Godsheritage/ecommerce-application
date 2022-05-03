@@ -35,6 +35,11 @@ const httpSignIn = async (req, res) => {
     const { email, password } = req.body;
     //find user
     const user = await (0, auth_models_1.findUser)(email, password);
+    if (!user) {
+        return res.status(400).json({
+            error: "incorrect username or password",
+        });
+    }
     req.session.userId = user._id;
     return res.status(200).json(user);
 };

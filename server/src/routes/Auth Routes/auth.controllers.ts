@@ -41,6 +41,12 @@ export const httpSignIn: RequestHandler = async (req, res) => {
 
   //find user
   const user = await findUser(email, password);
+  if (!user) {
+    return res.status(400).json({
+      error: "incorrect username or password",
+    });
+  }
+
   req.session!.userId = user._id;
   return res.status(200).json(user);
 };

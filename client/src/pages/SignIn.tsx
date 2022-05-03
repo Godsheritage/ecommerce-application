@@ -10,7 +10,8 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState<string>("");
 
   //submit form
-  const handleSubmit = async() => {
+  const handleSubmit = async(e:React.SyntheticEvent) => {
+    e.preventDefault()
     const credentials = {
       email,
       password,

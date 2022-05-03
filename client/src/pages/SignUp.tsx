@@ -4,7 +4,6 @@ import ProductContext from "../context/ProductContext";
 import { contextTypes, signUpTypes } from "../../../types";
 
 const SignUp: React.FC = () => {
-
   const { signUsersUp } = useContext(ProductContext) as contextTypes;
 
   const [email, setEmail] = useState<string>("");
@@ -18,7 +17,7 @@ const SignUp: React.FC = () => {
   const [confirmPasswordError, setConfirmPasswordError] = useState<string>("");
 
   //form submission
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     const credentials: signUpTypes = {
