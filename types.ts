@@ -18,11 +18,11 @@ export interface contextTypes {
   favouriteProducts: productTypes[];
   allProducts: productTypes[];
   // topSellingProducts: productTypes[];
-  signUserUp : (credentials:signUpTypes) => Promise<void>
+  signUsersUp: (credentials: signUpTypes) => Promise<void>;
+  signUsersIn: (credentials: signInTypes) => Promise<void>;
   addToCart: (product: productTypes) => void;
   fetchSingleProduct: (_id: any) => Promise<void>;
   submitContact: (data: any) => Promise<void>;
-
   // products : productTypes[]
 }
 
@@ -55,4 +55,8 @@ export interface signUpTypes {
   email: string;
   password: string;
   confirmPassword: string;
+}
+export interface signInTypes {
+  email: string;
+  password: string;
 }

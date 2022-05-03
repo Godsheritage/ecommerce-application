@@ -5,7 +5,7 @@ import { contextTypes, signUpTypes } from "../../../types";
 
 const SignUp: React.FC = () => {
 
-  const { signUserUp } = useContext(ProductContext) as contextTypes;
+  const { signUsersUp } = useContext(ProductContext) as contextTypes;
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -26,7 +26,7 @@ const SignUp: React.FC = () => {
       password,
       confirmPassword,
     };
-    signUserUp(credentials);
+    signUsersUp(credentials);
   };
 
   return (

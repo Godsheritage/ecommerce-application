@@ -10,11 +10,11 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const cookie_session_1 = __importDefault(require("cookie-session"));
 const passport_1 = __importDefault(require("passport"));
+const auth_routes_1 = __importDefault(require("./routes/Auth Routes/auth.routes"));
 const cart_routes_1 = __importDefault(require("./routes/Cart Routes/cart.routes"));
 const contact_routes_1 = __importDefault(require("./routes/contact routes/contact.routes"));
 const product_routes_1 = __importDefault(require("./routes/Product Routes/product.routes"));
 const passport_google_oauth20_1 = require("passport-google-oauth20");
-const auth_routes_1 = __importDefault(require("./routes/Auth Routes/auth.routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 //confign options
@@ -73,6 +73,7 @@ app.get("/failure", (req, res) => {
         error: "Failed to login",
     });
 });
+//serve frontend
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "..", "public ", "index.html"));

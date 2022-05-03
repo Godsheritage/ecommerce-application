@@ -28,10 +28,11 @@ export const httpSignup: RequestHandler = async (req, res) => {
 
   //sign the user up
   await signUp(email, password);
-  
+
   const newMail = await findMail(email);
   req.session!.userId = newMail._id;
   return res.status(201).json({
     message: "user has been created",
   });
 };
+

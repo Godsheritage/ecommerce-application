@@ -6,6 +6,7 @@ import helmet from "helmet";
 import express from "express";
 import cookieSession from "cookie-session";
 import passport, { Profile, session } from "passport";
+import authRoute from "./routes/Auth Routes/auth.routes";
 import cartRoute from "./routes/Cart Routes/cart.routes";
 import contactRoute from "./routes/contact routes/contact.routes";
 import productRoute from "./routes/Product Routes/product.routes";
@@ -14,7 +15,6 @@ import {
   StrategyOptionsWithRequest,
   VerifyCallback,
 } from "passport-google-oauth20";
-import authRoute from "./routes/Auth Routes/auth.routes";
 dotenv.config();
 
 const app = express();
@@ -103,6 +103,7 @@ app.get("/failure", (req, res) => {
   });
 });
 
+//serve frontend
 app.use(express.static(path.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public ", "index.html"));

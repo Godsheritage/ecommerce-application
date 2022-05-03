@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { productTypes, contextTypes } from "../../../types";
+import { productTypes, contextTypes, signInTypes, signUpTypes } from "../../../types";
 import { createContext, useEffect, useState } from "react";
 
 const ProductContext = createContext<contextTypes | null>(null);
@@ -67,8 +67,13 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   };
 
   //signup
-  const signUserUp = async (credentials: any) => {
+  const signUsersUp = async (credentials: signUpTypes) => {
     await axios.post(`${API_URL}/auth/signup`, credentials);
+  };
+
+  //signin
+  const signUsersIn = async (credentials: signInTypes) => {
+    await axios.post(`${API_URL}/auth/signin`, credentials);
   };
 
   useEffect(() => {
@@ -92,7 +97,8 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
         favouriteProducts,
         allProducts,
         singleProduct,
-        signUserUp,
+        signUsersUp,
+        signUsersIn,
         addToCart,
         submitContact,
         fetchSingleProduct,
