@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 import { contextTypes, signUpTypes } from "../../../types";
 
-const SignUp = () => {
+const SignUp: React.FC = () => {
+  const inputRef = useRef();
+
   const { signUserUp } = useContext(ProductContext) as contextTypes;
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-  
+  const [nameError, setNamerror] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
+  const [emailError, setEmailError] = useState<boolean>(false);
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
+  const [passwordError, setPasswordError] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState<string>("");
+
+  //form submission
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -35,6 +44,7 @@ const SignUp = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -44,21 +54,24 @@ const SignUp = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </div>
           <div className="mb-3">
             <input
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
+              id="exampleInputPassword2"
               placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
             />
           </div>
+
+          {error && <p>{error}</p>}
           <button
             type="submit"
-            className="contact-btn align-self-center mt-3 w-50 "
+            disabled={false}
+            className="contact-btn align-self-center mt-3 w-50"
           >
             Sign up
           </button>

@@ -25,6 +25,8 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState<string>("");
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
+  
+
   //submit contact form
   //TODO work on the form validation
   const submitForm = async (e: React.SyntheticEvent) => {
