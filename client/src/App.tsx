@@ -7,6 +7,7 @@ import Checkout from "./pages/Checkout";
 import Men from "./pages/categories/Men";
 import Women from "./pages/categories/Women";
 import Jewelry from "./pages/categories/Jewelry";
+import Signup from "./pages/SignUp";
 import SingleProduct from "./components/Shared/SingleProduct";
 import ProductSection from "./components/Shared/ProductSection";
 import { ProductContextProvider } from "./context/ProductContext";
@@ -18,14 +19,15 @@ const App: React.FC = () => {
       <ProductContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/signin" element={<SignIn />} />
           <Route path="/men" element={<Men />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/women" element={<Women />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/jewelry" element={<Jewelry />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/checkout" element={<Checkout />} />
           {/* <Route path="/products/:product" element={<ProductSection />} /> */}
           <Route path="/products/*" element={<SingleProduct />} />
         </Routes>
