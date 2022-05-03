@@ -36,6 +36,7 @@ const AUTH_OPTIONS = {
     clientSecret: CONFIG.CLIENT_SECRET,
     callbackURL: "https://localhost:5000/auth/google/callback",
 };
+//verify callback
 const verifyCallback = (accessToken, refreshToken, profile, done) => {
     console.log("Google Profile", profile);
     done(null, profile);

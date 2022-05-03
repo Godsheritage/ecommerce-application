@@ -41,6 +41,8 @@ const AUTH_OPTIONS: any = {
   callbackURL: "https://localhost:5000/auth/google/callback",
 };
 
+
+//verify callback
 const verifyCallback = (
   accessToken: string,
   refreshToken: string,
