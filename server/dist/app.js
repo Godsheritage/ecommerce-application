@@ -17,14 +17,6 @@ const passport_google_oauth20_1 = require("passport-google-oauth20");
 const auth_routes_1 = __importDefault(require("./routes/Auth Routes/auth.routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
-app.use((0, morgan_1.default)("combined"));
-app.use(express_1.default.json());
-// app.use(helmet());
-app.use("/cartitems", cart_routes_1.default);
-app.use("/Contact", contact_routes_1.default);
-app.use("/products", product_routes_1.default);
-app.use('/auth', auth_routes_1.default);
 //confign options
 const CONFIG = {
     CLIENT_ID: process.env.CLIENT_ID,
@@ -58,6 +50,14 @@ app.use((0, cookie_session_1.default)({
 }));
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
+app.use((0, cors_1.default)());
+app.use((0, morgan_1.default)("combined"));
+app.use(express_1.default.json());
+// app.use(helmet());
+app.use('/auth', auth_routes_1.default);
+app.use("/cartitems", cart_routes_1.default);
+app.use("/Contact", contact_routes_1.default);
+app.use("/products", product_routes_1.default);
 app.get("/auth/google", passport_1.default.authenticate("google", { scope: ["email", "profile"] }));
 //google callback
 app.get("/auth/google/callback", passport_1.default.authenticate("google", {

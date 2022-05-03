@@ -19,15 +19,6 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
-app.use(morgan("combined"));
-app.use(express.json());
-// app.use(helmet());
-app.use("/cartitems", cartRoute);
-app.use("/Contact", contactRoute);
-app.use("/products", productRoute);
-app.use('/auth', authRoute)
-
 //confign options
 const CONFIG: any = {
   CLIENT_ID: process.env.CLIENT_ID,
@@ -77,6 +68,15 @@ app.use(
 app.use(passport.initialize());
 
 app.use(passport.session());
+
+app.use(cors());
+app.use(morgan("combined"));
+app.use(express.json());
+// app.use(helmet());
+app.use('/auth', authRoute)
+app.use("/cartitems", cartRoute);
+app.use("/Contact", contactRoute);
+app.use("/products", productRoute);
 
 app.get(
   "/auth/google",

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.httpSignup = void 0;
 const auth_models_1 = require("../../model/auth models/auth.models");
+// import cookieSession from "cookie-session";
 const httpSignup = async (req, res) => {
     const { email, password, confirmPassword } = req.body;
     if (!email || !password || !confirmPassword) {
@@ -16,13 +17,15 @@ const httpSignup = async (req, res) => {
     }
     //check if mail exists
     const existingMail = await (0, auth_models_1.findMail)(email);
-    if (existingMail.length !== 0) {
+    if (existingMail !== null) {
         return res.status(400).json({
             error: "mail already exists",
         });
     }
     //sign the user up
     await (0, auth_models_1.signUp)(email, password);
+    const newMail = await (0, auth_models_1.findMail)(email);
+    req.session.userId = newMail._id;
     return res.status(201).json({
         message: "user has been created",
     });

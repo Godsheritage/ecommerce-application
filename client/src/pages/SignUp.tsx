@@ -1,11 +1,9 @@
-import React, { useRef } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 import { contextTypes, signUpTypes } from "../../../types";
 
 const SignUp: React.FC = () => {
-  const inputRef = useRef();
 
   const { signUserUp } = useContext(ProductContext) as contextTypes;
 
@@ -13,7 +11,6 @@ const SignUp: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const [nameError, setNamerror] = useState<string>("");
   const [error, setError] = useState<string>("");
-
   const [emailError, setEmailError] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
   const [passwordError, setPasswordError] = useState<string>("");
@@ -55,6 +52,7 @@ const SignUp: React.FC = () => {
               id="exampleInputPassword1"
               placeholder="Password"
               value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -64,6 +62,7 @@ const SignUp: React.FC = () => {
               id="exampleInputPassword2"
               placeholder="Confirm Password"
               value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 

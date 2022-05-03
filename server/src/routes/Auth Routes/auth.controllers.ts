@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { findMail, signUp } from "../../model/auth models/auth.models";
+// import cookieSession from "cookie-session";
 
 export const httpSignup: RequestHandler = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -19,7 +20,7 @@ export const httpSignup: RequestHandler = async (req, res) => {
   //check if mail exists
   const existingMail = await findMail(email);
 
-  if (existingMail.length !== 0) {
+  if (existingMail !== null) {
     return res.status(400).json({
       error: "mail already exists",
     });
@@ -27,6 +28,9 @@ export const httpSignup: RequestHandler = async (req, res) => {
 
   //sign the user up
   await signUp(email, password);
+  
+  const newMail = await findMail(email);
+  req.session!.userId = newMail._id;
   return res.status(201).json({
     message: "user has been created",
   });
