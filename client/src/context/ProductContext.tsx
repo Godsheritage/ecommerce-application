@@ -67,8 +67,8 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   };
 
   //signup
-  const signUp = async (details: any) => {
-    await axios.post(`${API_URL}/auth/signup`, details);
+  const signUserUp = async (credentials: any) => {
+    await axios.post(`${API_URL}/auth/signup`, credentials);
   };
 
   useEffect(() => {
@@ -92,6 +92,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
         favouriteProducts,
         allProducts,
         singleProduct,
+        signUserUp,
         addToCart,
         submitContact,
         fetchSingleProduct,

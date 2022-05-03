@@ -18,6 +18,7 @@ export interface contextTypes {
   favouriteProducts: productTypes[];
   allProducts: productTypes[];
   // topSellingProducts: productTypes[];
+  signUserUp : (credentials:signUpTypes) => Promise<void>
   addToCart: (product: productTypes) => void;
   fetchSingleProduct: (_id: any) => Promise<void>;
   submitContact: (data: any) => Promise<void>;
@@ -43,9 +44,15 @@ export interface PRODUCT_SECTION_TYPES {
 
 // Backend types
 
-interface contactDataTypes {
+export interface contactDataTypes {
   name: string;
   email: string;
   subject: string;
   message: string;
+}
+
+export interface signUpTypes {
+  email: string;
+  password: string;
+  confirmPassword: string;
 }

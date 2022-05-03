@@ -1,17 +1,25 @@
 import React from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import ProductContext from "../context/ProductContext";
+import { contextTypes, signUpTypes } from "../../../types";
 
 const SignUp = () => {
-  const [email, setEmail] = useState<String>("");
-  const [password, setPassword] = useState<String>("");
-  const [confirmPassword, setConfirmPassword] = useState<String>("");
+  const { signUserUp } = useContext(ProductContext) as contextTypes;
 
-  const handleSubmit = () => {
-    const info = {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    const credentials: signUpTypes = {
       email,
       password,
       confirmPassword,
     };
+    signUserUp(credentials);
   };
 
   return (
@@ -26,6 +34,7 @@ const SignUp = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -34,6 +43,7 @@ const SignUp = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -42,6 +52,7 @@ const SignUp = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
           <button
