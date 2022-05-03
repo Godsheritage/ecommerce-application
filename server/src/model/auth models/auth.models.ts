@@ -1,5 +1,4 @@
 import userDatabase from "./auth.mongo";
-import { AmpAttachment } from "nodemailer/lib/mailer";
 
 export const findMail = async (email: string) => {
   return await userDatabase.find({ email }, { _v: 0 });

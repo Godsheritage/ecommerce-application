@@ -28,6 +28,7 @@ const Contact: React.FC = () => {
   //submit contact form
   //TODO work on the form validation
   const submitForm = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
     if (
       name.length === 0 ||
       email.length === 0 ||
