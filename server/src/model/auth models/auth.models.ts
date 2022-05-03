@@ -7,3 +7,4 @@ export const findMail = async (email: string) => {
 export const signUp = async (email: string, password: string) => {
   return await userDatabase.create({ email, password });
 };
+ 

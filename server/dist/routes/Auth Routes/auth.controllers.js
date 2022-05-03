@@ -21,7 +21,10 @@ const httpSignup = async (req, res) => {
             err: "mail already exists",
         });
     }
+    //sign the user up
     await (0, auth_models_1.signUp)(email, password);
-    // const checkIfMailExists =
+    return res.status(201).json({
+        message: "user has been created",
+    });
 };
 exports.httpSignup = httpSignup;

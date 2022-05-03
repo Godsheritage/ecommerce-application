@@ -2,8 +2,8 @@ import mongoose, { model, Schema, Model, Document } from "mongoose";
 // where the schema will be stored
 
 const authSchema: Schema = new mongoose.Schema({
-  email: { type: Number, required: true },
-  password: { type: Date, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
 });
 
 //connect launchesSchema with the launches collection

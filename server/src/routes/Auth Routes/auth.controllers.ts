@@ -24,7 +24,11 @@ export const httpSignup: RequestHandler = async (req, res) => {
       err: "mail already exists",
     });
   }
-  await signUp(email, password);
 
-  // const checkIfMailExists =
+  //sign the user up
+  await signUp(email, password);
+  return res.status(201).json({
+    message: "user has been created",
+  });
+
 };
