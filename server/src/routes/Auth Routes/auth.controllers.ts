@@ -19,9 +19,9 @@ export const httpSignup: RequestHandler = async (req, res) => {
   //check if mail exists
   const existingMail = await findMail(email);
 
-  if (existingMail) {
+  if (existingMail.length !== 0) {
     return res.status(400).json({
-      err: "mail already exists",
+      error: "mail already exists",
     });
   }
 
@@ -30,5 +30,4 @@ export const httpSignup: RequestHandler = async (req, res) => {
   return res.status(201).json({
     message: "user has been created",
   });
-
 };

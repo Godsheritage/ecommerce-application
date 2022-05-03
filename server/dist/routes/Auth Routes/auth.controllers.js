@@ -16,9 +16,9 @@ const httpSignup = async (req, res) => {
     }
     //check if mail exists
     const existingMail = await (0, auth_models_1.findMail)(email);
-    if (existingMail) {
+    if (existingMail.length !== 0) {
         return res.status(400).json({
-            err: "mail already exists",
+            error: "mail already exists",
         });
     }
     //sign the user up
