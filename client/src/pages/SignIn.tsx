@@ -10,13 +10,13 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState<string>("");
 
   //submit form
-  const handleSubmit = async(e:React.SyntheticEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
     const credentials = {
       email,
       password,
     };
-    await signUsersIn(credentials)
+    await signUsersIn(credentials);
   };
 
   return (
@@ -31,6 +31,7 @@ const SignIn: React.FC = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -39,6 +40,7 @@ const SignIn: React.FC = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button

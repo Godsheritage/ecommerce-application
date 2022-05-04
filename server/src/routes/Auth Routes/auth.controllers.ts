@@ -1,7 +1,9 @@
 import { RequestHandler } from "express";
 import { findUser, signUp } from "../../model/auth models/auth.models";
 
-export const httpSignup: RequestHandler = async (req, res) => {
+
+
+export const httpSignUp: RequestHandler = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
 
   if (!email || !password || !confirmPassword) {
@@ -30,11 +32,14 @@ export const httpSignup: RequestHandler = async (req, res) => {
 
   const newUser = await findUser(email);
   req.session!.userId = newUser._id;
+
   return res.status(201).json({
     message: "user has been created",
   });
 };
 
+
+//sign users in
 export const httpSignIn: RequestHandler = async (req, res) => {
   const { email, password } = req.body;
   console.log(req.body)
@@ -52,7 +57,9 @@ export const httpSignIn: RequestHandler = async (req, res) => {
     });
   }
   req.session!.userId = user._id;
-  return res.status(200).json(user);
+  return res.status(200).json({
+    message : "user has been logged in"
+  });
 };
 
 

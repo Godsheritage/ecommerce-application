@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.httpSignOut = exports.httpSignIn = exports.httpSignup = void 0;
+exports.httpSignOut = exports.httpSignIn = exports.httpSignUp = void 0;
 const auth_models_1 = require("../../model/auth models/auth.models");
-const httpSignup = async (req, res) => {
+const httpSignUp = async (req, res) => {
     const { email, password, confirmPassword } = req.body;
     if (!email || !password || !confirmPassword) {
         return res.status(400).json({
@@ -29,7 +29,8 @@ const httpSignup = async (req, res) => {
         message: "user has been created",
     });
 };
-exports.httpSignup = httpSignup;
+exports.httpSignUp = httpSignUp;
+//sign users in
 const httpSignIn = async (req, res) => {
     const { email, password } = req.body;
     console.log(req.body);
@@ -46,7 +47,9 @@ const httpSignIn = async (req, res) => {
         });
     }
     req.session.userId = user._id;
-    return res.status(200).json(user);
+    return res.status(200).json({
+        message: "user has been logged in"
+    });
 };
 exports.httpSignIn = httpSignIn;
 const httpSignOut = (req, res) => {

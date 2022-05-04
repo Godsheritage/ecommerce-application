@@ -1,10 +1,10 @@
 import express from 'express'
-import { httpSignup, httpSignIn, httpSignOut } from './auth.controllers'
+import { httpSignUp, httpSignIn, httpSignOut } from './auth.controllers'
  
 
 const authRoute = express.Router()
 
-authRoute.post('/signup' , httpSignup)
+authRoute.post('/signup' , httpSignUp)
 authRoute.post('/signin' , httpSignIn)
 authRoute.get('/signout' , httpSignOut)
 
