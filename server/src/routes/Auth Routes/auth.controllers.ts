@@ -17,7 +17,7 @@ export const httpSignup: RequestHandler = async (req, res) => {
   }
 
   //check if mail exists
-  const existingMail = await findUser(email, password);
+  const existingMail = await findUser(email);
 
   if (existingMail !== null) {
     return res.status(400).json({
@@ -28,7 +28,7 @@ export const httpSignup: RequestHandler = async (req, res) => {
   //sign the user up
   await signUp(email, password);
 
-  const newUser = await findUser(email, password);
+  const newUser = await findUser(email);
   req.session!.userId = newUser._id;
   return res.status(201).json({
     message: "user has been created",
@@ -37,22 +37,27 @@ export const httpSignup: RequestHandler = async (req, res) => {
 
 export const httpSignIn: RequestHandler = async (req, res) => {
   const { email, password } = req.body;
-  // console.log(email);
-  // console.log({
-  //   email,
-  //   password,
-  // });
+  console.log(req.body)
 
   //find user
-  const user = await findUser(email, password);
+  const user = await findUser(email);
   if (user === null) {
-    return res.status(400).json({
+    return res.status(404).json({
       error: "User not found",
+    });
+  }
+  if (user.password !== password) {
+    return res.status(400).json({
+      error: "Incorrect password",
     });
   }
   req.session!.userId = user._id;
   return res.status(200).json(user);
 };
 
-//   return res.status(200).json(user);
-// };
+
+export const httpSignOut:RequestHandler = (req, res) => {
+  req.session = null
+  return res.status(200).redirect('/')
+
+}

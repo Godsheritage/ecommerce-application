@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.signUp = exports.findUser = void 0;
 const auth_mongo_1 = __importDefault(require("./auth.mongo"));
 //find email
-const findUser = async (email, password) => {
-    return await auth_mongo_1.default.findOne({ email, password }, { __v: 0 });
+const findUser = async (email) => {
+    return await auth_mongo_1.default.findOne({ email }, { __v: 0 });
 };
 exports.findUser = findUser;
 //sign up users
