@@ -1,6 +1,7 @@
 import "./hero.scss";
 import bg from "../../assets/img/bg.jpg";
 import bg2 from "../../assets/img/bg-2.jpg";
+import { motion } from "framer-motion";
 
 const HERO_CONSTANTS = [
   {
@@ -66,7 +67,13 @@ const Hero: React.FC = () => {
               </p>
               <div className="d-flex flex-row justify-content-start pt-5">
                 <button className="site-btn ">Discover</button>
-                <button className="site-btn sb-white ml-3">Add to cart</button>
+                <motion.button
+                  className="site-btn sb-white ml-3"
+                  whileHover={{ scale: 1.2 }}
+                  whileFocus={{scale:1.2}}
+                >
+                  Add to cart
+                </motion.button>
               </div>
             </span>
           </div>
