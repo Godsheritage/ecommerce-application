@@ -190,7 +190,7 @@ export const sendProductToMongo = async () => {
 };
 
 //send products to mongodb
-// sendProductToMongo()
+sendProductToMongo()
 
 //fetch single products from mongo
 export const fetchSingleProduct = async (ID: string) => {

@@ -172,7 +172,7 @@ const sendProductToMongo = async () => {
 };
 exports.sendProductToMongo = sendProductToMongo;
 //send products to mongodb
-// sendProductToMongo()
+(0, exports.sendProductToMongo)();
 //fetch single products from mongo
 const fetchSingleProduct = async (ID) => {
     return await product_mongo_1.default.findOne({ _id: ID }, { __v: 0 });
