@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchAllProducts = exports.fetchFavouriteProducts = exports.fetchLatestProducts = exports.fetchSingleProduct = exports.sendProductToMongo = void 0;
 const product_mongo_1 = __importDefault(require("./product.mongo"));
-const latestProduct = [
+const products = [
     {
         name: "Flamboyant Pink Top",
         image: "https://img.romwe.com/images/romwe.com/201703/1490669572815131393_thumbnail_900x.webp",
@@ -168,7 +168,7 @@ const latestProduct = [
     },
 ];
 const sendProductToMongo = async () => {
-    await product_mongo_1.default.create(latestProduct);
+    await product_mongo_1.default.create(products);
 };
 exports.sendProductToMongo = sendProductToMongo;
 //send products to mongodb

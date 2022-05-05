@@ -1,6 +1,6 @@
 import productDataDatabse from "./product.mongo";
 
-const latestProduct = [
+const products = [
   {
     name: "Flamboyant Pink Top",
     image:
@@ -186,7 +186,7 @@ const latestProduct = [
 ];
 
 export const sendProductToMongo = async () => {
-  await productDataDatabse.create(latestProduct);
+  await productDataDatabse.create(products);
 };
 //send products to mongodb
 // sendProductToMongo()
