@@ -1,5 +1,8 @@
 import userDatabase from "./auth.mongo";
 import crypto from "crypto";
+import util from "util";
+
+const scrypt = util.promisify(crypto.scrypt);
 
 //find email
 export const findUser = async (email: string) => {
@@ -10,11 +13,12 @@ export const findUser = async (email: string) => {
 export const signUp = async (email: string, password: string) => {
   const salt = crypto.randomBytes(8).toString("hex");
 
-  crypto.scrypt(password, salt, 64, (err, buff) => {
-    const hashed = buff.toString("hex");
-  });
+  const buff: any = await scrypt(password, salt, 64);
 
-  return await userDatabase.create({ email, password });
+  return await userDatabase.create({
+    email,
+    password: `${buff.toString("hex")}.${salt}`,
+  });
 };
 
 const hashPasswords = () => {};
