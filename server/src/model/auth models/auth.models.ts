@@ -15,10 +15,12 @@ export const signUp = async (email: string, password: string) => {
 
   const buff: any = await scrypt(password, salt, 64);
 
-  return await userDatabase.create({
+  const record = {
     email,
     password: `${buff.toString("hex")}.${salt}`,
-  });
+  }
+
+  return await userDatabase.create(record);
 };
 
 const hashPasswords = () => {};
