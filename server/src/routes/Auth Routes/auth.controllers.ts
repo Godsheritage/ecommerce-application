@@ -1,7 +1,9 @@
 import { RequestHandler } from "express";
-import { findUser, signUp } from "../../model/auth models/auth.models";
-
-
+import {
+  comparePasswords,
+  findUser,
+  signUp,
+} from "../../model/auth models/auth.models";
 
 export const httpSignUp: RequestHandler = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -38,11 +40,10 @@ export const httpSignUp: RequestHandler = async (req, res) => {
   });
 };
 
-
 //sign users in
 export const httpSignIn: RequestHandler = async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body)
+  console.log(req.body);
 
   //find user
   const user = await findUser(email);
@@ -51,20 +52,21 @@ export const httpSignIn: RequestHandler = async (req, res) => {
       error: "User not found",
     });
   }
-  if (user.password !== password) {
+  comparePasswords(user.password, password);
+
+  if (!comparePasswords) {
     return res.status(400).json({
       error: "Incorrect password",
     });
   }
+
   req.session!.userId = user._id;
   return res.status(200).json({
-    message : "user has been logged in"
+    message: "user has been logged in",
   });
 };
 
-
-export const httpSignOut:RequestHandler = (req, res) => {
-  req.session = null
-  return res.status(200).redirect('/')
-
-}
+export const httpSignOut: RequestHandler = (req, res) => {
+  req.session = null;
+  return res.status(200).redirect("/");
+};

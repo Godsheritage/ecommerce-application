@@ -41,19 +41,20 @@ const httpSignIn = async (req, res) => {
             error: "User not found",
         });
     }
-    if (user.password !== password) {
+    (0, auth_models_1.comparePasswords)(user.password, password);
+    if (!auth_models_1.comparePasswords) {
         return res.status(400).json({
             error: "Incorrect password",
         });
     }
     req.session.userId = user._id;
     return res.status(200).json({
-        message: "user has been logged in"
+        message: "user has been logged in",
     });
 };
 exports.httpSignIn = httpSignIn;
 const httpSignOut = (req, res) => {
     req.session = null;
-    return res.status(200).redirect('/');
+    return res.status(200).redirect("/");
 };
 exports.httpSignOut = httpSignOut;

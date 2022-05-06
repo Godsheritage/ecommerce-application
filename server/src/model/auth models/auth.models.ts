@@ -1,6 +1,6 @@
-import userDatabase from "./auth.mongo";
-import crypto from "crypto";
 import util from "util";
+import crypto from "crypto";
+import userDatabase from "./auth.mongo";
 
 const scrypt = util.promisify(crypto.scrypt);
 
@@ -18,11 +18,19 @@ export const signUp = async (email: string, password: string) => {
   const record = {
     email,
     password: `${buff.toString("hex")}.${salt}`,
-  }
+  };
 
   return await userDatabase.create(record);
 };
 
 const hashPasswords = () => {};
 
-const comparePasswords = () => {};
+export const comparePasswords = async (
+  hashedPassword: string,
+  password: string 
+) => {
+  const [hashed, salt] = hashedPassword.split(".");
+  const hashSuppliedBuffer: any = await scrypt(password, salt, 64);
+
+  return hashSuppliedBuffer.toString('hex') === hashed;
+};
