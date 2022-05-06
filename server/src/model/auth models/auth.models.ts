@@ -10,3 +10,6 @@ export const signUp = async (email: string, password: string) => {
   return await userDatabase.create({ email, password });
 };
     
+const hashPasswords = () => {}
+
+const comparePasswords = () => {}
