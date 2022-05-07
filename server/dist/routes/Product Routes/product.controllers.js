@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.httpFetchFavouriteProducts = exports.httpFetchLatestProducts = exports.httpFetchAllProducts = exports.httpFetchSingleProduct = void 0;
-const product_model_1 = require("../../model/product.model");
+const product_model_1 = require("../../model/products models/product.model");
 //fetch single products
 const httpFetchSingleProduct = async (req, res) => {
     const ID = req.params.product;

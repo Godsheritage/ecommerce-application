@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.httpGetCartItems = exports.httpPostCartItems = void 0;
-const cart_model_1 = require("../../model/cart.model");
+const cart_model_1 = require("../../model/cart models/cart.model");
 //post cart items controller
 const httpPostCartItems = async (req, res) => {
     const cartItem = req.body;
