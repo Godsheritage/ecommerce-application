@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "index.d.ts", "../types.ts"  ]
+, "index.d.ts", "types.ts"  ]
 }

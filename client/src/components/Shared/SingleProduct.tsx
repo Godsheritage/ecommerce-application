@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import Footer from "../Home/Footer";
 import Header from "../Home/Header";
 import PageTopInfo from "./PageTopInfo";
-import { contextTypes } from "../../../../types";
+import { contextTypes } from "../../types";
 import ProductSection from "./ProductSection";
 import ProductContext from "../../context/ProductContext";
 import {

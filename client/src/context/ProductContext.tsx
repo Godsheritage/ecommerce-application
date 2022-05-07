@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { productTypes, contextTypes, signInTypes, signUpTypes } from "../../../types";
+import { productTypes, contextTypes, signInTypes, signUpTypes } from "../types";
 import { createContext, useEffect, useState } from "react";
 
 const ProductContext = createContext<contextTypes | null>(null);

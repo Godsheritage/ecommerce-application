@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../../../types";
+import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../types";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 

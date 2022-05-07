@@ -1,7 +1,7 @@
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useContext } from "react";
 import ProductContext from "../../context/ProductContext";
-import { contextTypes } from "../../../../types";
+import { contextTypes } from "../../types";
 
 const FavouriteProducts = () => {
   const { favouriteProducts, addToCart } = useContext(

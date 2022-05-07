@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
-import { contextTypes, signUpTypes } from "../../../types";
+import { contextTypes, signUpTypes } from "../types";
 
 const SignUp: React.FC = () => {
   const { signUsersUp } = useContext(ProductContext) as contextTypes;

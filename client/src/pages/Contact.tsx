@@ -1,5 +1,5 @@
 import axios from "axios";
-import { contextTypes } from "../../../types";
+import { contextTypes } from "../types";
 import { useState, useContext } from "react";
 import Header from "../components/Home/Header";
 import Footer from "../components/Home/Footer";

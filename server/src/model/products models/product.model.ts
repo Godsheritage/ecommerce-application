@@ -1,5 +1,5 @@
 import productDataDatabse from "./product.mongo";
-import {productTypes} from '../../../../types'
+// import {productTypes} from '../../../../types'
 
 const products: = [
   {
