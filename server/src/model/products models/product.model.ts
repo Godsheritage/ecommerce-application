@@ -1,7 +1,7 @@
 import productDataDatabse from "./product.mongo";
 // import {productTypes} from '../../../../types'
 
-const products: = [
+const products = [
   {
     name: "Flamboyant Pink Top",
     image:
@@ -189,7 +189,6 @@ const products: = [
 
 //send products to mongo
 export const sendProductToMongo = async () => {
-  const prod = ...products
   await productDataDatabse.create(products);
 };
 
