@@ -16,6 +16,7 @@ exports.findUser = findUser;
 //sign up users
 const signUp = async (email, password) => {
     const salt = crypto_1.default.randomBytes(8).toString("hex");
+    //create hash buffer
     const buff = await scrypt(password, salt, 64);
     const record = {
         email,

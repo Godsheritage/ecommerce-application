@@ -13,6 +13,7 @@ export const findUser = async (email: string) => {
 export const signUp = async (email: string, password: string) => {
   const salt = crypto.randomBytes(8).toString("hex");
 
+  //create hash buffer
   const buff: any = await scrypt(password, salt, 64);
 
   const record = {
