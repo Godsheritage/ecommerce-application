@@ -185,12 +185,12 @@ const products = [
   },
 ];
 
+//send products to mongo
 export const sendProductToMongo = async () => {
   await productDataDatabse.create(products);
 };
 
-//send products to mongodb
-sendProductToMongo()
+// sendProductToMongo()
 
 //fetch All products from mongo 
 export const fetchAllProducts = async () => {
