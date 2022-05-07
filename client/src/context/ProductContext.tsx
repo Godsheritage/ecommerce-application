@@ -1,18 +1,18 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { productTypes, contextTypes, signInTypes, signUpTypes } from "../types";
 import { createContext, useEffect, useState } from "react";
+import { productTypes, contextTypes, signInTypes, signUpTypes } from "../types";
 
 const ProductContext = createContext<contextTypes | null>(null);
 
 export const ProductContextProvider: React.FC<any> = ({ children }) => {
-  const [allProducts, setAllProducts] = useState<productTypes[]>([]);
+  const [cart, setCart] = useState<productTypes[]>([]);
   const [singleProduct, setSingleProduct] = useState<any>();
+  const [allProducts, setAllProducts] = useState<productTypes[]>([]);
   const [latestProducts, setLatestProducts] = useState<productTypes[]>([]);
   const [favouriteProducts, setFavouriteProducts] = useState<productTypes[]>(
     []
   );
-  const [cart, setCart] = useState<productTypes[]>([]);
   const navigate = useNavigate();
   const API_URL = "https://localhost:5000";
 
