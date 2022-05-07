@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { addToCart, fetchCartItems } from "../../model/cart.model";
+import { addToCart, fetchCartItems } from "../../model/cart models/cart.model";
 
 //post cart items controller
 export const httpPostCartItems: RequestHandler = async (req, res) => {

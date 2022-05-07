@@ -4,7 +4,7 @@ import {
   fetchSingleProduct,
   fetchAllProducts,
   fetchFavouriteProducts,
-} from "../../model/product.model";
+} from "../../model/products models/product.model";
 
 //fetch single products
 export const httpFetchSingleProduct: RequestHandler = async (req, res) => {
