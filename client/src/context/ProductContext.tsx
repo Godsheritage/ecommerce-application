@@ -67,7 +67,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await axios.post(`${API_URL}/Contact`, data);
   };
 
-  //signup
+  //signup route
   const signUsersUp = async (credentials: signUpTypes) => {
     await axios.post(`${API_URL}/auth/signup`, credentials);
   };
