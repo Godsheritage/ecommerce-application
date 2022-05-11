@@ -33,11 +33,13 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     // }
     const response = await axios.post(`${API_URL}/cartItems`, product);
     // await fetchCartItems();
-    setCart([...cart, response.data])
+    setCart([...cart, response.data]);
   };
 
   //fetch single product
-  const fetchSingleProduct: (product: productTypes) => Promise<void> = async (product: productTypes) => {
+  const fetchSingleProduct: (product: productTypes) => Promise<void> = async (
+    product: productTypes
+  ) => {
     const ID = product._id;
     const response = await axios.get(`${API_URL}/products/singleproduct/${ID}`);
     setSingleProduct(response.data);
@@ -45,19 +47,19 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   };
 
   //fetch all products
-  const fetchAllProducts = async () => {
+  const fetchAllProducts: () => Promise<void> = async () => {
     const response = await axios.get(`${API_URL}/products/allproducts`);
     setAllProducts(response.data);
   };
 
   //fetch the latest products
-  const fetchLatestProducts = async () => {
+  const fetchLatestProducts: () => Promise<void> = async () => {
     const response = await axios.get(`${API_URL}/products/latestproducts`);
     setLatestProducts(response.data);
   };
 
   //fetch the favourite products
-  const fetchFavouriteProducts = async () => {
+  const fetchFavouriteProducts: () => Promise<void> = async () => {
     const response = await axios.get(`${API_URL}/products/favouriteproducts`);
     setFavouriteProducts(response.data);
   };
@@ -67,7 +69,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     await axios.post(`${API_URL}/Contact`, data);
   };
 
-  //signup 
+  //signup
   const signUsersUp = async (credentials: signUpTypes) => {
     await axios.post(`${API_URL}/auth/signup`, credentials);
   };
