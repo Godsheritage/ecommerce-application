@@ -17,7 +17,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   const API_URL = "https://localhost:5000";
 
   //fetch cart items
-  const fetchCartItems = async () => {
+  const fetchCartItems: () => Promise<void> = async () => {
     const response = await axios.get(`${API_URL}/cartItems`);
     setCart(response.data);
   };
@@ -37,7 +37,7 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
   };
 
   //fetch single product
-  const fetchSingleProduct = async (product: productTypes) => {
+  const fetchSingleProduct: (product: productTypes) => Promise<void> = async (product: productTypes) => {
     const ID = product._id;
     const response = await axios.get(`${API_URL}/products/singleproduct/${ID}`);
     setSingleProduct(response.data);
