@@ -94,13 +94,13 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
       value={{
         cart,
         sum,
-        latestProducts,
-        favouriteProducts,
         allProducts,
         singleProduct,
+        latestProducts,
+        favouriteProducts,
+        addToCart,
         signUsersUp,
         signUsersIn,
-        addToCart,
         submitContact,
         fetchSingleProduct,
       }}
