@@ -108,7 +108,13 @@ const SignUp: React.FC = () => {
             className="contact-btn align-self-center mt-3 w-50"
             variants={buttonVariants}
             initial="hidden"
-            whileHover="visible"
+            whileHover={{
+              scale: 0.95,
+              color: "#333",
+              backgroundColor: "#fff",
+              border: "3px solid #F51167",
+            }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
           >
             Sign up
           </motion.button>
