@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { useContext } from "react";
-import ProductContext from "../context/ProductContext";
-import { contextTypes, signUpTypes } from "../types";
-import GoogleLogo from "../assets/img/Google.png";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import GoogleLogo from "../assets/img/Google.png";
+import { contextTypes, signUpTypes } from "../types";
+import ProductContext from "../context/ProductContext";
 
 const SignIn: React.FC = () => {
-  const { signUsersIn } = useContext(ProductContext) as contextTypes;
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const { signUsersIn } = useContext(ProductContext) as contextTypes;
+
+  const buttonVariants = {
+    visible: {
+      scale: 0.95,
+      color: "#333",
+      backgroundColor: "#fff",
+      border: "3px solid #F51167",
+      transition: { duration: 0.7, ease: "easeInOut" },
+    },
+  };
 
   //submit form
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -44,18 +55,22 @@ const SignIn: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button
+          <motion.button
             type="submit"
             className="contact-btn align-self-center mt-3 w-50 "
+            variants={buttonVariants}
+            whileHover="visible"
           >
             Sign In
-          </button>
+          </motion.button>
           <div className="my-3">
             <a href="/auth/google">
               <img src={GoogleLogo} className="googleLogo" />
             </a>
           </div>
-          <Link to = '/signup' className = 'card-link'>Don't have an account? Sign up</Link>
+          <Link to="/signup" className="card-link">
+            Don't have an account? Sign up
+          </Link>
         </form>
       </div>
     </div>

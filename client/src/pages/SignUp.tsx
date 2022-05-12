@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
+import { motion } from "framer-motion";
 import { contextTypes, signUpTypes } from "../types";
 import ProductContext from "../context/ProductContext";
 
@@ -15,6 +16,16 @@ const SignUp: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [confirmPasswordError, setConfirmPasswordError] = useState<string>("");
+
+  const buttonVariants = {
+    visible: {
+      scale: 0.95,
+      color: "#333",
+      backgroundColor: "#fff",
+      border: "3px solid #F51167",
+      transition: { duration: 0.7, ease: "easeInOut" },
+    },
+  };
 
   //form submission
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -66,15 +77,18 @@ const SignUp: React.FC = () => {
           </div>
 
           {error && <p>{error}</p>}
-          <button
+          <motion.button
             type="submit"
             disabled={false}
             className="contact-btn align-self-center mt-3 w-50"
+            variants={buttonVariants}
+            whileHover="visible"
           >
             Sign up
-          </button>
-          <Link to = '/signin' className = 'card-link pt-3'>Already have an account? Sign In</Link>
-
+          </motion.button>
+          <Link to="/signin" className="card-link pt-3">
+            Already have an account? Sign In
+          </Link>
         </form>
       </div>
     </div>
