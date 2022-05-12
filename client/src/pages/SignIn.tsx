@@ -11,6 +11,16 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const { signUsersIn } = useContext(ProductContext) as contextTypes;
 
+  const defaultVariants = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: { type:'spring', stiffnes:2},
+    },
+  };
+
   const buttonVariants = {
     visible: {
       scale: 0.95,
@@ -32,7 +42,12 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <motion.div
+      className="container"
+      variants={defaultVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="form w-50 d-flex flex-column">
         <h1 className="text-center pb-2">Login</h1>
         <form onSubmit={handleSubmit} className=" d-flex flex-column ">
@@ -73,7 +88,7 @@ const SignIn: React.FC = () => {
           </Link>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
