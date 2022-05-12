@@ -22,21 +22,20 @@ const Header: React.FC = () => {
                 <form className="header-search-form">
                   <input type="text" placeholder="Search on divisima ...." />
                   <button>
-                    <FaSearch size="18px" />
+                    <FaSearch size="18px" className="opacity-75 mb-2" />
                   </button>
                 </form>
               </div>
               <div className="col-xl-4 col-lg-5">
-                <div className="user-panel">
+                <div className="user-panel pt-2">
                   <div className="up-item">
                     <FaUser size="22px" />
                     <Link to="/signin" className="card-link">
                       Sign In
                     </Link>{" "}
-                    or{" "}
-                    <Link to="/signup" className="card-link">
+                    {/* <Link to="/signup" className="card-link">
                       Create Account
-                    </Link>
+                    </Link> */}
                   </div>
                   <div className="up-item">
                     <div className="shopping-card">

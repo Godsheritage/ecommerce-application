@@ -73,7 +73,7 @@ const SignUp: React.FC = () => {
           >
             Sign up
           </button>
-          <Link to = '/signup' className = 'card-link'>Don't have an account? Sign up</Link>
+          <Link to = '/signin' className = 'card-link pt-3'>Already have an account? Sign In</Link>
 
         </form>
       </div>
