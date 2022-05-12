@@ -3,6 +3,7 @@ import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 import { contextTypes, signUpTypes } from "../types";
 import GoogleLogo from "../assets/img/Google.png";
+import { Link } from "react-router-dom";
 
 const SignIn: React.FC = () => {
   const { signUsersIn } = useContext(ProductContext) as contextTypes;
@@ -54,6 +55,7 @@ const SignIn: React.FC = () => {
               <img src={GoogleLogo} className="googleLogo" />
             </a>
           </div>
+          <Link to = '/signup' className = 'card-link'>Don't have an account?</Link>
         </form>
       </div>
     </div>
