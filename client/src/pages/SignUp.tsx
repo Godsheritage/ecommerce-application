@@ -3,7 +3,6 @@ import { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { contextTypes, signUpTypes } from "../types";
 import ProductContext from "../context/ProductContext";
-import { AnimatePresence } from "framer-motion";
 
 const SignUp: React.FC = () => {
   const { signUsersUp } = useContext(ProductContext) as contextTypes;
@@ -61,69 +60,64 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <AnimatePresence
-    exitBeforeEnter
-    animate = {{x:0}}
+    <motion.div
+      className="container"
+      variants={defaultVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <motion.div
-        className="container"
-        variants={defaultVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="form w-50 d-flex flex-column">
-          <h1 className="text-center pb-2">Create Account</h1>
-          <form onSubmit={handleSubmit} className=" d-flex flex-column ">
-            <div className="my-3">
-              <input
-                type="email"
-                className="form-control "
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword2"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
+      <div className="form w-50 d-flex flex-column">
+        <h1 className="text-center pb-2">Create Account</h1>
+        <form onSubmit={handleSubmit} className=" d-flex flex-column ">
+          <div className="my-3">
+            <input
+              type="email"
+              className="form-control "
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword2"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
 
-            {error && <p>{error}</p>}
-            <motion.button
-              type="submit"
-              disabled={false}
-              className="contact-btn align-self-center mt-3 w-50"
-              variants={buttonVariants}
-              initial="hidden"
-              whileHover="visible"
-            >
-              Sign up
-            </motion.button>
-            <Link to="/signin" className="card-link pt-3">
-              Already have an account? Sign In
-            </Link>
-          </form>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+          {error && <p>{error}</p>}
+          <motion.button
+            type="submit"
+            disabled={false}
+            className="contact-btn align-self-center mt-3 w-50"
+            variants={buttonVariants}
+            initial="hidden"
+            whileHover="visible"
+          >
+            Sign up
+          </motion.button>
+          <Link to="/signin" className="card-link pt-3">
+            Already have an account? Sign In
+          </Link>
+        </form>
+      </div>
+    </motion.div>
   );
 };
 
