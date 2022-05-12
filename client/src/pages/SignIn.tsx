@@ -55,7 +55,7 @@ const SignIn: React.FC = () => {
               <img src={GoogleLogo} className="googleLogo" />
             </a>
           </div>
-          <Link to = '/signup' className = 'card-link'>Don't have an account?</Link>
+          <Link to = '/signup' className = 'card-link'>Don't have an account? Sign up</Link>
         </form>
       </div>
     </div>

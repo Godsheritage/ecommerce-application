@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useContext } from "react";
-import ProductContext from "../context/ProductContext";
+import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
 import { contextTypes, signUpTypes } from "../types";
+import ProductContext from "../context/ProductContext";
 
 const SignUp: React.FC = () => {
   const { signUsersUp } = useContext(ProductContext) as contextTypes;
@@ -73,6 +73,8 @@ const SignUp: React.FC = () => {
           >
             Sign up
           </button>
+          <Link to = '/signup' className = 'card-link'>Don't have an account? Sign up</Link>
+
         </form>
       </div>
     </div>
