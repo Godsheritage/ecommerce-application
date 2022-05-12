@@ -25,7 +25,7 @@ const signUp = async (email, password) => {
     return await auth_mongo_1.default.create(record);
 };
 exports.signUp = signUp;
-const hashPasswords = () => { };
+//compare passw inputs
 const comparePasswords = async (hashedPassword, password) => {
     const [hashed, salt] = hashedPassword.split(".");
     const hashSuppliedBuffer = await scrypt(password, salt, 64);

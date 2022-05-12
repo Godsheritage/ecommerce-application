@@ -24,8 +24,7 @@ export const signUp = async (email: string, password: string) => {
   return await userDatabase.create(record);
 };
 
-const hashPasswords = () => {};
-
+//compare passw inputs
 export const comparePasswords = async (
   hashedPassword: string,
   password: string 
