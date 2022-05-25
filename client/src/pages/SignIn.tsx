@@ -34,6 +34,7 @@ const SignIn: React.FC = () => {
   // };
 
   //submit form
+  // console.log(EMAIL_REQUIRED)
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const credentials = {
@@ -58,21 +59,20 @@ const SignIn: React.FC = () => {
               element="input"
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
+              id="email"
               aria-describedby="emailHelp"
               placeholder="Email"
               errorText = 'please enter a valid email'
               validators={[EMAIL_REQUIRED]}
-            />
+              />
           </div>
           <div className="mb-3">
             <Input
             element="input"
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
+              id="password"
               placeholder="Password"
-              onChange={(e: any) => setPassword(e.target.value)}
               errorText = 'password must be greater than 8 digits'
               validators={[PASSWORD_REQUIRED]}
             />

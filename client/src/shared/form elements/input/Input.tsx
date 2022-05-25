@@ -13,27 +13,19 @@ const Input: React.FC<any> = ({
   placeholder,
 }) => {
   const signInreducer = (state: any, action: any) => {
-    console.log(validate(action.validator, action.val));
+    // console.log(validate(action.validator, action.val));
     switch (action.type) {
       case "CHANGE":
         return {
           ...state,
           value: action.val,
-          isValid: validate(action.validator, action.val),
+          isValid: validate(action.validators, action.val),
         };
       default:
         return state;
     }
   };
-
   const initialState: any = {
-    // inputs: {
-    //   userName: {
-    //     value: "",
-    //     isValid: false,
-    //   },
-    //   password: { value: "", isValid: false },
-    // },
     value: "",
     isValid: false,
   };
@@ -41,7 +33,7 @@ const Input: React.FC<any> = ({
   const [state, dispatch] = useReducer(signInreducer, initialState);
 
   const ChangeHandler = (e: any) => {
-    dispatch({ type: "CHANGE", val: e.target.value, validator: validators });
+    dispatch({ type: "CHANGE", val: e.target.value, validators });
   };
 
   console.log(state);
@@ -54,7 +46,6 @@ const Input: React.FC<any> = ({
         type={type}
         onChange={ChangeHandler}
         value={state.value}
-        // onBlur={blurHandle}
       />
       {state.value !== "" && !state.isValid && <p>{errorText}</p>}
     </>

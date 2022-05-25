@@ -1,8 +1,8 @@
 
 
-export const EMAIL_REQUIRED = { type: "EMAIL" };
-export const REQUIRED = { type: "REQUIRED" };
-export const PASSWORD_REQUIRED = { type: "PASSWORD" };
+export const EMAIL_REQUIRED = () =>({ type: "EMAIL" }) ;
+export const REQUIRED = () => ({ type: "REQUIRED" });
+export const PASSWORD_REQUIRED = () => ({ type: "PASSWORD" });
 
 export const validate = (validators: any, value: string) => {
   validators.forEach((validator: any) => {
