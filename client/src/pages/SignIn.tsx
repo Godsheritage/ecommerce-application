@@ -12,28 +12,6 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const { signUsersIn } = useContext(ProductContext) as contextTypes;
 
-  const signInreducer = (state: SIGN_IN_VALIDATION_TYPES, action: any) => {
-    switch (action.types) {
-      case "Change":
-        return { ...state };
-      default:
-        return { ...state };
-    }
-  };
-
-  const initialState: SIGN_IN_VALIDATION_TYPES = {
-    inputs: {
-      userName: {
-        value: "",
-        isValid: false,
-      },
-      password: { value: "", isValid: false },
-    },
-    isValid: false,
-  };
-
-  const [state, dispatch] = useReducer(signInreducer, initialState);
-
   const defaultVariants = {
     hidden: {
       x: "-100vw",
@@ -44,21 +22,15 @@ const SignIn: React.FC = () => {
     },
   };
 
-//handle inputChange 
-
-const handleInputChange =() => {
-  
-}
-
-  const buttonVariants = {
-    visible: {
-      scale: 0.95,
-      color: "#333",
-      backgroundColor: "#fff",
-      border: "3px solid #F51167",
-      transition: { duration: 0.7, ease: "easeInOut" },
-    },
-  };
+  // const buttonVariants = {
+  //   visible: {
+  //     scale: 0.95,
+  //     color: "#333",
+  //     backgroundColor: "#fff",
+  //     border: "3px solid #F51167",
+  //     transition: { duration: 0.7, ease: "easeInOut" },
+  //   },
+  // };
 
   //submit form
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -82,29 +54,30 @@ const handleInputChange =() => {
         <form onSubmit={handleSubmit} className=" d-flex flex-column ">
           <div className="my-3">
             <Input
+              element="input"
               type="email"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
-              onChange={(e: any) => setEmail(e.target.value)}
-              onInput = {handleInputChange}
+              errorText = 'please enter a valid email'
             />
           </div>
           <div className="mb-3">
             <Input
+            element="input"
               type="password"
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
               onChange={(e: any) => setPassword(e.target.value)}
+              errorText = 'password must be greater than 8 digits'
             />
           </div>
           <motion.button
             type="submit"
             className="contact-btn align-self-center mt-3 w-50 "
-            variants={buttonVariants}
-            whileHover="visible"
+            disabled={true}
           >
             Sign In
           </motion.button>
