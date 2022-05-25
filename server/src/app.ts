@@ -73,6 +73,8 @@ app.use(cors());
 app.use(morgan("combined"));
 app.use(express.json());
 // app.use(helmet());
+
+//routes
 app.use('/auth', authRoute)
 app.use("/cartitems", cartRoute);
 app.use("/Contact", contactRoute);
