@@ -63,7 +63,7 @@ const SignIn: React.FC = () => {
               aria-describedby="emailHelp"
               placeholder="Email"
               errorText = 'please enter a valid email'
-              validators={[EMAIL_REQUIRED]}
+              validators={[EMAIL_REQUIRED()]}
               />
           </div>
           <div className="mb-3">
@@ -74,7 +74,7 @@ const SignIn: React.FC = () => {
               id="password"
               placeholder="Password"
               errorText = 'password must be greater than 8 digits'
-              validators={[PASSWORD_REQUIRED]}
+              validators={[PASSWORD_REQUIRED()]}
             />
           </div>
           <motion.button

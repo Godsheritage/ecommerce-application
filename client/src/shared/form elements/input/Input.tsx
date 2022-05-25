@@ -19,7 +19,7 @@ const Input: React.FC<any> = ({
         return {
           ...state,
           value: action.val,
-          isValid: validate(action.validators, action.val),
+          isValid: validate([{type: "EMAIL"}], action.val),
         };
       default:
         return state;
