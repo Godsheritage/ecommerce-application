@@ -1,10 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import GoogleLogo from "../assets/img/Google.png";
 import { contextTypes, signUpTypes } from "../types";
 import ProductContext from "../context/ProductContext";
+import Input from "../shared/form elements/input/Input";
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -52,22 +53,22 @@ const SignIn: React.FC = () => {
         <h1 className="text-center pb-2">Login</h1>
         <form onSubmit={handleSubmit} className=" d-flex flex-column ">
           <div className="my-3">
-            <input
+            <Input
               type="email"
-              className="form-control "
+              className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e:any) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3">
-            <input
+            <Input
               type="password"
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e:any) => setPassword(e.target.value)}
             />
           </div>
           <motion.button
@@ -80,7 +81,7 @@ const SignIn: React.FC = () => {
           </motion.button>
           <div className="my-3">
             <a href="/auth/google">
-              <img src={GoogleLogo} className="googleLogo" />
+              <img src={GoogleLogo} className="googleLogo" alt="" />
             </a>
           </div>
           <Link to="/signup" className="card-link">
