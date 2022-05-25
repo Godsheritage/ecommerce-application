@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import GoogleLogo from "../assets/img/Google.png";
-import { contextTypes, signUpTypes } from "../types";
+import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 import ProductContext from "../context/ProductContext";
 import Input from "../shared/form elements/input/Input";
 
@@ -12,15 +12,43 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const { signUsersIn } = useContext(ProductContext) as contextTypes;
 
+  const signInreducer = (state: SIGN_IN_VALIDATION_TYPES, action: any) => {
+    switch (action.types) {
+      case "Change":
+        return { ...state };
+      default:
+        return { ...state };
+    }
+  };
+
+  const initialState: SIGN_IN_VALIDATION_TYPES = {
+    inputs: {
+      userName: {
+        value: "",
+        isValid: false,
+      },
+      password: { value: "", isValid: false },
+    },
+    isValid: false,
+  };
+
+  const [state, dispatch] = useReducer(signInreducer, initialState);
+
   const defaultVariants = {
     hidden: {
       x: "-100vw",
     },
     visible: {
       x: 0,
-      transition: { type:'spring', stiffnes:2},
+      transition: { type: "spring", stiffnes: 2 },
     },
   };
+
+//handle inputChange 
+
+const handleInputChange =() => {
+  
+}
 
   const buttonVariants = {
     visible: {
@@ -59,7 +87,8 @@ const SignIn: React.FC = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Email"
-              onChange={(e:any) => setEmail(e.target.value)}
+              onChange={(e: any) => setEmail(e.target.value)}
+              onInput = {handleInputChange}
             />
           </div>
           <div className="mb-3">
@@ -68,7 +97,7 @@ const SignIn: React.FC = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
-              onChange={(e:any) => setPassword(e.target.value)}
+              onChange={(e: any) => setPassword(e.target.value)}
             />
           </div>
           <motion.button

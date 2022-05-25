@@ -60,3 +60,17 @@ export interface signInTypes {
   email: string;
   password: string;
 }
+
+export interface SIGN_IN_VALIDATION_TYPES {
+  inputs: {
+    userName: {
+      value: string;
+      isValid: boolean;
+    };
+    password: {
+      value: string;
+      isValid: boolean;
+    };
+  };
+  isValid: boolean;
+}
