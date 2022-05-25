@@ -6,6 +6,7 @@ import GoogleLogo from "../assets/img/Google.png";
 import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 import ProductContext from "../context/ProductContext";
 import Input from "../shared/form elements/input/Input";
+import { EMAIL_REQUIRED, PASSWORD_REQUIRED } from "../shared/util/validation";
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -61,6 +62,7 @@ const SignIn: React.FC = () => {
               aria-describedby="emailHelp"
               placeholder="Email"
               errorText = 'please enter a valid email'
+              validators={[EMAIL_REQUIRED]}
             />
           </div>
           <div className="mb-3">
@@ -72,6 +74,7 @@ const SignIn: React.FC = () => {
               placeholder="Password"
               onChange={(e: any) => setPassword(e.target.value)}
               errorText = 'password must be greater than 8 digits'
+              validators={[PASSWORD_REQUIRED]}
             />
           </div>
           <motion.button

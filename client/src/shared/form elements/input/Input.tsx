@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { SIGN_IN_VALIDATION_TYPES } from "../../../types";
-import { VALIDATOR_TYPE_REQUIRED } from "../../util/validation";
+import { validate } from "../../util/validation";
 
 const Input: React.FC<any> = ({
   id,
@@ -13,23 +13,19 @@ const Input: React.FC<any> = ({
   placeholder,
 }) => {
   const signInreducer = (state: any, action: any) => {
+    console.log(validate(action.validator, action.val));
     switch (action.type) {
       case "CHANGE":
         return {
           ...state,
           value: action.val,
-          isValid: VALIDATOR_TYPE_REQUIRED(action.val),
-        };
-      case "BLUR":
-        return {
-          isValid: false,
+          isValid: validate(action.validator, action.val),
         };
       default:
         return state;
     }
   };
 
-  //initial state
   const initialState: any = {
     // inputs: {
     //   userName: {
@@ -45,12 +41,9 @@ const Input: React.FC<any> = ({
   const [state, dispatch] = useReducer(signInreducer, initialState);
 
   const ChangeHandler = (e: any) => {
-    dispatch({ type: "CHANGE", val: e.target.value });
+    dispatch({ type: "CHANGE", val: e.target.value, validator: validators });
   };
 
-  const blurHandle = () => {
-    dispatch({ type: "BLUR" });
-  };
   console.log(state);
   return element === "input" ? (
     <>
@@ -61,7 +54,7 @@ const Input: React.FC<any> = ({
         type={type}
         onChange={ChangeHandler}
         value={state.value}
-        onBlur={blurHandle}
+        // onBlur={blurHandle}
       />
       {state.value !== "" && !state.isValid && <p>{errorText}</p>}
     </>
