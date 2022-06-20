@@ -24,13 +24,6 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
 
   // add items to cart
   const addToCart = async (product: productTypes) => {
-    // if (cart.some((cartItems) => cartItems._id === product._id)) {
-    //   product.quantity++;
-    //   let price = product.price;
-    //   product.price = product.price + price;
-    // } else {
-    //   setCart([...cart, product]);
-    // }
     const response = await axios.post(`${API_URL}/cartItems`, product);
     // await fetchCartItems();
     setCart([...cart, response.data]);
