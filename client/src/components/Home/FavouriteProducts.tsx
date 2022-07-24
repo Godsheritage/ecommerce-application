@@ -1,7 +1,7 @@
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useContext } from "react";
-import ProductContext from "../../context/ProductContext";
 import { contextTypes } from "../../types";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import ProductContext from "../../context/ProductContext";
 
 const FavouriteProducts = () => {
   const { favouriteProducts, addToCart } = useContext(
@@ -21,7 +21,7 @@ const FavouriteProducts = () => {
                 <div className="product-item">
                   <div className="pi-pic">
                     <div className="tag-new">New</div>
-                    <img src={product.image} alt={product.name} />
+                    <img src={product.image} alt={product.title} />
                     <div className="pi-links">
                       <button
                         className="add-card"
@@ -37,7 +37,7 @@ const FavouriteProducts = () => {
                   </div>
                   <div className="pi-text">
                     <h6>${product.price}</h6>
-                    <p>{product.name}</p>
+                    <p>{product.title}</p>
                   </div>
                 </div>
               </div>

@@ -222,7 +222,7 @@ export const CategoryMain: React.FC = () => {
                   <div className="product-item">
                     <div className="pi-pic">
                       <div className="tag-sale">ON SALE</div>
-                      <img src={product.image} alt={product.name} />
+                      <img src={product.image} alt={product.title} />
                       <div className="pi-links">
                         <button
                           className="add-card"
@@ -238,7 +238,7 @@ export const CategoryMain: React.FC = () => {
                     </div>
                     <div className="pi-text">
                       <h6>${product.price}</h6>
-                      <p>{product.name}</p>
+                      <p>{product.title}</p>
                     </div>
                   </div>
                 </div>

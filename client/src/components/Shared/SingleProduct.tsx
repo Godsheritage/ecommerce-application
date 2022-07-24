@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
 import Footer from "../Home/Footer";
 import Header from "../Home/Header";
 import PageTopInfo from "./PageTopInfo";
 import { contextTypes } from "../../types";
+import { useContext, useEffect } from "react";
 import ProductSection from "./ProductSection";
 import ProductContext from "../../context/ProductContext";
 import {
@@ -70,7 +70,7 @@ const SingleProduct: React.FC = () => {
               </div>
             </div>
             <div className="col-lg-6 product-details">
-              <h2 className="p-title">{singleProduct.name}</h2>
+              <h2 className="p-title">{singleProduct.title}</h2>
               <h3 className="p-price">${singleProduct.price}</h3>
               <h4 className="p-stock">
                 Available: <span>In Stock</span>
