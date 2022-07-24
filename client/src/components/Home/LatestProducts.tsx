@@ -2,6 +2,7 @@
 
 import { useContext } from "react";
 import { contextTypes } from "../../types";
+import Card from "../../shared/UI Elements/Card/Card";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
 import ProductSection from "../Shared/ProductSection";
@@ -22,33 +23,35 @@ const LatestProducts: React.FC = () => {
           </div>
           <div className="row">
             {latestProducts.map((product) => (
-              <div className="col-lg-3 col-sm-6" key={product._id}>
-                <div className="product-item">
-                  <div className="pi-pic">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      onClick={() => fetchSingleProd(product)}
-                    />
-                    <div className="pi-links">
-                      <button
-                        className="add-card"
-                        onClick={() => addToCart(product)}
-                      >
-                        <FaShoppingCart className="i" />
-                        <span>ADD TO CART</span>
-                      </button>
-                      <button className="wishlist-btn">
-                        <FaHeart className="i" />
-                      </button>
+              // <Card>
+                <div className="col-lg-3 col-sm-6" key={product._id}>
+                  <div className="product-item">
+                    <div className="pi-pic">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        onClick={() => fetchSingleProd(product)}
+                      />
+                      <div className="pi-links">
+                        <button
+                          className="add-card"
+                          onClick={() => addToCart(product)}
+                        >
+                          <FaShoppingCart className="i" />
+                          <span>ADD TO CART</span>
+                        </button>
+                        <button className="wishlist-btn">
+                          <FaHeart className="i" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="pi-text">
+                      <h6>${product.price}</h6>
+                      <p>{product.title}</p>
                     </div>
                   </div>
-                  <div className="pi-text">
-                    <h6>${product.price}</h6>
-                    <p>{product.title}</p>
-                  </div>
                 </div>
-              </div>
+              //</Card> 
             ))}
           </div>
         </div>

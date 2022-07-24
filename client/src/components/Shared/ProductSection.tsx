@@ -1,9 +1,14 @@
 import { useContext } from "react";
-import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../types";
+import Card from "../../shared/UI Elements/Card/Card";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
+import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../types";
 
-const ProductSection: React.FC<PRODUCT_SECTION_TYPES> = ( {products, header, style} ) => {
+const ProductSection: React.FC<PRODUCT_SECTION_TYPES> = ({
+  products,
+  header,
+  style,
+}) => {
   const { addToCart, fetchSingleProduct } = useContext(
     ProductContext
   ) as contextTypes;
@@ -18,28 +23,36 @@ const ProductSection: React.FC<PRODUCT_SECTION_TYPES> = ( {products, header, sty
           <div className="row">
             {products.map((product: any) => (
               <div className="col-lg-3 col-sm-6" key={product._id}>
-                <div className="product-item">
-                  <div className="pi-pic">
-                    <img src={product.image} alt={product.name} onClick = {() => fetchSingleProduct(product) } />
-                    <div className="pi-links">
-                      <button
-                        className="add-card"
-                        onClick={() => addToCart(product)}
-                      >
-                        <FaShoppingCart className="i" />
-                        <span>ADD TO CART</span>
-                      </button>
-                      <button className="wishlist-btn">
-                        <FaHeart className="i" />
-                      </button>
+  
+                  <Card style={{height: "22rem"}} className ="m-2">
+                  <div className="product-item">
+                    <div className="pi-pic">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        onClick={() => fetchSingleProduct(product)}
+                        style={{margin:" auto, 0"}}
+                      />
+                      <div className="pi-links">
+                        <button
+                          className="add-card"
+                          onClick={() => addToCart(product)}
+                        >
+                          <FaShoppingCart className="i" />
+                          <span>ADD TO CART</span>
+                        </button>
+                        <button className="wishlist-btn">
+                          <FaHeart className="i" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="pi-text">
+                      <h6>${product.price}</h6>
+                      <p>{product.name}</p>
                     </div>
                   </div>
-                  <div className="pi-text">
-                    <h6>${product.price}</h6>
-                    <p>{product.name}</p>
-                  </div>
+              </Card>
                 </div>
-              </div>
             ))}
           </div>
         </div>
