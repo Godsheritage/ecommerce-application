@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
 import { contextTypes } from "../types";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import ProductContext from "../context/ProductContext";
 
@@ -47,7 +47,7 @@ const CartTable = () => {
                         <td className="product-col">
                           <img src={cartItem.image} alt="cartImage1" />
                           <div className="pc-title">
-                            <h4>{cartItem.name}</h4>
+                            <h4>{cartItem.title}</h4>
                             <p>${cartItem.price}</p>
                           </div>
                         </td>

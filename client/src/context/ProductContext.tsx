@@ -36,24 +36,24 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     const ID = product._id;
     const response = await axios.get(`${API_URL}/products/singleproduct/${ID}`);
     setSingleProduct(response.data);
-    navigate(`/products/${product.name}`);
+    navigate(`/products/${product.title}`);
   };
 
   //fetch all products
   const fetchAllProducts: () => Promise<void> = async () => {
-    const response = await axios.get(`${API_URL}/products/allproducts`);
+    const response = await axios.get("https://fakestoreapi.com/products");
     setAllProducts(response.data);
   };
 
   //fetch the latest products
   const fetchLatestProducts: () => Promise<void> = async () => {
-    const response = await axios.get(`${API_URL}/products/latestproducts`);
+    const response = await axios.get("https://fakestoreapi.com/products");
     setLatestProducts(response.data);
   };
 
   //fetch the favourite products
   const fetchFavouriteProducts: () => Promise<void> = async () => {
-    const response = await axios.get(`${API_URL}/products/favouriteproducts`);
+    const response = await axios.get("https://fakestoreapi.com/products");
     setFavouriteProducts(response.data);
   };
 

@@ -27,7 +27,7 @@ const LatestProducts: React.FC = () => {
                   <div className="pi-pic">
                     <img
                       src={product.image}
-                      alt={product.name}
+                      alt={product.title}
                       onClick={() => fetchSingleProd(product)}
                     />
                     <div className="pi-links">
@@ -45,7 +45,7 @@ const LatestProducts: React.FC = () => {
                   </div>
                   <div className="pi-text">
                     <h6>${product.price}</h6>
-                    <p>{product.name}</p>
+                    <p>{product.title}</p>
                   </div>
                 </div>
               </div>

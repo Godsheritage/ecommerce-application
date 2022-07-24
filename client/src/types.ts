@@ -2,7 +2,7 @@
 
 export interface productTypes {
   _id: string;
-  name: string;
+  title: string;
   image: string;
   size: string;
   price: number;
