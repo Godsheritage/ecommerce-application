@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Card from "../../shared/UI Elements/Card/Card";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ProductContext from "../../context/ProductContext";
-import { contextTypes, productTypes, PRODUCT_SECTION_TYPES } from "../../types";
+import { contextTypes, PRODUCT_SECTION_TYPES } from "../../types";
 
 const ProductSection: React.FC<PRODUCT_SECTION_TYPES> = ({
   products,

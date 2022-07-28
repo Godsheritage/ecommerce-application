@@ -38,6 +38,14 @@ export const ProductContextProvider: React.FC<any> = ({ children }) => {
     setSingleProduct(response.data);
     navigate(`/products/${product.title}`);
   };
+  // const fetchSingleProduct: (product: productTypes) => Promise<void> = async (
+  //   product: productTypes
+  // ) => {
+  //   const ID = product._id;
+  //   const response = await axios.get(`${API_URL}/products/singleproduct/${ID}`);
+  //   setSingleProduct(response.data);
+  //   navigate(`/products/${product.title}`);
+  // };
 
   //fetch all products
   const fetchAllProducts: () => Promise<void> = async () => {
