@@ -2,12 +2,12 @@ import cartItemDatabse from "./cart.mongo";
 
 const cart = [];
 
-//add items to cart  
+//ADD ITEMS TO THE CART
 export const addToCart = async (cartItem: any) => {
   await cartItemDatabse.create(cartItem);
 };
 
-//fetch cart Items
+//FETCH CART ITEMS
 export const fetchCartItems = async () => {
   return await cartItemDatabse.find({}, { __v: 0 });
 };

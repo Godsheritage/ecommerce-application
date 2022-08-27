@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 const MOGO_URL: any = process.env.MONGO_URL;
 
 
-//create the server
+//CREATE THE SERVER
 const server = https.createServer(
   {
     key: fs.readFileSync(path.join(__dirname, "..", "key.pem")),
@@ -28,7 +28,8 @@ mongoose.connection.on("error", (err) => {
   console.log(err);
 });
 
-//start the server 
+
+//START THE SERVER
 const startServer = async () => {
   await mongoose.connect(MOGO_URL);  
 
