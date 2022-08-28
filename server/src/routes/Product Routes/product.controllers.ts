@@ -6,12 +6,9 @@ import {
   fetchFavouriteProducts,
 } from "../../model/products models/product.model";
 
-//fetch single products
+//FETCH SINGLE PRODUCTS
 export const httpFetchSingleProduct: RequestHandler = async (req, res) => {
   const ID = req.params.product;
-  if (!ID) {
-    return res.status(400).json({ error: "ID is missing" });
-  }
   const found = await fetchSingleProduct(ID);
   if (!found) {
     return res.status(404).json({ error: `item with id ${ID} was not found` });
@@ -19,17 +16,17 @@ export const httpFetchSingleProduct: RequestHandler = async (req, res) => {
   return res.status(200).json(found);
 };
 
-//fetch all products
+//FETCH ALL PRODUCTS
 export const httpFetchAllProducts: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchAllProducts());
 };
 
-//fetch latest products
+//FETCH LATEST PRODUCTS
 export const httpFetchLatestProducts: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchLatestProducts());
 };
 
-// fetch favourite products
+// FETCH FAVOURITE PRODUCTS
 export const httpFetchFavouriteProducts: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchFavouriteProducts());
 };

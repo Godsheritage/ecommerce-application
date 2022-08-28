@@ -8,6 +8,7 @@ import {
 
 const productRoute = express.Router();
 
+//PRODUCT ROUTES
 productRoute.get("/allproducts", httpFetchAllProducts);
 productRoute.get("/singleproduct/:product", httpFetchSingleProduct);
 productRoute.get("/latestproducts", httpFetchLatestProducts);

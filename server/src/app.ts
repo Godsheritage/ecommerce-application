@@ -19,7 +19,7 @@ dotenv.config();
 
 const app = express();
 
-//confign options
+//CONFIG OPTIONS
 const CONFIG: any = {
   CLIENT_ID: process.env.CLIENT_ID,
   CLIENT_SECRET: process.env.CLIENT_SECRET,
@@ -27,7 +27,7 @@ const CONFIG: any = {
   COOKIE_SECRET_2: process.env.COOKIE_SECRET_2,
 };
 
-//passport authentication options
+//PASSPORT AUTHENICATION OPTIONS
 const AUTH_OPTIONS: any = {
   clientID: CONFIG.CLIENT_ID,
   clientSecret: CONFIG.CLIENT_SECRET,
@@ -35,7 +35,7 @@ const AUTH_OPTIONS: any = {
 };
 
 
-//verify callback
+//VERIFY CALLBACK FUNCTION
 const verifyCallback = (
   accessToken: string,
   refreshToken: string,
@@ -52,7 +52,7 @@ passport.serializeUser((user: any, done) => {
   done(null, user.id);
 });
 
-//read the session from the cookie
+//READ SESSION FROM THE COOKIE
 passport.deserializeUser((id: any, done) => {
   done(null, id);
 });
@@ -74,7 +74,7 @@ app.use(morgan("combined"));
 app.use(express.json());
 // app.use(helmet());
 
-//routes
+//ROUTES
 app.use('/auth', authRoute)
 app.use("/cartitems", cartRoute);
 app.use("/Contact", contactRoute);
@@ -94,6 +94,7 @@ app.get(
   })
 );
 
+//LOGOUT ROUTE
 app.get("/auth/logout", (req, res) => {
   req.logOut();
   return res.redirect("/");
@@ -105,7 +106,7 @@ app.get("/failure", (req, res) => {
   });
 });
 
-//serve frontend
+//FRONT END
 app.use(express.static(path.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public ", "index.html"));
