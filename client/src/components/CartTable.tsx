@@ -9,10 +9,6 @@ const CartTable = () => {
 
   const [quantity, setQuantity] = useState<number>(1);
 
-  // const plusOne = () => {
-  //   cartItem.quantity++
-  //   setQuantity(quantity + 1);
-  // };
 
 
 
