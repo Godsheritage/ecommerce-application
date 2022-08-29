@@ -14,12 +14,6 @@ const CartTable = () => {
   //   setQuantity(quantity + 1);
   // };
 
-  // const minusOne = () => {
-  //   cartItem.quantity --
-  //   setQuantity(quantity + 1);
-  // };
-
-  // const defaultn = 1
 
 
 //TODO make a way for the value of the quantity to change on click of the + or - btn
